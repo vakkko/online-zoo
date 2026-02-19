@@ -21,7 +21,18 @@ ul {
   list-style-type: none;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+}
+
 header {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.logo-links {
   padding: 0 26rem;
   display: flex;
   align-items: center;
@@ -31,13 +42,13 @@ header {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
-header > div {
+.logo-links > .link-container {
   display: flex;
   align-items: center;
   gap: 0;
   gap: 6.7rem;
 }
-header nav > ul {
+.logo-links nav > ul {
   display: flex;
   align-items: center;
   gap: 4.825rem;
@@ -46,10 +57,10 @@ header nav > ul {
   font-size: 18px;
   line-height: 150%;
 }
-header nav > ul a {
+.logo-links nav > ul a {
   color: #000000;
 }
-header nav > ul a:hover {
+.logo-links nav > ul a:hover {
   color: #00a092;
 }
 
@@ -57,4 +68,46 @@ header nav > ul a:hover {
   display: flex;
   align-items: center;
   gap: 3rem;
+}
+
+.panda-container {
+  padding: 0 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: flex-start;
+  padding-top: 12.9rem;
+  padding-bottom: 12.9rem;
+  background-image: url(../../assets/images/panda.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.panda-container h1 {
+  font-weight: 800;
+  font-size: 82px;
+  line-height: 100%;
+  letter-spacing: 1%;
+  text-transform: uppercase;
+  width: 74.1666666667%;
+  color: #00a092;
+}
+.panda-container p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  width: 35.8333333333%;
+}
+.panda-container button {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #f58021;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.6rem 3rem;
 }/*# sourceMappingURL=index.css.map */

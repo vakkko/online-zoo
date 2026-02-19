@@ -1,8 +1,13 @@
 @use "../../scss/global";
 @use "../../scss/variables" as *;
 @use "../../scss/mixins" as *;
+@use "sass:math";
 
 header {
+  @include flexColumn;
+}
+
+.logo-links {
   @include paddingLeftRight;
   @include flexAlignCenter;
   background-color: $orange;
@@ -10,7 +15,7 @@ header {
   padding-top: 3rem;
   padding-bottom: 3rem;
 
-  & > div {
+  & > .link-container {
     @include flexAlignCenter;
     gap: 6.7rem;
   }
@@ -34,4 +39,36 @@ header {
 
 .social-networks {
   @include flexAlignCenter(3rem);
+}
+
+.panda-container {
+  @include paddingLeftRight;
+  @include flexColumn(5rem);
+  align-items: flex-start;
+  padding-top: 12.9rem;
+  padding-bottom: 12.9rem;
+  background-image: url(../../assets/images/panda.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1 {
+    font-weight: 800;
+    font-size: 82px;
+    line-height: 100%;
+    letter-spacing: 1%;
+    text-transform: uppercase;
+    width: math.div(890rem, 1200rem) * 100%;
+    color: $lightGreen;
+  }
+
+  p {
+    @include regularText;
+    width: math.div(430rem, 1200rem) * 100%;
+  }
+
+  button {
+    @include buttonStyles($orange, $white);
+    @include flexAlignCenter(1rem);
+    padding: 2.6rem 3rem;
+  }
 }
