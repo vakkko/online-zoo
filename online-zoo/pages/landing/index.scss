@@ -1,0 +1,37 @@
+@use "../../scss/global";
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+header {
+  @include paddingLeftRight;
+  @include flexAlignCenter;
+  background-color: $orange;
+  justify-content: space-between;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  & > div {
+    @include flexAlignCenter;
+    gap: 6.7rem;
+  }
+
+  nav > ul {
+    @include flexAlignCenter(4.825rem);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+
+    a {
+      color: $black;
+
+      &:hover {
+        color: $lightGreen;
+      }
+    }
+  }
+}
+
+.social-networks {
+  @include flexAlignCenter(3rem);
+}
