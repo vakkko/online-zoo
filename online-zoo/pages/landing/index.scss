@@ -78,10 +78,57 @@ main {
 
   .articles-donation {
     @include flexColumn(15rem);
+    section {
+      @include paddingLeftRight;
+      @include sectionStyles;
+    }
   }
 
-  @include paddingLeftRight;
-  section {
-    @include sectionStyles;
+  .donation-container {
+    @include paddingLeftRight;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: $darkBlue;
+    color: $white;
+  }
+
+  h3 {
+    @include heading3styles;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    @include regularText;
+    width: 43.5%;
+  }
+
+  .donation-button-box {
+    @include flexColumn(1rem);
+    h4 {
+      @include subHeaderStyles;
+    }
+
+    button {
+      @include buttonStyles(transparent, $white);
+      border: 1px solid white;
+
+      @include flexAlignCenter(1.5rem);
+      white-space: nowrap;
+      position: relative;
+
+      span {
+        padding: 2.6rem 0 2.6rem 1.4rem;
+      }
+
+      div {
+        @include flexAlignCenter;
+        justify-content: center;
+        background-color: $orange;
+        padding: 2.6rem;
+        border-radius: 5px;
+      }
+    }
   }
 }

@@ -42,6 +42,23 @@
   color: $color;
 }
 
+@mixin heading3styles {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: variables.$white;
+}
+
+@mixin subHeaderStyles {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: variables.$white;
+}
+
 @mixin sectionStyles {
   @include flexAlignCenter(7.7rem);
   h2 {
@@ -51,6 +68,7 @@
 
   p {
     @include regularText;
+    width: 100%;
   }
 
   img {
