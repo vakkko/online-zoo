@@ -24,6 +24,7 @@ ul {
 button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 header {
@@ -113,7 +114,7 @@ header {
 }
 
 main {
-  margin-top: 15rem;
+  margin: 15rem 0;
 }
 main .articles-donation {
   display: flex;
@@ -208,4 +209,51 @@ main .donation-button-box button div {
   background-color: #f58021;
   padding: 2.6rem;
   border-radius: 5px;
+}
+main .pets-carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 13.6rem;
+  justify-content: center;
+}
+main .pets-carousel-container .article-arrows {
+  width: 47.9%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+}
+main .pets-carousel-container .article-arrows h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #00a092;
+}
+main .pets-carousel-container .article-arrows > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+}
+main .pets-carousel-container .article-arrows > div p {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  color: black;
+  width: 100%;
+}
+main .pets-carousel-container .article-arrows .arrows-box {
+  margin-top: 10rem;
+  display: flex;
+  gap: 5.5rem;
+}
+main .pets-carousel-container .article-arrows .arrows-box div {
+  border: 1px solid #20113d;
+  border-radius: 5px;
+  padding: 1.9rem 1.7rem;
 }/*# sourceMappingURL=index.css.map */

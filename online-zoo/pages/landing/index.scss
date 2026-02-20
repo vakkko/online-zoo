@@ -74,7 +74,7 @@ header {
 }
 
 main {
-  margin-top: 15rem;
+  margin: 15rem 0;
 
   .articles-donation {
     @include flexColumn(15rem);
@@ -128,6 +128,45 @@ main {
         background-color: $orange;
         padding: 2.6rem;
         border-radius: 5px;
+      }
+    }
+  }
+
+  .pets-carousel-container {
+    @include flexAlignCenter;
+    margin-top: 13.6rem;
+    justify-content: center;
+
+    .article-arrows {
+      width: 47.9%;
+      @include flexColumn(5rem);
+      align-items: center;
+
+      h2 {
+        @include heading2Styles($lightGreen);
+      }
+
+      & > div {
+        @include flexColumn;
+        align-items: center;
+
+        p {
+          @include subHeaderStyles;
+          color: black;
+          width: 100%;
+        }
+      }
+
+      .arrows-box {
+        margin-top: 10rem;
+        display: flex;
+        gap: 5.5rem;
+
+        div {
+          border: 1px solid $darkBlue;
+          border-radius: 5px;
+          padding: 1.9rem 1.7rem;
+        }
       }
     }
   }
