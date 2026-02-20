@@ -72,3 +72,11 @@ header {
     padding: 2.6rem 3rem;
   }
 }
+
+main {
+  margin-top: 15rem;
+  @include paddingLeftRight;
+  section {
+    @include sectionStyles;
+  }
+}

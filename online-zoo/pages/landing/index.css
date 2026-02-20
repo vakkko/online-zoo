@@ -110,4 +110,31 @@ header {
   align-items: center;
   gap: 1rem;
   padding: 2.6rem 3rem;
+}
+
+main {
+  margin-top: 15rem;
+  padding: 0 26rem;
+}
+main section {
+  display: flex;
+  gap: 7.7rem;
+}
+main section h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #00a092;
+  margin-bottom: 5rem;
+}
+main section p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+main section img {
+  max-width: 80rem;
 }/*# sourceMappingURL=index.css.map */

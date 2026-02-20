@@ -1,3 +1,5 @@
+@use "variables";
+
 @mixin regularText {
   font-weight: 400;
   font-size: 18px;
@@ -29,4 +31,30 @@
   border-radius: 5px;
   color: $color;
   background-color: $backgroundColor;
+}
+
+@mixin heading2Styles($color: "") {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@mixin sectionStyles {
+  display: flex;
+  gap: 7.7rem;
+  h2 {
+    @include heading2Styles(variables.$lightGreen);
+    margin-bottom: 5rem;
+  }
+
+  p {
+    @include regularText;
+  }
+
+  img {
+    max-width: 80rem;
+  }
 }
