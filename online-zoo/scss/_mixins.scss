@@ -43,8 +43,7 @@
 }
 
 @mixin sectionStyles {
-  display: flex;
-  gap: 7.7rem;
+  @include flexAlignCenter(7.7rem);
   h2 {
     @include heading2Styles(variables.$lightGreen);
     margin-bottom: 5rem;

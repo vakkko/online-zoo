@@ -75,6 +75,11 @@ header {
 
 main {
   margin-top: 15rem;
+
+  .articles-donation {
+    @include flexColumn(15rem);
+  }
+
   @include paddingLeftRight;
   section {
     @include sectionStyles;

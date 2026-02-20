@@ -114,10 +114,18 @@ header {
 
 main {
   margin-top: 15rem;
+}
+main .articles-donation {
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+}
+main {
   padding: 0 26rem;
 }
 main section {
   display: flex;
+  align-items: center;
   gap: 7.7rem;
 }
 main section h2 {
