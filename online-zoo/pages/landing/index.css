@@ -11,6 +11,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -212,8 +213,9 @@ main .donation-button-box button div {
 }
 main .pets-carousel-container {
   display: flex;
+  flex-direction: column;
+  gap: 5rem;
   align-items: center;
-  gap: 0;
   margin-top: 13.6rem;
   justify-content: center;
 }
@@ -252,8 +254,63 @@ main .pets-carousel-container .article-arrows .arrows-box {
   display: flex;
   gap: 5.5rem;
 }
-main .pets-carousel-container .article-arrows .arrows-box div {
+main .pets-carousel-container .article-arrows .arrows-box button {
   border: 1px solid #20113d;
   border-radius: 5px;
   padding: 1.9rem 1.7rem;
+}
+main .pets-carousel-container .carousel-container .carousel-item {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main .pets-carousel-container .carousel-container .carousel-item span {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.2rem 1.9rem;
+  background-color: #20113d;
+  border-top-left-radius: 5px;
+}
+main .pets-carousel-container .carousel-container .carousel-item .carousel-image {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+main .pets-carousel-container .carousel-container .carousel-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  margin-top: 3rem;
+  background-color: #20113d;
+}
+main .pets-carousel-container .carousel-container .carousel-item > div p {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
+}
+main .pets-carousel-container .carousel-container .carousel-item > div h4 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+main .pets-carousel-container .carousel-container .carousel-item > div button {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: "";
+  background-color: "";
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  color: #f58021;
 }/*# sourceMappingURL=index.css.map */
