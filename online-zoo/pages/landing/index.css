@@ -278,6 +278,7 @@ main .pets-carousel-container .carousel-container .carousel-item span {
   border-top-left-radius: 5px;
 }
 main .pets-carousel-container .carousel-container .carousel-item .carousel-image {
+  max-width: 44rem;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
