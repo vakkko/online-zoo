@@ -245,4 +245,55 @@ main {
       border: 1px solid $darkBlue;
     }
   }
+
+  .pay-and-feed-container {
+    @include paddingLeftRight;
+    background-color: $darkBlue;
+    color: $white;
+    margin-top: 15rem;
+    padding-top: 9rem;
+
+    h2 {
+      @include heading2Styles;
+      margin-bottom: 9rem;
+      margin-bottom: 11.5rem;
+    }
+
+    .number-and-line {
+      @include flexAlignCenter(9.3rem);
+      justify-content: space-between;
+      margin-bottom: 8.2rem;
+
+      span {
+        @include subHeaderStyles;
+      }
+
+      hr {
+        width: 100%;
+      }
+    }
+
+    .donation-main-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 16rem;
+
+      div {
+        @include flexColumn;
+        align-items: flex-start;
+        margin-top: 1.9rem;
+
+        h4 {
+          @include subHeaderStyles;
+          margin-top: 3rem;
+          margin-bottom: 5rem;
+        }
+
+        p {
+          @include regularText;
+          width: 100%;
+        }
+      }
+    }
+  }
 }

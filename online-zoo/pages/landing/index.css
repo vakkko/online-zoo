@@ -354,4 +354,66 @@ main .pets-carousel-container .choose-fav {
   color: #20113d;
   padding: 2.6rem 3.5rem;
   border: 1px solid #20113d;
+}
+main .pay-and-feed-container {
+  padding: 0 26rem;
+  background-color: #20113d;
+  color: #ffffff;
+  margin-top: 15rem;
+  padding-top: 9rem;
+}
+main .pay-and-feed-container h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: "";
+  margin-bottom: 9rem;
+  margin-bottom: 11.5rem;
+}
+main .pay-and-feed-container .number-and-line {
+  display: flex;
+  align-items: center;
+  gap: 9.3rem;
+  justify-content: space-between;
+  margin-bottom: 8.2rem;
+}
+main .pay-and-feed-container .number-and-line span {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+main .pay-and-feed-container .number-and-line hr {
+  width: 100%;
+}
+main .pay-and-feed-container .donation-main-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16rem;
+}
+main .pay-and-feed-container .donation-main-content div {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  margin-top: 1.9rem;
+}
+main .pay-and-feed-container .donation-main-content div h4 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+main .pay-and-feed-container .donation-main-content div p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  width: 100%;
 }/*# sourceMappingURL=index.css.map */
