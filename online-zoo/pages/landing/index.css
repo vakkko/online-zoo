@@ -259,10 +259,15 @@ main .pets-carousel-container .article-arrows .arrows-box button {
   border-radius: 5px;
   padding: 1.9rem 1.7rem;
 }
+main .pets-carousel-container .carousel-container {
+  display: grid;
+  grid-template-columns: repeat(4, 44rem);
+  gap: 4rem;
+  margin-left: 52rem;
+}
 main .pets-carousel-container .carousel-container .carousel-item {
   position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
+  align-items: stretch;
 }
 main .pets-carousel-container .carousel-container .carousel-item span {
   font-weight: 500;
@@ -277,32 +282,46 @@ main .pets-carousel-container .carousel-container .carousel-item span {
   background-color: #20113d;
   border-top-left-radius: 5px;
 }
-main .pets-carousel-container .carousel-container .carousel-item .carousel-image {
+main .pets-carousel-container .carousel-container .carousel-item .carousel-image-box {
+  display: flex;
+  align-items: center;
   max-width: 44rem;
+  height: 43.6rem;
+  overflow: hidden;
+}
+main .pets-carousel-container .carousel-container .carousel-item .carousel-image-box img {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  width: 100%;
+  height: 100%;
 }
-main .pets-carousel-container .carousel-container .carousel-item > div {
+main .pets-carousel-container .carousel-container .carousel-item > div:last-child {
   display: flex;
   flex-direction: column;
   gap: 0;
   align-items: center;
-  margin-top: 3rem;
+  gap: 2rem;
   background-color: #20113d;
+  padding-bottom: 7.4rem;
 }
-main .pets-carousel-container .carousel-container .carousel-item > div p {
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+main .pets-carousel-container .carousel-container .carousel-item > div:last-child p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
   color: #ffffff;
+  width: 100%;
+  text-align: center;
 }
-main .pets-carousel-container .carousel-container .carousel-item > div h4 {
+main .pets-carousel-container .carousel-container .carousel-item > div:last-child h4 {
+  margin-top: 3rem;
   font-weight: 500;
   font-size: 26px;
   line-height: 130%;
   letter-spacing: 0%;
   color: #ffffff;
 }
-main .pets-carousel-container .carousel-container .carousel-item > div button {
+main .pets-carousel-container .carousel-container .carousel-item > div:last-child button {
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
@@ -314,4 +333,5 @@ main .pets-carousel-container .carousel-container .carousel-item > div button {
   align-items: center;
   gap: 1.1rem;
   color: #f58021;
+  margin-bottom: 7.4rem;
 }/*# sourceMappingURL=index.css.map */
