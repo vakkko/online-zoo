@@ -174,11 +174,16 @@ main {
     .carousel-container {
       display: grid;
       grid-template-columns: repeat(4, 44rem);
+      grid-template-rows: repeat(2, 74.7rem);
+      row-gap: 4rem;
       gap: 4rem;
-      margin-left: 52rem;
+      margin-left: 26rem;
+      margin-bottom: 10rem;
+      overflow-x: scroll;
+      width: 166rem;
       .carousel-item {
         position: relative;
-        align-items: stretch;
+        overflow: hidden;
         span {
           @include subHeaderStyles;
           position: absolute;
@@ -215,6 +220,7 @@ main {
             color: $white;
             width: 100%;
             text-align: center;
+            padding: 3rem;
           }
 
           h4 {
@@ -226,10 +232,17 @@ main {
             @include buttonStyles;
             @include flexAlignCenter(1.1rem);
             color: $orange;
-            margin-bottom: 7.4rem;
           }
         }
       }
+    }
+
+    .choose-fav {
+      @include buttonStyles;
+      @include flexAlignCenter(1rem);
+      color: $darkBlue;
+      padding: 2.6rem 3.5rem;
+      border: 1px solid $darkBlue;
     }
   }
 }

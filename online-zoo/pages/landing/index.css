@@ -262,12 +262,17 @@ main .pets-carousel-container .article-arrows .arrows-box button {
 main .pets-carousel-container .carousel-container {
   display: grid;
   grid-template-columns: repeat(4, 44rem);
+  grid-template-rows: repeat(2, 74.7rem);
+  row-gap: 4rem;
   gap: 4rem;
-  margin-left: 52rem;
+  margin-left: 26rem;
+  margin-bottom: 10rem;
+  overflow-x: scroll;
+  width: 166rem;
 }
 main .pets-carousel-container .carousel-container .carousel-item {
   position: relative;
-  align-items: stretch;
+  overflow: hidden;
 }
 main .pets-carousel-container .carousel-container .carousel-item span {
   font-weight: 500;
@@ -312,6 +317,7 @@ main .pets-carousel-container .carousel-container .carousel-item > div:last-chil
   color: #ffffff;
   width: 100%;
   text-align: center;
+  padding: 3rem;
 }
 main .pets-carousel-container .carousel-container .carousel-item > div:last-child h4 {
   margin-top: 3rem;
@@ -333,5 +339,19 @@ main .pets-carousel-container .carousel-container .carousel-item > div:last-chil
   align-items: center;
   gap: 1.1rem;
   color: #f58021;
-  margin-bottom: 7.4rem;
+}
+main .pets-carousel-container .choose-fav {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: "";
+  background-color: "";
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #20113d;
+  padding: 2.6rem 3.5rem;
+  border: 1px solid #20113d;
 }/*# sourceMappingURL=index.css.map */
