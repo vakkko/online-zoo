@@ -30,10 +30,6 @@ header {
     }
   }
 
-  .social-networks {
-    @include flexAlignCenter(3rem);
-  }
-
   .panda-container {
     @include paddingLeftRight;
     @include flexColumn(5rem);
@@ -73,6 +69,10 @@ header {
   font-weight: 600;
   font-size: 18px;
   line-height: 150%;
+}
+
+.social-networks {
+  @include flexAlignCenter(3rem);
 }
 
 main {
@@ -500,6 +500,22 @@ footer {
       @include flexAlignCenter(1rem);
       border: 1px solid $white;
       padding: 2.6rem 2.3rem;
+    }
+  }
+
+  hr {
+    margin: 7rem 0 4.4rem;
+  }
+
+  .credits-and-social-networks {
+    @include flexAlignCenter();
+    justify-content: space-between;
+    .credits {
+      @include flexAlignCenter(5rem);
+      span {
+        @include regularText;
+        color: $white;
+      }
     }
   }
 }

@@ -55,11 +55,6 @@ header .logo-links .page-navigation > ul a {
 header .logo-links .page-navigation > ul a:hover {
   color: #00a092;
 }
-header .social-networks {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-}
 header .panda-container {
   padding: 0 26rem;
   display: flex;
@@ -110,6 +105,12 @@ header .panda-container button {
   font-weight: 600;
   font-size: 18px;
   line-height: 150%;
+}
+
+.social-networks {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 main {
@@ -675,4 +676,25 @@ footer .logos-and-links button {
   gap: 1rem;
   border: 1px solid #ffffff;
   padding: 2.6rem 2.3rem;
+}
+footer hr {
+  margin: 7rem 0 4.4rem;
+}
+footer .credits-and-social-networks {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: space-between;
+}
+footer .credits-and-social-networks .credits {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+footer .credits-and-social-networks .credits span {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
 }/*# sourceMappingURL=index.css.map */
