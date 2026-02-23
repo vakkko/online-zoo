@@ -160,13 +160,10 @@ main {
 
       .arrows-box {
         margin-top: 10rem;
-        display: flex;
-        gap: 5.5rem;
 
         button {
-          border: 1px solid $darkBlue;
           border-radius: 5px;
-          padding: 1.9rem 1.7rem;
+          border: 1px solid $darkBlue;
         }
       }
     }
@@ -244,6 +241,16 @@ main {
     }
   }
 
+  .arrows-box {
+    display: flex;
+    gap: 5.5rem;
+
+    button {
+      border-radius: 5px;
+      padding: 1.9rem 1.7rem;
+    }
+  }
+
   .pay-and-feed-container {
     @include paddingLeftRight;
     @include flexColumn(11.6rem);
@@ -299,6 +306,80 @@ main {
           padding: 2.6rem 3.4rem;
         }
       }
+    }
+  }
+
+  .feedback-container {
+    background-image: url(../../assets/images/panda-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 26rem;
+    padding-bottom: 15rem;
+    padding-top: 15rem;
+
+    .users-feedback {
+      display: flex;
+      align-items: flex-start;
+      gap: 4rem;
+    }
+
+    .users-feedback > div:first-child {
+      h2 {
+        @include heading2Styles($white);
+        margin-bottom: 5rem;
+      }
+
+      p {
+        @include subHeaderStyles;
+        width: 100%;
+      }
+    }
+
+    .feedbacks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(1fr, 3);
+      gap: 3rem;
+      & > section {
+        @include flexColumn;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 5rem 5rem 7rem 5rem;
+        background-color: $white;
+        border-radius: 5px;
+
+        h4 {
+          @include subHeaderStyles;
+          color: $black;
+        }
+
+        p {
+          @include regularText;
+          width: 100%;
+        }
+
+        span {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 100%;
+          letter-spacing: 0%;
+          text-transform: uppercase;
+        }
+      }
+      .arrows-box.feedback {
+        margin-top: 3rem;
+        button {
+          border: 1px solid $white !important;
+        }
+      }
+    }
+
+    .btn-leave-feedback {
+      @include buttonStyles(transparent, $white);
+      @include flexAlignCenter(1rem);
+      border: 1px solid $white;
+      margin-top: 37.6rem;
+      padding: 2.6rem 7.7rem;
     }
   }
 }

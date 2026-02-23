@@ -251,13 +251,10 @@ main .pets-carousel-container .article-arrows > div p {
 }
 main .pets-carousel-container .article-arrows .arrows-box {
   margin-top: 10rem;
-  display: flex;
-  gap: 5.5rem;
 }
 main .pets-carousel-container .article-arrows .arrows-box button {
-  border: 1px solid #20113d;
   border-radius: 5px;
-  padding: 1.9rem 1.7rem;
+  border: 1px solid #20113d;
 }
 main .pets-carousel-container .carousel-container {
   display: grid;
@@ -353,6 +350,14 @@ main .pets-carousel-container .choose-fav {
   padding: 2.6rem 3.5rem;
   border: 1px solid #20113d;
 }
+main .arrows-box {
+  display: flex;
+  gap: 5.5rem;
+}
+main .arrows-box button {
+  border-radius: 5px;
+  padding: 1.9rem 1.7rem;
+}
 main .pay-and-feed-container {
   padding: 0 26rem;
   display: flex;
@@ -430,4 +435,93 @@ main .pay-and-feed-container .donation-main-content div button {
   gap: 1rem;
   margin-top: 5rem;
   padding: 2.6rem 3.4rem;
+}
+main .feedback-container {
+  background-image: url(../../assets/images/panda-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 26rem;
+  padding-bottom: 15rem;
+  padding-top: 15rem;
+}
+main .feedback-container .users-feedback {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+}
+main .feedback-container .users-feedback > div:first-child h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 5rem;
+}
+main .feedback-container .users-feedback > div:first-child p {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  width: 100%;
+}
+main .feedback-container .feedbacks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(1fr, 3);
+  gap: 3rem;
+}
+main .feedback-container .feedbacks > section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 5rem 5rem 7rem 5rem;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+main .feedback-container .feedbacks > section h4 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  color: #000000;
+}
+main .feedback-container .feedbacks > section p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  width: 100%;
+}
+main .feedback-container .feedbacks > section span {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+main .feedback-container .feedbacks .arrows-box.feedback {
+  margin-top: 3rem;
+}
+main .feedback-container .feedbacks .arrows-box.feedback button {
+  border: 1px solid #ffffff !important;
+}
+main .feedback-container .btn-leave-feedback {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #ffffff;
+  margin-top: 37.6rem;
+  padding: 2.6rem 7.7rem;
 }/*# sourceMappingURL=index.css.map */
