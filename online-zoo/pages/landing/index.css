@@ -317,7 +317,6 @@ main .pets-carousel-container .carousel-container .carousel-item > div:last-chil
   color: #ffffff;
   width: 100%;
   text-align: center;
-  padding: 3rem;
 }
 main .pets-carousel-container .carousel-container .carousel-item > div:last-child h4 {
   margin-top: 3rem;
@@ -357,6 +356,9 @@ main .pets-carousel-container .choose-fav {
 }
 main .pay-and-feed-container {
   padding: 0 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: 11.6rem;
   background-color: #20113d;
   color: #ffffff;
   margin-top: 15rem;
@@ -369,8 +371,6 @@ main .pay-and-feed-container h2 {
   letter-spacing: 0%;
   text-transform: uppercase;
   color: "";
-  margin-bottom: 9rem;
-  margin-bottom: 11.5rem;
 }
 main .pay-and-feed-container .number-and-line {
   display: flex;
