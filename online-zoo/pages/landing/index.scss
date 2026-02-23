@@ -228,16 +228,15 @@ main {
           }
 
           button {
-            @include buttonStyles;
+            @include buttonStyles("", $orange);
             @include flexAlignCenter(1.1rem);
-            color: $orange;
           }
         }
       }
     }
 
     .choose-fav {
-      @include buttonStyles;
+      @include buttonStyles("", $darkBlue);
       @include flexAlignCenter(1rem);
       color: $darkBlue;
       padding: 2.6rem 3.5rem;
@@ -251,6 +250,7 @@ main {
     background-color: $darkBlue;
     color: $white;
     margin-top: 15rem;
+    padding-bottom: 10rem;
     padding-top: 9rem;
 
     h2 {
@@ -290,6 +290,13 @@ main {
         p {
           @include regularText;
           width: 100%;
+        }
+
+        button {
+          @include buttonStyles($orange, $white);
+          @include flexAlignCenter(1rem);
+          margin-top: 5rem;
+          padding: 2.6rem 3.4rem;
         }
       }
     }

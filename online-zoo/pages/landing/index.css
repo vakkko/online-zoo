@@ -332,12 +332,11 @@ main .pets-carousel-container .carousel-container .carousel-item > div:last-chil
   line-height: 100%;
   text-transform: uppercase;
   border-radius: 5px;
-  color: "";
+  color: #f58021;
   background-color: "";
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  color: #f58021;
 }
 main .pets-carousel-container .choose-fav {
   font-weight: 600;
@@ -345,7 +344,7 @@ main .pets-carousel-container .choose-fav {
   line-height: 100%;
   text-transform: uppercase;
   border-radius: 5px;
-  color: "";
+  color: #20113d;
   background-color: "";
   display: flex;
   align-items: center;
@@ -362,6 +361,7 @@ main .pay-and-feed-container {
   background-color: #20113d;
   color: #ffffff;
   margin-top: 15rem;
+  padding-bottom: 10rem;
   padding-top: 9rem;
 }
 main .pay-and-feed-container h2 {
@@ -416,4 +416,18 @@ main .pay-and-feed-container .donation-main-content div p {
   line-height: 150%;
   letter-spacing: 0%;
   width: 100%;
+}
+main .pay-and-feed-container .donation-main-content div button {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #f58021;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 5rem;
+  padding: 2.6rem 3.4rem;
 }/*# sourceMappingURL=index.css.map */
