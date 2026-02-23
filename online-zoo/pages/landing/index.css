@@ -260,7 +260,6 @@ main .pets-carousel-container .carousel-container {
   display: grid;
   grid-template-columns: repeat(4, 44rem);
   grid-template-rows: repeat(2, 74.7rem);
-  row-gap: 4rem;
   gap: 4rem;
   margin-left: 26rem;
   margin-bottom: 10rem;
@@ -268,6 +267,9 @@ main .pets-carousel-container .carousel-container {
   width: 166rem;
 }
 main .pets-carousel-container .carousel-container .carousel-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   position: relative;
   overflow: hidden;
 }
@@ -287,7 +289,7 @@ main .pets-carousel-container .carousel-container .carousel-item span {
 main .pets-carousel-container .carousel-container .carousel-item .carousel-image-box {
   display: flex;
   align-items: center;
-  max-width: 44rem;
+  width: 44rem;
   height: 43.6rem;
   overflow: hidden;
 }
@@ -301,10 +303,11 @@ main .pets-carousel-container .carousel-container .carousel-item > div:last-chil
   display: flex;
   flex-direction: column;
   gap: 0;
+  padding: 0 3rem 7.4rem;
+  flex-grow: 1;
   align-items: center;
   gap: 2rem;
   background-color: #20113d;
-  padding-bottom: 7.4rem;
 }
 main .pets-carousel-container .carousel-container .carousel-item > div:last-child p {
   font-weight: 400;
@@ -314,6 +317,7 @@ main .pets-carousel-container .carousel-container .carousel-item > div:last-chil
   color: #ffffff;
   width: 100%;
   text-align: center;
+  flex-grow: 1;
 }
 main .pets-carousel-container .carousel-container .carousel-item > div:last-child h4 {
   margin-top: 3rem;

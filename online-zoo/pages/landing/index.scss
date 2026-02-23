@@ -172,13 +172,13 @@ main {
       display: grid;
       grid-template-columns: repeat(4, 44rem);
       grid-template-rows: repeat(2, 74.7rem);
-      row-gap: 4rem;
       gap: 4rem;
       margin-left: 26rem;
       margin-bottom: 10rem;
       overflow-x: scroll;
       width: 166rem;
       .carousel-item {
+        @include flexColumn;
         position: relative;
         overflow: hidden;
         span {
@@ -194,7 +194,7 @@ main {
         .carousel-image-box {
           display: flex;
           align-items: center;
-          max-width: 44rem;
+          width: 44rem;
           height: 43.6rem;
           overflow: hidden;
           img {
@@ -207,16 +207,18 @@ main {
 
         & > div:last-child {
           @include flexColumn;
+          padding: 0 3rem 7.4rem;
+          flex-grow: 1;
           align-items: center;
           gap: 2rem;
           background-color: $darkBlue;
-          padding-bottom: 7.4rem;
 
           p {
             @include regularText;
             color: $white;
             width: 100%;
             text-align: center;
+            flex-grow: 1;
           }
 
           h4 {
