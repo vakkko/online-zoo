@@ -462,4 +462,11 @@ main {
       padding: 2.6rem 3.5rem;
     }
   }
+  .animal-on-screen {
+    @include paddingLeftRight;
+    margin: 15rem 0;
+    img {
+      object-fit: cover;
+    }
+  }
 }

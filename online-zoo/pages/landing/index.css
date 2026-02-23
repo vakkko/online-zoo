@@ -631,4 +631,12 @@ main .animal-caring button {
   background-color: transparent;
   border: 1px solid #20113d;
   padding: 2.6rem 3.5rem;
+}
+main .animal-on-screen {
+  padding: 0 26rem;
+  margin: 15rem 0;
+}
+main .animal-on-screen img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=index.css.map */
