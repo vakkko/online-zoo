@@ -524,4 +524,70 @@ main .feedback-container .btn-leave-feedback {
   border: 1px solid #ffffff;
   margin-top: 37.6rem;
   padding: 2.6rem 7.7rem;
+}
+main .animal-caring {
+  padding: 0 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  margin-top: 13.6rem;
+  align-items: center;
+}
+main .animal-caring .feed-animal-heading {
+  width: 42%;
+}
+main .animal-caring .feed-animal-heading h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #00a092;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+main .animal-caring .feed-animal-heading p {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  color: #20113d;
+  width: 95%;
+  text-align: center;
+}
+main .animal-caring .feed-animal-container section > div:first-child {
+  width: 44rem;
+}
+main .animal-caring .feed-animal-container section > div:first-child img {
+  width: 100%;
+}
+main .animal-caring .feed-animal-container section > div:last-child {
+  margin-top: 3rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #20113d;
+}
+main .animal-caring .feed-animal-container section > div:last-child p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+main .animal-caring .feed-animal-container section > div:last-child button {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #f58021;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }/*# sourceMappingURL=index.css.map */

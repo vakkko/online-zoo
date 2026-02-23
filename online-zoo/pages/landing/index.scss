@@ -382,4 +382,57 @@ main {
       padding: 2.6rem 7.7rem;
     }
   }
+
+  .animal-caring {
+    @include paddingLeftRight;
+    @include flexColumn(10rem);
+    margin-top: 13.6rem;
+    align-items: center;
+    .feed-animal-heading {
+      width: 42%;
+      h2 {
+        @include heading2Styles($lightGreen);
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+
+      p {
+        @include subHeaderStyles;
+        color: $darkBlue;
+        width: 95%;
+        text-align: center;
+      }
+    }
+
+    .feed-animal-container {
+      section {
+        & > div:first-child {
+          width: 44rem;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        & > div:last-child {
+          margin-top: 3rem;
+          padding-bottom: 5rem;
+          @include flexColumn;
+          align-items: center;
+          justify-content: space-between;
+          background-color: $darkBlue;
+
+          p {
+            @include regularText;
+            color: $white;
+          }
+
+          button {
+            @include buttonStyles(transparent, $orange);
+            @include flexAlignCenter(1rem);
+          }
+        }
+      }
+    }
+  }
 }
