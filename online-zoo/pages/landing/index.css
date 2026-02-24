@@ -58,50 +58,6 @@ header .logo-links .page-navigation > ul a:hover {
 header .logo-links .page-navigation > ul a.active {
   color: #00a092;
 }
-header .panda-container {
-  padding: 0 26rem;
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  align-items: flex-start;
-  padding-top: 12.9rem;
-  padding-bottom: 12.9rem;
-  background-image: url(../../assets/images/panda.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-header .panda-container h1 {
-  font-weight: 800;
-  font-size: 82px;
-  line-height: 100%;
-  letter-spacing: 1%;
-  text-transform: uppercase;
-  width: 74.1666666667%;
-  color: #00a092;
-}
-header .panda-container p {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  letter-spacing: 0%;
-  width: 35.8333333333%;
-}
-header .panda-container button {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 100%;
-  text-transform: uppercase;
-  border-radius: 5px;
-  color: #ffffff;
-  background-color: #f58021;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 2.6rem 3rem;
-}
-header .panda-container button:hover {
-  background-color: #d26004;
-}
 
 .page-navigation > ul {
   display: flex;
@@ -179,6 +135,51 @@ footer .credits-and-social-networks .credits span {
   line-height: 150%;
   letter-spacing: 0%;
   color: #ffffff;
+}
+
+header .panda-container {
+  padding: 0 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: flex-start;
+  padding-top: 12.9rem;
+  padding-bottom: 12.9rem;
+  background-image: url(../../assets/images/panda.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header .panda-container h1 {
+  font-weight: 800;
+  font-size: 82px;
+  line-height: 100%;
+  letter-spacing: 1%;
+  text-transform: uppercase;
+  width: 74.1666666667%;
+  color: #00a092;
+}
+header .panda-container p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  width: 35.8333333333%;
+}
+header .panda-container button {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #f58021;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.6rem 3rem;
+}
+header .panda-container button:hover {
+  background-color: #d26004;
 }
 
 main {
