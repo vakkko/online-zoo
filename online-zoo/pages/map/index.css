@@ -191,4 +191,12 @@ main .map-container .lemur-pin {
 main .map-container .panda-icon {
   top: 35.2rem;
   right: 35.6rem;
+}
+main .map-container .tiger-pin {
+  right: 29.3rem;
+  bottom: 25.8rem;
+}
+main .map-container .koala-pin {
+  right: 16.2rem;
+  bottom: 14.4rem;
 }/*# sourceMappingURL=index.css.map */
