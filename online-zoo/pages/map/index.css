@@ -135,4 +135,24 @@ footer .credits-and-social-networks .credits span {
   line-height: 150%;
   letter-spacing: 0%;
   color: #ffffff;
+}
+
+main {
+  padding: 0 26rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 15rem;
+}
+main h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #20113d;
+  width: 42.7%;
+  text-align: center;
 }/*# sourceMappingURL=index.css.map */

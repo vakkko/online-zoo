@@ -2,3 +2,17 @@
 @use "../../scss/common";
 @use "../../scss/variables" as *;
 @use "../../scss/mixins" as *;
+
+main {
+  @include paddingLeftRight;
+  @include flexColumn(7rem);
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 15rem;
+
+  h2 {
+    @include heading2Styles($darkBlue);
+    width: 42.7%;
+    text-align: center;
+  }
+}
