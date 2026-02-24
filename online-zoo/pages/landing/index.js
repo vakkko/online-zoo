@@ -3,7 +3,6 @@ const leftSlider = document.querySelector(".left-arrow");
 const rightSlider = document.querySelector(".right-arrow");
 const path = window.location.pathname;
 const navLinks = document.querySelectorAll(".page-navigation a");
-console.log(path);
 
 function slideLeft() {
   carouselContainer.scrollBy({

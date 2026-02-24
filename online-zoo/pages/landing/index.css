@@ -99,6 +99,9 @@ header .panda-container button {
   gap: 1rem;
   padding: 2.6rem 3rem;
 }
+header .panda-container button:hover {
+  background-color: #d26004;
+}
 
 .page-navigation > ul {
   display: flex;
@@ -194,17 +197,18 @@ main .donation-button-box button {
   border-radius: 5px;
   color: #ffffff;
   background-color: transparent;
-  border: 1px solid white;
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  border: 1px solid white;
   white-space: nowrap;
   position: relative;
+  padding-left: 1.4rem;
 }
-main .donation-button-box button span {
-  padding: 2.6rem 0 2.6rem 1.4rem;
+main .donation-button-box button:hover img {
+  background-color: #d26004;
 }
-main .donation-button-box button div {
+main .donation-button-box button img {
   display: flex;
   align-items: center;
   gap: 0;
@@ -258,6 +262,15 @@ main .pets-carousel-container .article-arrows .arrows-box button {
   border-radius: 5px;
   border: 1px solid #20113d;
 }
+main .pets-carousel-container .article-arrows .arrows-box button svg {
+  fill: #20113d;
+}
+main .pets-carousel-container .article-arrows .arrows-box button:hover {
+  background-color: #20113d;
+}
+main .pets-carousel-container .article-arrows .arrows-box button:hover svg {
+  fill: #ffffff;
+}
 main .pets-carousel-container .carousel-container {
   display: grid;
   grid-template-columns: repeat(4, 44rem);
@@ -274,6 +287,7 @@ main .pets-carousel-container .carousel-container .carousel-item {
   gap: 0;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 main .pets-carousel-container .carousel-container .carousel-item span {
   font-weight: 500;
@@ -340,6 +354,16 @@ main .pets-carousel-container .carousel-container .carousel-item > div:last-chil
   display: flex;
   align-items: center;
   gap: 1.1rem;
+  padding: 2.6rem 2.9rem;
+}
+main .pets-carousel-container .carousel-container .carousel-item > div:last-child button:hover {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #f58021;
 }
 main .pets-carousel-container .choose-fav {
   font-weight: 600;
@@ -355,6 +379,16 @@ main .pets-carousel-container .choose-fav {
   color: #20113d;
   padding: 2.6rem 3.5rem;
   border: 1px solid #20113d;
+}
+main .pets-carousel-container .choose-fav:hover {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #20113d;
+  border: 1px solid #ffffff;
 }
 main .arrows-box {
   display: flex;
@@ -442,6 +476,9 @@ main .pay-and-feed-container .donation-main-content div button {
   margin-top: 5rem;
   padding: 2.6rem 3.4rem;
 }
+main .pay-and-feed-container .donation-main-content div button:hover {
+  background-color: #d26004;
+}
 main .feedback-container {
   background-image: url(../../assets/images/panda-background.png);
   background-repeat: no-repeat;
@@ -516,6 +553,15 @@ main .feedback-container .feedbacks .arrows-box.feedback {
 main .feedback-container .feedbacks .arrows-box.feedback button {
   border: 1px solid #ffffff !important;
 }
+main .feedback-container .feedbacks .arrows-box.feedback button svg {
+  fill: white;
+}
+main .feedback-container .feedbacks .arrows-box.feedback button:hover {
+  background-color: white;
+}
+main .feedback-container .feedbacks .arrows-box.feedback button:hover svg {
+  fill: #20113d;
+}
 main .feedback-container .btn-leave-feedback {
   font-weight: 600;
   font-size: 18px;
@@ -530,6 +576,9 @@ main .feedback-container .btn-leave-feedback {
   border: 1px solid #ffffff;
   margin-top: 37.6rem;
   padding: 2.6rem 7.7rem;
+}
+main .feedback-container .btn-leave-feedback:hover {
+  background-color: #00a092;
 }
 main .animal-caring {
   padding: 0 26rem;
@@ -619,6 +668,16 @@ main .animal-caring .feed-animal-container section > div:last-child button {
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding: 2.6rem 2.8rem;
+}
+main .animal-caring .feed-animal-container section > div:last-child button:hover {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #f58021;
 }
 main .animal-caring button {
   display: flex;
@@ -633,6 +692,15 @@ main .animal-caring button {
   background-color: transparent;
   border: 1px solid #20113d;
   padding: 2.6rem 3.5rem;
+}
+main .animal-caring button:hover {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #20113d;
 }
 main .animal-on-screen {
   padding: 0 26rem;
@@ -679,6 +747,9 @@ footer .logos-and-links button {
   gap: 1rem;
   border: 1px solid #ffffff;
   padding: 2.6rem 2.3rem;
+}
+footer .logos-and-links button:hover {
+  background-color: #00a092;
 }
 footer hr {
   margin: 7rem 0 4.4rem;

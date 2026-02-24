@@ -63,6 +63,10 @@ header {
       @include buttonStyles($orange, $white);
       @include flexAlignCenter(1rem);
       padding: 2.6rem 3rem;
+
+      &:hover {
+        background-color: $orangeHover;
+      }
     }
   }
 }
@@ -118,17 +122,19 @@ main {
 
     button {
       @include buttonStyles(transparent, $white);
-      border: 1px solid white;
-
       @include flexAlignCenter(1.5rem);
+      border: 1px solid white;
       white-space: nowrap;
       position: relative;
+      padding-left: 1.4rem;
 
-      span {
-        padding: 2.6rem 0 2.6rem 1.4rem;
+      &:hover {
+        img {
+          background-color: $orangeHover;
+        }
       }
 
-      div {
+      img {
         @include flexAlignCenter;
         justify-content: center;
         background-color: $orange;
@@ -170,6 +176,17 @@ main {
         button {
           border-radius: 5px;
           border: 1px solid $darkBlue;
+
+          svg {
+            fill: $darkBlue;
+          }
+
+          &:hover {
+            background-color: $darkBlue;
+            svg {
+              fill: $white;
+            }
+          }
         }
       }
     }
@@ -187,6 +204,7 @@ main {
         @include flexColumn;
         position: relative;
         overflow: hidden;
+        cursor: pointer;
         span {
           @include subHeaderStyles;
           position: absolute;
@@ -235,6 +253,11 @@ main {
           button {
             @include buttonStyles("", $orange);
             @include flexAlignCenter(1.1rem);
+            padding: 2.6rem 2.9rem;
+
+            &:hover {
+              @include buttonStyles($orange, $white);
+            }
           }
         }
       }
@@ -246,6 +269,11 @@ main {
       color: $darkBlue;
       padding: 2.6rem 3.5rem;
       border: 1px solid $darkBlue;
+
+      &:hover {
+        @include buttonStyles($darkBlue, $white);
+        border: 1px solid $white;
+      }
     }
   }
 
@@ -312,6 +340,10 @@ main {
           @include flexAlignCenter(1rem);
           margin-top: 5rem;
           padding: 2.6rem 3.4rem;
+
+          &:hover {
+            background-color: $orangeHover;
+          }
         }
       }
     }
@@ -378,6 +410,18 @@ main {
         margin-top: 3rem;
         button {
           border: 1px solid $white !important;
+
+          svg {
+            fill: white;
+          }
+
+          &:hover {
+            background-color: white;
+
+            svg {
+              fill: $darkBlue;
+            }
+          }
         }
       }
     }
@@ -388,6 +432,10 @@ main {
       border: 1px solid $white;
       margin-top: 37.6rem;
       padding: 2.6rem 7.7rem;
+
+      &:hover {
+        background-color: $lightGreen;
+      }
     }
   }
 
@@ -457,6 +505,11 @@ main {
           button {
             @include buttonStyles(transparent, $orange);
             @include flexAlignCenter(1rem);
+            padding: 2.6rem 2.8rem;
+
+            &:hover {
+              @include buttonStyles($orange, $white);
+            }
           }
         }
       }
@@ -466,6 +519,10 @@ main {
       @include buttonStyles(transparent, $darkBlue);
       border: 1px solid $darkBlue;
       padding: 2.6rem 3.5rem;
+
+      &:hover {
+        @include buttonStyles($darkBlue, $white);
+      }
     }
   }
   .animal-on-screen {
@@ -504,6 +561,10 @@ footer {
       @include flexAlignCenter(1rem);
       border: 1px solid $white;
       padding: 2.6rem 2.3rem;
+
+      &:hover {
+        background-color: $lightGreen;
+      }
     }
   }
 
