@@ -15,4 +15,31 @@ main {
     width: 42.7%;
     text-align: center;
   }
+
+  .map-container {
+    position: relative;
+
+    svg:hover {
+      cursor: pointer;
+      path[fill="#F58021"] {
+        fill: $white;
+      }
+
+      path[stroke="#F58021"] {
+        stroke: $white;
+      }
+    }
+
+    .eagle-pin {
+      position: absolute;
+      top: 39.6rem;
+      left: 16.4rem;
+    }
+
+    .crocodile-pin {
+      position: absolute;
+      top: 40.9rem;
+      left: 28.9rem;
+    }
+  }
 }
