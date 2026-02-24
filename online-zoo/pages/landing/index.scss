@@ -1,87 +1,8 @@
 @use "../../scss/global";
+@use "../../scss/common";
 @use "../../scss/variables" as *;
 @use "../../scss/mixins" as *;
 @use "sass:math";
-
-header {
-  @include flexColumn;
-
-  .logo-links {
-    @include paddingLeftRight;
-    @include flexAlignCenter;
-    background-color: $orange;
-    justify-content: space-between;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-
-    & > .link-container {
-      @include flexAlignCenter;
-      gap: 6.7rem;
-    }
-
-    .page-navigation > ul {
-      a {
-        color: $black;
-
-        &:hover {
-          color: $lightGreen;
-        }
-      }
-
-      a.active {
-        color: $lightGreen;
-      }
-    }
-  }
-
-  .panda-container {
-    @include paddingLeftRight;
-    @include flexColumn(5rem);
-    align-items: flex-start;
-    padding-top: 12.9rem;
-    padding-bottom: 12.9rem;
-    background-image: url(../../assets/images/panda.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    h1 {
-      font-weight: 800;
-      font-size: 82px;
-      line-height: 100%;
-      letter-spacing: 1%;
-      text-transform: uppercase;
-      width: math.div(890rem, 1200rem) * 100%;
-      color: $lightGreen;
-    }
-
-    p {
-      @include regularText;
-      width: math.div(430rem, 1200rem) * 100%;
-    }
-
-    button {
-      @include buttonStyles($orange, $white);
-      @include flexAlignCenter(1rem);
-      padding: 2.6rem 3rem;
-
-      &:hover {
-        background-color: $orangeHover;
-      }
-    }
-  }
-}
-
-.page-navigation > ul {
-  @include flexAlignCenter(4.825rem);
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 150%;
-}
-
-.social-networks {
-  @include flexAlignCenter(3rem);
-}
 
 main {
   margin: 15rem 0;
@@ -530,57 +451,6 @@ main {
     margin: 15rem 0;
     img {
       object-fit: cover;
-    }
-  }
-}
-
-footer {
-  @include paddingLeftRight;
-  padding-top: 7rem;
-  padding-bottom: 3.6rem;
-  background-color: $darkBlue;
-  .logos-and-links {
-    @include flexAlignCenter();
-    justify-content: space-between;
-    & > div {
-      @include flexAlignCenter(6.5rem);
-    }
-
-    .page-navigation > ul {
-      a {
-        color: $white;
-
-        &:hover {
-          color: $lightGreen;
-        }
-      }
-    }
-
-    button {
-      @include buttonStyles(transparent, $white);
-      @include flexAlignCenter(1rem);
-      border: 1px solid $white;
-      padding: 2.6rem 2.3rem;
-
-      &:hover {
-        background-color: $lightGreen;
-      }
-    }
-  }
-
-  hr {
-    margin: 7rem 0 4.4rem;
-  }
-
-  .credits-and-social-networks {
-    @include flexAlignCenter();
-    justify-content: space-between;
-    .credits {
-      @include flexAlignCenter(5rem);
-      span {
-        @include regularText;
-        color: $white;
-      }
     }
   }
 }
