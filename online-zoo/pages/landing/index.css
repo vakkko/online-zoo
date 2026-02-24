@@ -55,6 +55,9 @@ header .logo-links .page-navigation > ul a {
 header .logo-links .page-navigation > ul a:hover {
   color: #00a092;
 }
+header .logo-links .page-navigation > ul a.active {
+  color: #00a092;
+}
 header .panda-container {
   padding: 0 26rem;
   display: flex;
