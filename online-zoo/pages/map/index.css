@@ -159,6 +159,9 @@ main h2 {
 main .map-container {
   position: relative;
 }
+main .map-container svg {
+  position: absolute;
+}
 main .map-container svg:hover {
   cursor: pointer;
 }
@@ -169,12 +172,18 @@ main .map-container svg:hover path[stroke="#F58021"] {
   stroke: #ffffff;
 }
 main .map-container .eagle-pin {
-  position: absolute;
   top: 39.6rem;
   left: 16.4rem;
 }
 main .map-container .crocodile-pin {
-  position: absolute;
   top: 40.9rem;
   left: 28.9rem;
+}
+main .map-container .lion-pin {
+  bottom: 31.2rem;
+  left: 57.4rem;
+}
+main .map-container .gorilla-pin {
+  bottom: 28.9rem;
+  right: 61.6rem;
 }/*# sourceMappingURL=index.css.map */

@@ -19,6 +19,10 @@ main {
   .map-container {
     position: relative;
 
+    svg {
+      position: absolute;
+    }
+
     svg:hover {
       cursor: pointer;
       path[fill="#F58021"] {
@@ -31,15 +35,23 @@ main {
     }
 
     .eagle-pin {
-      position: absolute;
       top: 39.6rem;
       left: 16.4rem;
     }
 
     .crocodile-pin {
-      position: absolute;
       top: 40.9rem;
       left: 28.9rem;
+    }
+
+    .lion-pin {
+      bottom: 31.2rem;
+      left: 57.4rem;
+    }
+
+    .gorilla-pin {
+      bottom: 28.9rem;
+      right: 61.6rem;
     }
   }
 }
