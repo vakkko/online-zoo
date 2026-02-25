@@ -137,20 +137,20 @@ footer .credits-and-social-networks .credits span {
   color: #ffffff;
 }
 
-main nav {
+main .animal-navigation {
   background-color: #20113d;
   width: -moz-fit-content;
   width: fit-content;
 }
-main nav .camera-and-btn {
+main .animal-navigation .camera-and-btn {
   display: flex;
   align-items: flex-end;
-  gap: 5.4rem;
+  justify-content: space-between;
   padding-bottom: 3.5rem;
   padding-right: 3rem;
   border-bottom: 1px solid #ffffff;
 }
-main nav .camera-and-btn span {
+main .animal-navigation .camera-and-btn span {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -165,36 +165,57 @@ main nav .camera-and-btn span {
   padding: 0.8rem 2.4rem;
   border-radius: 0 0 5px 0;
 }
-main nav .camera-and-btn button {
+main .animal-navigation .camera-and-btn .btn-open-close {
   margin-bottom: -0.7rem;
 }
-main nav ul > li:not(.camera-and-btn) {
+main .animal-navigation .camera-and-btn .btn-open-close.open {
+  transform: rotate(180deg);
+}
+main .animal-navigation ul > li:not(.camera-and-btn) {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: center;
   padding: 3.3rem 5.8rem;
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-main nav ul > li:last-child {
+main .animal-navigation ul > li:last-child {
   border-bottom: none;
 }
-main nav a svg circle {
+main .animal-navigation a {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+main .animal-navigation a p {
+  width: 16.9rem;
+  display: none;
+}
+main .animal-navigation a svg circle {
   stroke: #f58021;
 }
-main nav a svg g {
+main .animal-navigation a svg g {
   fill: #f58021;
 }
-main nav a.active svg circle {
+main .animal-navigation.open p {
+  display: block;
+}
+main .animal-navigation a.active svg circle {
   stroke: white;
 }
-main nav a.active svg g {
+main .animal-navigation a.active svg g {
   fill: white;
 }
-main nav.open a > svg circle {
+main .animal-navigation.open a > svg circle {
   fill: none;
   stroke: none;
 }
-main nav.open a > svg path {
+main .animal-navigation.open a > svg path {
   fill: white;
 }/*# sourceMappingURL=index.css.map */

@@ -3,14 +3,14 @@
 @use "../../scss/mixins" as *;
 
 main {
-  nav {
+  .animal-navigation {
     background-color: $darkBlue;
     width: fit-content;
 
     .camera-and-btn {
       display: flex;
       align-items: flex-end;
-      gap: 5.4rem;
+      justify-content: space-between;
       padding-bottom: 3.5rem;
       padding-right: 3rem;
       border-bottom: 1px solid $white;
@@ -27,18 +27,21 @@ main {
         border-radius: 0 0 5px 0;
       }
 
-      button {
+      .btn-open-close {
         margin-bottom: -0.7rem;
+      }
+
+      .btn-open-close.open {
+        transform: rotate(180deg);
       }
     }
 
     ul > li:not(.camera-and-btn) {
+      @include flexAlignCenter();
+      justify-content: center;
       padding: 3.3rem 5.8rem;
       border-top: 1px solid $white;
       border-bottom: 1px solid $white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     ul > li:last-child {
@@ -46,6 +49,16 @@ main {
     }
 
     a {
+      @include flexAlignCenter(2rem);
+      @include regularText;
+
+      color: $white;
+
+      p {
+        width: 16.9rem;
+        display: none;
+      }
+
       svg {
         circle {
           stroke: $orange;
@@ -53,6 +66,12 @@ main {
         g {
           fill: $orange;
         }
+      }
+    }
+
+    &.open {
+      p {
+        display: block;
       }
     }
 
