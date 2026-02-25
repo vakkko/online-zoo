@@ -141,6 +141,8 @@ main .animal-navigation {
   background-color: #20113d;
   width: -moz-fit-content;
   width: fit-content;
+  position: sticky;
+  top: 0;
 }
 main .animal-navigation .camera-and-btn {
   display: flex;
@@ -176,9 +178,12 @@ main .animal-navigation ul > li:not(.camera-and-btn) {
   align-items: center;
   gap: 0;
   justify-content: center;
-  padding: 3.3rem 5.8rem;
+  padding: 2.5rem 5rem;
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
+}
+main .animal-navigation.open ul > li:not(.camera-and-btn) {
+  padding: 5rem 1.7rem;
 }
 main .animal-navigation ul > li:last-child {
   border-bottom: none;
@@ -218,4 +223,87 @@ main .animal-navigation.open a > svg circle {
 }
 main .animal-navigation.open a > svg path {
   fill: white;
+}
+main .navigation-and-videos {
+  display: flex;
+  gap: 2rem;
+}
+main .navigation-and-videos .animal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+  padding-right: 26rem;
+  margin-top: 5rem;
+}
+main .navigation-and-videos .animal-container .video-heading {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+main .navigation-and-videos .animal-container .video-heading > h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #00a092;
+  grid-column: span 2;
+  justify-self: flex-end;
+}
+main .navigation-and-videos .animal-container .video-heading > button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #f58021;
+  justify-self: flex-end;
+  padding: 2.6rem 3.4rem;
+}
+main .navigation-and-videos .animal-container .large-youtube-link > img {
+  width: 140rem;
+}
+main .navigation-and-videos .animal-container .more-videos-container {
+  margin-top: 5rem;
+}
+main .navigation-and-videos .animal-container .more-videos-container h3 {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  color: #000000;
+}
+main .navigation-and-videos .animal-container .more-videos-container > div {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  margin-top: 3rem;
+}
+main .navigation-and-videos .animal-container .more-videos-container > div button {
+  border-radius: 5px;
+}
+main .navigation-and-videos .animal-container .more-videos-container > div button svg {
+  fill: #20113d;
+}
+main .navigation-and-videos .animal-container .more-videos-container > div button:hover {
+  background-color: #20113d;
+}
+main .navigation-and-videos .animal-container .more-videos-container > div button:hover svg {
+  fill: #ffffff;
+}
+main .navigation-and-videos .animal-container .more-videos-container > div button {
+  padding: 2rem;
+}
+main .navigation-and-videos .animal-container .more-videos-container > div .carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }/*# sourceMappingURL=index.css.map */
