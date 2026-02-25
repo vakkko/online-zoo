@@ -1,3 +1,82 @@
 @use "../../scss/common";
 @use "../../scss/variables" as *;
 @use "../../scss/mixins" as *;
+
+main {
+  nav {
+    background-color: $darkBlue;
+    width: fit-content;
+
+    .camera-and-btn {
+      display: flex;
+      align-items: flex-end;
+      gap: 5.4rem;
+      padding-bottom: 3.5rem;
+      padding-right: 3rem;
+      border-bottom: 1px solid $white;
+      span {
+        @include flexAlignCenter(1rem);
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        color: $white;
+        background-color: $orange;
+        width: fit-content;
+        padding: 0.8rem 2.4rem;
+        border-radius: 0 0 5px 0;
+      }
+
+      button {
+        margin-bottom: -0.7rem;
+      }
+    }
+
+    ul > li:not(.camera-and-btn) {
+      padding: 3.3rem 5.8rem;
+      border-top: 1px solid $white;
+      border-bottom: 1px solid $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ul > li:last-child {
+      border-bottom: none;
+    }
+
+    a {
+      svg {
+        circle {
+          stroke: $orange;
+        }
+        g {
+          fill: $orange;
+        }
+      }
+    }
+
+    a.active {
+      svg {
+        circle {
+          stroke: white;
+        }
+        g {
+          fill: white;
+        }
+      }
+    }
+
+    &.open {
+      a > svg {
+        circle {
+          fill: none;
+          stroke: none;
+        }
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+}

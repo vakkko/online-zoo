@@ -135,4 +135,66 @@ footer .credits-and-social-networks .credits span {
   line-height: 150%;
   letter-spacing: 0%;
   color: #ffffff;
+}
+
+main nav {
+  background-color: #20113d;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+main nav .camera-and-btn {
+  display: flex;
+  align-items: flex-end;
+  gap: 5.4rem;
+  padding-bottom: 3.5rem;
+  padding-right: 3rem;
+  border-bottom: 1px solid #ffffff;
+}
+main nav .camera-and-btn span {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  background-color: #f58021;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.8rem 2.4rem;
+  border-radius: 0 0 5px 0;
+}
+main nav .camera-and-btn button {
+  margin-bottom: -0.7rem;
+}
+main nav ul > li:not(.camera-and-btn) {
+  padding: 3.3rem 5.8rem;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main nav ul > li:last-child {
+  border-bottom: none;
+}
+main nav a svg circle {
+  stroke: #f58021;
+}
+main nav a svg g {
+  fill: #f58021;
+}
+main nav a.active svg circle {
+  stroke: white;
+}
+main nav a.active svg g {
+  fill: white;
+}
+main nav.open a > svg circle {
+  fill: none;
+  stroke: none;
+}
+main nav.open a > svg path {
+  fill: white;
 }/*# sourceMappingURL=index.css.map */
