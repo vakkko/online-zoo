@@ -28,6 +28,16 @@ button {
   cursor: pointer;
 }
 
+input,
+textarea {
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
 header {
   display: flex;
   flex-direction: column;

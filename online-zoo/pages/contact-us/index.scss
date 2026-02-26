@@ -1,3 +1,62 @@
 @use "../../scss/common";
 @use "../../scss/variables" as *;
 @use "../../scss/mixins" as *;
+
+main {
+  @include paddingLeftRight;
+  margin-bottom: 15rem;
+
+  .get-in-touch-and-form {
+    margin-top: 15rem;
+    display: flex;
+    gap: 17.5rem;
+
+    & > div {
+      width: 82%;
+      h2 {
+        @include heading2Styles($lightGreen);
+        margin-bottom: 5rem;
+      }
+      p {
+        @include regularText;
+      }
+    }
+  }
+
+  form {
+    width: 100%;
+    label,
+    input,
+    textarea {
+      @include regularText;
+    }
+    label {
+      margin-bottom: 1rem;
+      .asterisk {
+        color: $lightGreen;
+      }
+    }
+    input,
+    textarea {
+      width: 100%;
+    }
+
+    input {
+      padding: 1.7rem 2rem;
+      border: 1px solid $black;
+      margin-bottom: 3rem;
+    }
+
+    textarea {
+      padding: 2rem;
+      height: 20rem;
+      margin-bottom: 6.7rem;
+    }
+
+    button {
+      @include buttonStyles($lightGreen, $white);
+      @include flexAlignCenter(1rem);
+      padding: 2.6rem 8.7rem;
+    }
+  }
+}

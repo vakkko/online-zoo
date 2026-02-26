@@ -28,6 +28,16 @@ button {
   cursor: pointer;
 }
 
+input,
+textarea {
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -135,4 +145,76 @@ footer .credits-and-social-networks .credits span {
   line-height: 150%;
   letter-spacing: 0%;
   color: #ffffff;
+}
+
+main {
+  padding: 0 26rem;
+  margin-bottom: 15rem;
+}
+main .get-in-touch-and-form {
+  margin-top: 15rem;
+  display: flex;
+  gap: 17.5rem;
+}
+main .get-in-touch-and-form > div {
+  width: 82%;
+}
+main .get-in-touch-and-form > div h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #00a092;
+  margin-bottom: 5rem;
+}
+main .get-in-touch-and-form > div p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+main form {
+  width: 100%;
+}
+main form label,
+main form input,
+main form textarea {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+main form label {
+  margin-bottom: 1rem;
+}
+main form label .asterisk {
+  color: #00a092;
+}
+main form input,
+main form textarea {
+  width: 100%;
+}
+main form input {
+  padding: 1.7rem 2rem;
+  border: 1px solid #000000;
+  margin-bottom: 3rem;
+}
+main form textarea {
+  padding: 2rem;
+  height: 20rem;
+  margin-bottom: 6.7rem;
+}
+main form button {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #00a092;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.6rem 8.7rem;
 }/*# sourceMappingURL=index.css.map */
