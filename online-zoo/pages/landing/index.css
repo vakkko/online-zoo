@@ -782,4 +782,79 @@ main .animal-on-screen {
 main .animal-on-screen img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.donation-pop-up {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.3);
+}
+.donation-pop-up .donation-pop-up-1 {
+  display: none;
+}
+.donation-pop-up .donation-pop-up-1 .image-container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+.donation-pop-up .donation-pop-up-1 .image-container button {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+.donation-pop-up .donation-pop-up-1 .donation-amount-container {
+  background-color: #ffffff;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+.donation-pop-up .donation-pop-up-1 .donation-amount-container h2,
+.donation-pop-up .donation-pop-up-1 .donation-amount-container p {
+  text-align: center;
+}
+.donation-pop-up .donation-pop-up-1 .donation-amount-container h2 {
+  width: 58%;
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #f58021;
+}
+.donation-pop-up .donation-pop-up-1 .donation-amount-container p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  width: 49%;
+}
+.donation-pop-up .donation-pop-up-1 .donation-amount-container .donation-amount {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+.donation-pop-up .donation-pop-up-1 .donation-amount-container .donation-amount > button {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #00a092;
+}
+.donation-pop-up .donation-pop-up-1 .donation-amount-container .donation-amount > button:hover {
+  background-color: #05786e;
+}
+.donation-pop-up .donation-pop-up-1 .donation-amount-container .donation-amount > button:not(:last-child) {
+  padding: 2.15rem 4.3rem;
+}
+.donation-pop-up .donation-pop-up-1 .donation-amount-container .donation-amount > button:last-child {
+  padding: 2.15rem;
 }/*# sourceMappingURL=index.css.map */

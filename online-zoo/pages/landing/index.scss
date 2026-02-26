@@ -491,3 +491,65 @@ main {
     }
   }
 }
+
+.donation-pop-up {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.3);
+
+  .donation-pop-up-1 {
+    display: none;
+    .image-container {
+      @include flexAlignCenter();
+      position: relative;
+
+      button {
+        position: absolute;
+        top: 3rem;
+        right: 3rem;
+      }
+    }
+
+    .donation-amount-container {
+      background-color: $white;
+      padding-top: 2rem;
+      padding-bottom: 5rem;
+      @include flexColumn(3rem);
+      align-items: center;
+      justify-content: center;
+
+      h2,
+      p {
+        text-align: center;
+      }
+
+      h2 {
+        width: 58%;
+        @include heading2Styles($orange);
+      }
+
+      p {
+        @include regularText;
+        width: 49%;
+      }
+
+      .donation-amount {
+        @include flexAlignCenter(4rem);
+        & > button {
+          @include buttonStyles($lightGreen, $white);
+          &:hover {
+            background-color: $lightGreenHover;
+          }
+          &:not(:last-child) {
+            padding: 2.15rem 4.3rem;
+          }
+          &:last-child {
+            padding: 2.15rem;
+          }
+        }
+      }
+    }
+  }
+}
