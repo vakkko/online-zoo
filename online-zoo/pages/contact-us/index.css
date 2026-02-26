@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+header .logo-links {
+  padding: 0 26rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background-color: #f58021;
+  justify-content: space-between;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+header .logo-links > .link-container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  gap: 6.7rem;
+}
+header .logo-links .page-navigation > ul a {
+  color: #000000;
+}
+header .logo-links .page-navigation > ul a:hover {
+  color: #00a092;
+}
+header .logo-links .page-navigation > ul a.active {
+  color: #00a092;
+}
+
+.page-navigation > ul {
+  display: flex;
+  align-items: center;
+  gap: 4.825rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.social-networks {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+footer {
+  padding: 0 26rem;
+  padding-top: 7rem;
+  padding-bottom: 3.6rem;
+  background-color: #20113d;
+}
+footer .logos-and-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: space-between;
+}
+footer .logos-and-links > div {
+  display: flex;
+  align-items: center;
+  gap: 6.5rem;
+}
+footer .logos-and-links .page-navigation > ul a {
+  color: #ffffff;
+}
+footer .logos-and-links .page-navigation > ul a:hover {
+  color: #00a092;
+}
+footer .logos-and-links button {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #ffffff;
+  padding: 2.6rem 2.3rem;
+}
+footer .logos-and-links button:hover {
+  background-color: #00a092;
+}
+footer hr {
+  margin: 7rem 0 4.4rem;
+}
+footer .credits-and-social-networks {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: space-between;
+}
+footer .credits-and-social-networks .credits {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+footer .credits-and-social-networks .credits span {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}/*# sourceMappingURL=index.css.map */
