@@ -172,4 +172,54 @@ main {
       }
     }
   }
+
+  .donation-container {
+    @include paddingLeftRight;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: $darkBlue;
+    color: $white;
+
+    h3 {
+      @include heading3styles;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      @include regularText;
+      width: 90%;
+    }
+
+    .donation-button-box {
+      @include flexColumn(1rem);
+      h4 {
+        @include subHeaderStyles;
+      }
+
+      button {
+        @include buttonStyles(transparent, $white);
+        @include flexAlignCenter(1.5rem);
+        border: 1px solid white;
+        white-space: nowrap;
+        position: relative;
+        padding-left: 1.4rem;
+
+        &:hover {
+          img {
+            background-color: $orangeHover;
+          }
+        }
+
+        img {
+          @include flexAlignCenter;
+          justify-content: center;
+          background-color: $orange;
+          padding: 2.6rem;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
 }

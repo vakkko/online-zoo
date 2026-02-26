@@ -224,7 +224,7 @@ main .donation-container {
   background-color: #20113d;
   color: #ffffff;
 }
-main h3 {
+main .donation-container h3 {
   font-weight: 500;
   font-size: 42px;
   line-height: 100%;
@@ -233,26 +233,26 @@ main h3 {
   color: #ffffff;
   margin-bottom: 2rem;
 }
-main p {
+main .donation-container p {
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
   letter-spacing: 0%;
   width: 43.5%;
 }
-main .donation-button-box {
+main .donation-container .donation-button-box {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-main .donation-button-box h4 {
+main .donation-container .donation-button-box h4 {
   font-weight: 500;
   font-size: 26px;
   line-height: 130%;
   letter-spacing: 0%;
   color: #ffffff;
 }
-main .donation-button-box button {
+main .donation-container .donation-button-box button {
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
@@ -268,10 +268,10 @@ main .donation-button-box button {
   position: relative;
   padding-left: 1.4rem;
 }
-main .donation-button-box button:hover img {
+main .donation-container .donation-button-box button:hover img {
   background-color: #d26004;
 }
-main .donation-button-box button img {
+main .donation-container .donation-button-box button img {
   display: flex;
   align-items: center;
   gap: 0;
