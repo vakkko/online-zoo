@@ -265,6 +265,9 @@ main .navigation-and-videos .animal-container .video-heading > button {
   justify-self: flex-end;
   padding: 2.6rem 3.4rem;
 }
+main .navigation-and-videos .animal-container .video-heading > button:hover {
+  background-color: #d26004;
+}
 main .navigation-and-videos .animal-container .large-youtube-link > img {
   width: 140rem;
 }

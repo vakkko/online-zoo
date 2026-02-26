@@ -132,6 +132,10 @@ main {
           @include buttonStyles($orange, $white);
           justify-self: flex-end;
           padding: 2.6rem 3.4rem;
+
+          &:hover {
+            background-color: $orangeHover;
+          }
         }
       }
 
