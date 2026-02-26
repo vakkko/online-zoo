@@ -371,4 +371,105 @@ main .donation-container .donation-button-box button img {
   background-color: #f58021;
   padding: 2.6rem;
   border-radius: 5px;
+}
+main .info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+  align-items: center;
+  margin-top: 17.5rem;
+  margin-bottom: 15rem;
+}
+main .info-container .info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4.6rem 6rem;
+  align-items: center;
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  width: 54%;
+}
+main .info-container .info h3 {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #ffffff;
+  color: #00a092;
+}
+main .info-container .info p {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  color: #000000;
+  text-align: center;
+}
+main .info-container .animal-detailed-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin-left: 26rem;
+  margin-right: 50rem;
+}
+main .info-container .animal-detailed-info > div {
+  display: flex;
+  align-items: center;
+  gap: 24rem;
+  justify-content: space-between;
+}
+main .info-container .animal-detailed-info > div > dl {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+main .info-container .animal-detailed-info > div > dl > div {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+main .info-container .animal-detailed-info > div > dl > div dt {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  color: #000000;
+}
+main .info-container .animal-detailed-info > div > dl > div dd {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+main .info-container .animal-detailed-info > div > dl > div:last-child button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #f58021;
+  background-color: transparent;
+  padding: 2.4rem 4.4rem;
+}
+main .info-container .animal-detailed-info > div > dl > div:last-child button:hover {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #f58021;
+}
+main .info-container .animal-detailed-info p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
 }/*# sourceMappingURL=index.css.map */
