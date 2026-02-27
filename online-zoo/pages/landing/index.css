@@ -906,7 +906,6 @@ main .animal-on-screen img {
   display: flex;
   align-items: center;
   gap: 0;
-  padding: 0 12rem;
 }
 .donation-pop-up-container .donation-pop-up-step-1 .next-steps > svg circle.active,
 .donation-pop-up-container .donation-pop-up-step-2 .next-steps > svg circle.active,
@@ -933,6 +932,38 @@ main .animal-on-screen img {
 .donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-next:hover {
   background-color: #05786e;
 }
+.donation-pop-up-container .donation-pop-up-step-1 .select-container,
+.donation-pop-up-container .donation-pop-up-step-3 .select-container {
+  position: relative;
+}
+.donation-pop-up-container .donation-pop-up-step-1 .select-container select,
+.donation-pop-up-container .donation-pop-up-step-3 .select-container select {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  flex-grow: 1;
+  padding: 1.9rem;
+  text-align: center;
+  color: #a4a8ae;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+}
+.donation-pop-up-container .donation-pop-up-step-1 .select-container .select-arrow,
+.donation-pop-up-container .donation-pop-up-step-3 .select-container .select-arrow {
+  position: absolute;
+  right: 0;
+  padding: 2.9rem 0.8rem 2.8rem;
+  background-color: #00a092;
+  pointer-events: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 1px solid #000000;
+}
 .donation-pop-up-container .donation-pop-up-step-1 {
   display: none;
 }
@@ -951,6 +982,7 @@ main .animal-on-screen img {
   color: #ffffff;
   border-radius: 5px;
   padding: 2.15rem;
+  background-color: #80cfc8;
 }
 .donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount input {
   font-weight: 400;
@@ -993,45 +1025,13 @@ main .animal-on-screen img {
   padding: 2.15rem 2.45rem;
 }
 .donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .other-amount,
-.donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .select-pet {
+.donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .select-container {
   display: flex;
   align-items: center;
   gap: 4rem;
 }
 .donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .other-amount label {
   background-color: #00a092;
-}
-.donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .select-pet {
-  position: relative;
-}
-.donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .select-pet label {
-  background-color: #80cfc8;
-}
-.donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .select-pet select {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 150%;
-  letter-spacing: 0%;
-  border: 1px solid #000000;
-  border-radius: 5px;
-  flex-grow: 1;
-  padding: 1.9rem;
-  text-align: center;
-  color: #a4a8ae;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  cursor: pointer;
-}
-.donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .select-pet .select-arrow {
-  position: absolute;
-  right: 0;
-  padding: 2.9rem 0.8rem 2.8rem;
-  background-color: #00a092;
-  pointer-events: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-left: 1px solid #000000;
 }
 .donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .gift-checkbox {
   display: flex;
@@ -1051,27 +1051,50 @@ main .animal-on-screen img {
 .donation-pop-up-container .donation-pop-up-step-1 .next-steps {
   gap: 32.5rem;
 }
-.donation-pop-up-container .donation-pop-up-step-2 .details-inputs form {
+.donation-pop-up-container .donation-pop-up-step-2 form,
+.donation-pop-up-container .donation-pop-up-step-3 form {
   width: 100%;
   margin: 4rem 0 1rem;
 }
-.donation-pop-up-container .donation-pop-up-step-2 .details-inputs form label .asterisk {
+.donation-pop-up-container .donation-pop-up-step-2 form label .asterisk,
+.donation-pop-up-container .donation-pop-up-step-3 form label .asterisk {
   color: #00a092;
 }
-.donation-pop-up-container .donation-pop-up-step-2 .details-inputs form input {
+.donation-pop-up-container .donation-pop-up-step-2 form input,
+.donation-pop-up-container .donation-pop-up-step-3 form input {
   margin-top: 1rem;
-  width: 100%;
   padding: 1.7rem 2rem;
   border: 1px solid #000000;
   margin-bottom: 3rem;
   border-radius: 5px;
+  width: 100%;
 }
-.donation-pop-up-container .donation-pop-up-step-2 .details-inputs form label,
-.donation-pop-up-container .donation-pop-up-step-2 .details-inputs form input {
+.donation-pop-up-container .donation-pop-up-step-2 form label,
+.donation-pop-up-container .donation-pop-up-step-2 form input,
+.donation-pop-up-container .donation-pop-up-step-3 form label,
+.donation-pop-up-container .donation-pop-up-step-3 form input {
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
   letter-spacing: 0%;
+}
+.donation-pop-up-container .donation-pop-up-step-2 .next-steps .btn-back,
+.donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-back {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  text-decoration: underline;
+  color: #00a092;
+}
+.donation-pop-up-container .donation-pop-up-step-2 .next-steps .btn-back:hover,
+.donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-back:hover {
+  color: #05786e;
+}
+.donation-pop-up-container .donation-pop-up-step-2 {
+  display: none;
+}
+.donation-pop-up-container .donation-pop-up-step-2 .details-inputs form input {
+  width: 100%;
 }
 .donation-pop-up-container .donation-pop-up-step-2 .details-inputs p {
   font-weight: 400;
@@ -1082,13 +1105,42 @@ main .animal-on-screen img {
 .donation-pop-up-container .donation-pop-up-step-2 .next-steps {
   gap: 10.3rem;
 }
-.donation-pop-up-container .donation-pop-up-step-2 .next-steps .btn-back {
+.donation-pop-up-container .donation-pop-up-step-3 form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+.donation-pop-up-container .donation-pop-up-step-3 form .credit-card-input {
+  grid-column: span 2;
+}
+.donation-pop-up-container .donation-pop-up-step-3 form .select-container label {
+  display: block;
+}
+.donation-pop-up-container .donation-pop-up-step-3 form .select-container select {
+  width: 100%;
+}
+.donation-pop-up-container .donation-pop-up-step-3 form .select-container .select-arrow {
+  background-color: #80cfc8;
+}
+.donation-pop-up-container .donation-pop-up-step-3 form .select-container.year {
+  align-self: flex-end;
+}
+.donation-pop-up-container .donation-pop-up-step-3 .next-steps {
+  justify-content: space-between;
+}
+.donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-complete {
   font-weight: 600;
   font-size: 18px;
-  line-height: 150%;
-  text-decoration: underline;
-  color: #00a092;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #f58021;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.6rem 5.5rem;
 }
-.donation-pop-up-container .donation-pop-up-step-2 .next-steps .btn-back:hover {
-  color: #05786e;
+.donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-complete:hover {
+  background-color: #d26004;
 }/*# sourceMappingURL=index.css.map */
