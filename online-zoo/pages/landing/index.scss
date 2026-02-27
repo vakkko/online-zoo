@@ -41,8 +41,27 @@ header {
   }
 }
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 main {
   margin: 15rem 0;
+
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+  }
+
+  .hidden {
+    display: none;
+  }
 
   .articles-donation {
     @include flexColumn(15rem);
@@ -493,11 +512,13 @@ main {
 }
 
 .donation-pop-up-container {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 
   .donation-pop-up {
     display: none;
@@ -638,14 +659,13 @@ main {
       .choose-donation-amount {
         @include flexColumn(4rem);
 
-        label {
+        label:not(.gift-checkbox > label, .other-amount) {
           font-weight: 600;
           font-size: 18px;
           text-transform: uppercase;
           color: $white;
           border-radius: 5px;
           padding: 2.15rem;
-          background-color: #80cfc8;
         }
 
         input {
@@ -682,6 +702,9 @@ main {
         .other-amount,
         .select-container {
           @include flexAlignCenter(4rem);
+          label {
+            background-color: #80cfc8;
+          }
         }
 
         .other-amount {
@@ -767,6 +790,7 @@ main {
   }
 
   .donation-pop-up-step-3 {
+    display: none;
     form {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -796,7 +820,7 @@ main {
     .next-steps {
       justify-content: space-between;
 
-      .btn-complete {
+      .btn-complete-donation {
         @include buttonStyles($orange, $white);
         @include flexAlignCenter(1rem);
         padding: 2.6rem 5.5rem;

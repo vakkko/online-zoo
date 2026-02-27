@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./index.css" />
     <script src="../../js/common.js" defer></script>
     <script src="./index.js" defer></script>
+    <script src="../../js/pop-up-handler.js" defer></script>
     <title>Online Zoo</title>
   </head>
   <body>
@@ -99,7 +100,7 @@
           </div>
           <div class="donation-button-box">
             <h4>Quick Donate</h4>
-            <button>
+            <button class="btn-donate">
               $ donation amount
               <img
                 src="../../assets/images/arrow-right.png"
@@ -526,7 +527,7 @@
                 and make a real personal impact. Never doubt that your donation
                 can make a difference even if it is small.
               </p>
-              <button>
+              <button class="btn-donate">
                 donate now
                 <img src="../../assets/images/arrow-right.png" alt="" />
               </button>
@@ -797,6 +798,7 @@
           alt="lemur on screen"
         />
       </div>
+      <div id="overlay" class="hidden"></div>
       <div class="donation-pop-up-container">
         <div class="donation-pop-up">
           <div class="image-container">
@@ -804,7 +806,7 @@
               src="../../assets/images/donation-pop-up/hand-touching.png"
               alt="animal and human hand-touching"
             />
-            <button>
+            <button class="btn-cancel">
               <img
                 src="../../assets/images/donation-pop-up/x.png"
                 alt="cancel"
@@ -900,7 +902,7 @@
                 </clipPath>
               </defs>
             </svg>
-            <button>
+            <button class="btn-next">
               next
               <svg
                 width="25"
@@ -1114,7 +1116,7 @@
               </defs>
             </svg>
             <button class="btn-back">Back</button>
-            <button class="btn-complete">
+            <button class="btn-complete-donation">
               complete donation
               <svg
                 width="25"

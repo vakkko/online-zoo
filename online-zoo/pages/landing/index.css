@@ -193,8 +193,25 @@ header .panda-container button:hover {
   background-color: #d26004;
 }
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 main {
   margin: 15rem 0;
+}
+main #overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 50;
+}
+main .hidden {
+  display: none;
 }
 main .articles-donation {
   display: flex;
@@ -786,11 +803,13 @@ main .animal-on-screen img {
 }
 
 .donation-pop-up-container {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 .donation-pop-up-container .donation-pop-up {
   display: none;
@@ -975,14 +994,13 @@ main .animal-on-screen img {
   flex-direction: column;
   gap: 4rem;
 }
-.donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount label {
+.donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount label:not(.gift-checkbox > label, .other-amount) {
   font-weight: 600;
   font-size: 18px;
   text-transform: uppercase;
   color: #ffffff;
   border-radius: 5px;
   padding: 2.15rem;
-  background-color: #80cfc8;
 }
 .donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount input {
   font-weight: 400;
@@ -1029,6 +1047,10 @@ main .animal-on-screen img {
   display: flex;
   align-items: center;
   gap: 4rem;
+}
+.donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .other-amount label,
+.donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .select-container label {
+  background-color: #80cfc8;
 }
 .donation-pop-up-container .donation-pop-up-step-1 .choose-dontation-container .choose-donation-amount .other-amount label {
   background-color: #00a092;
@@ -1105,6 +1127,9 @@ main .animal-on-screen img {
 .donation-pop-up-container .donation-pop-up-step-2 .next-steps {
   gap: 10.3rem;
 }
+.donation-pop-up-container .donation-pop-up-step-3 {
+  display: none;
+}
 .donation-pop-up-container .donation-pop-up-step-3 form {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1128,7 +1153,7 @@ main .animal-on-screen img {
 .donation-pop-up-container .donation-pop-up-step-3 .next-steps {
   justify-content: space-between;
 }
-.donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-complete {
+.donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-complete-donation {
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
@@ -1141,6 +1166,6 @@ main .animal-on-screen img {
   gap: 1rem;
   padding: 2.6rem 5.5rem;
 }
-.donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-complete:hover {
+.donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-complete-donation:hover {
   background-color: #d26004;
 }/*# sourceMappingURL=index.css.map */
