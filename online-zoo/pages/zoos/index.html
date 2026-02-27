@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="index.css" />
     <script src="../../js/common.js" defer></script>
     <script src="./index.js" defer></script>
+    <script src="../../js/pop-up-handler.js" defer></script>
     <title>Online Zoo</title>
   </head>
   <body>
@@ -302,7 +303,7 @@
         <div class="animal-container">
           <div class="video-heading">
             <h2>live panda cams</h2>
-            <button>
+            <button class="btn-donate">
               donate now
               <svg
                 width="25"
@@ -406,7 +407,7 @@
         </div>
         <div class="donation-button-box">
           <h4>Quick Donate</h4>
-          <button>
+          <button class="btn-donate">
             $ donation amount
             <img src="../../assets/images/arrow-right.png" alt="right arrow" />
           </button>
@@ -492,6 +493,344 @@
             Its popularity around the world has helped the giant panda become
             the focus of successful conservation programs.
           </p>
+        </div>
+      </div>
+      <div id="overlay" class="hidden"></div>
+      <div class="donation-pop-up-container">
+        <div class="donation-pop-up">
+          <div class="image-container">
+            <img
+              src="../../assets/images/donation-pop-up/hand-touching.png"
+              alt="animal and human hand-touching"
+            />
+            <button class="btn-cancel">
+              <img
+                src="../../assets/images/donation-pop-up/x.png"
+                alt="cancel"
+              />
+            </button>
+          </div>
+          <div class="donation-amount-container">
+            <h2>together we care, save and protect!</h2>
+            <p>
+              Your most generous gift not only cares for countless animals, but
+              it also offers hope and a vital lifeline to the world’s most
+              endangered wildlife relying on us to survive.
+            </p>
+            <div class="donation-amount">
+              <button>$20</button>
+              <button>$30</button>
+              <button>$50</button>
+              <button>$80</button>
+              <button>$100</button>
+              <button class="btn-other-amount">other amount</button>
+            </div>
+          </div>
+        </div>
+        <div class="donation-pop-up-step-1">
+          <h3>make your donation</h3>
+          <div class="choose-dontation-container">
+            <h4>Donation Information:</h4>
+            <hr />
+            <div class="choose-donation-amount">
+              <div class="amount-box">
+                <h5><span>*</span>Choose your donation amount:</h5>
+                <div>
+                  <button>$10</button>
+                  <button>$20</button>
+                  <button>$30</button>
+                  <button>$50</button>
+                  <button>$80</button>
+                  <button>$100</button>
+                </div>
+              </div>
+              <div class="other-amount">
+                <label for="amount">Other amount</label>
+                <input type="text" id="amount" autocomplete="off" />
+              </div>
+              <div class="select-container">
+                <label for="pet">for special pet</label>
+                <select aria-placeholder="name" name="pet" id="pet">
+                  <option selected hidden>Choose your favourite</option>
+                  <option>Lukas the Panda</option>
+                  <option>Andy the Lemur</option>
+                  <option>Clen the Gorilla</option>
+                  <option>Mike the Aligator</option>
+                  <option>Sam & Lora the eagles family</option>
+                  <option>Liz the Koala</option>
+                  <option>Shake the Lion</option>
+                  <option>Senja the Tiger</option>
+                </select>
+                <img
+                  src="../../assets/images/donation-pop-up/arrow-down.png"
+                  alt="down arrow"
+                  class="select-arrow"
+                />
+              </div>
+              <div class="gift-checkbox">
+                <input id="gift" type="checkbox" />
+                <label for="gift">Make this a monthly recurring gift</label>
+              </div>
+            </div>
+          </div>
+          <div class="next-steps">
+            <svg
+              width="50"
+              height="10"
+              viewBox="0 0 50 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_38782_9082)">
+                <circle
+                  class="active"
+                  cx="5"
+                  cy="5"
+                  r="4.5"
+                  fill=""
+                  stroke="#00A092"
+                />
+                <circle cx="25" cy="5" r="4.5" fill="white" stroke="#00A092" />
+                <circle cx="45" cy="5" r="4.5" fill="white" stroke="#00A092" />
+              </g>
+              <defs>
+                <clipPath id="clip0_38782_9082">
+                  <rect width="50" height="10" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <button class="btn-next">
+              next
+              <svg
+                width="25"
+                height="22"
+                viewBox="0 0 25 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="donation-pop-up-step-2">
+          <h3>make your donation</h3>
+          <div class="details-inputs">
+            <h4>Billing Information:</h4>
+            <hr />
+            <form>
+              <label for="name"><span class="asterisk">*</span> Your Name</label
+              ><br />
+              <input
+                type="text"
+                id="name"
+                placeholder="First and last name"
+                autocomplete="name"
+              /><br />
+              <label for="email"
+                ><span class="asterisk">*</span> Your Email Address</label
+              ><br />
+              <input
+                type="email"
+                id="email"
+                autocomplete="email"
+                placeholder="Enter your email"
+              />
+            </form>
+            <p>
+              You will receive emails from the Online Zoo, including updates and
+              news on the latest discoveries and translations. You can
+              unsubscribe at any time.
+            </p>
+          </div>
+          <div class="next-steps">
+            <svg
+              width="50"
+              height="10"
+              viewBox="0 0 50 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_38782_9082)">
+                <circle
+                  class="active"
+                  cx="5"
+                  cy="5"
+                  r="4.5"
+                  fill=""
+                  stroke="#00A092"
+                />
+                <circle
+                  class="active"
+                  cx="25"
+                  cy="5"
+                  r="4.5"
+                  fill="white"
+                  stroke="#00A092"
+                />
+                <circle cx="45" cy="5" r="4.5" fill="white" stroke="#00A092" />
+              </g>
+              <defs>
+                <clipPath id="clip0_38782_9082">
+                  <rect width="50" height="10" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <button class="btn-back">Back</button>
+            <button class="btn-next">
+              next
+              <svg
+                width="25"
+                height="22"
+                viewBox="0 0 25 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="donation-pop-up-step-3">
+          <h3>make your donation</h3>
+          <div>
+            <h4>Payment Information</h4>
+            <hr />
+            <form>
+              <div class="credit-card-input">
+                <label for="card"
+                  ><span class="asterisk">*</span> Credit Card Number</label
+                ><br />
+                <input type="text" id="card" placeholder="" />
+              </div>
+              <div>
+                <label for="cvvNumber"
+                  ><span class="asterisk">*</span> CVVNumber</label
+                ><br />
+                <input type="text" id="cvvNumber" placeholder="" />
+              </div>
+              <div class="select-container">
+                <label for="month"
+                  ><span class="asterisk">*</span> Expiration Date</label
+                ><br />
+                <select name="month">
+                  <option hidden selected>Month</option>
+                  <option>January</option>
+                  <option>February</option>
+                  <option>March</option>
+                  <option>April</option>
+                  <option>May</option>
+                  <option>June</option>
+                  <option>July</option>
+                  <option>August</option>
+                  <option>September</option>
+                  <option>October</option>
+                  <option>November</option>
+                  <option>December</option>
+                </select>
+                <img
+                  src="../../assets/images/donation-pop-up/arrow-down.png"
+                  alt="down arrow"
+                  class="select-arrow"
+                />
+              </div>
+              <div class="select-container year">
+                <select name="year">
+                  <option selected hidden>Year</option>
+                  <option>2015</option>
+                  <option>2016</option>
+                  <option>2017</option>
+                  <option>2018</option>
+                  <option>2019</option>
+                  <option>2020</option>
+                  <option>2021</option>
+                  <option>2022</option>
+                  <option>2023</option>
+                  <option>2024</option>
+                  <option>2025</option>
+                  <option>2026</option>
+                  <option>2027</option>
+                  <option>2028</option>
+                  <option>2029</option>
+                  <option>2030</option>
+                </select>
+                <img
+                  src="../../assets/images/donation-pop-up/arrow-down.png"
+                  alt="down arrow"
+                  class="select-arrow"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="next-steps">
+            <svg
+              width="50"
+              height="10"
+              viewBox="0 0 50 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_38782_9082)">
+                <circle
+                  class="active"
+                  cx="5"
+                  cy="5"
+                  r="4.5"
+                  fill=""
+                  stroke="#00A092"
+                />
+                <circle
+                  class="active"
+                  cx="25"
+                  cy="5"
+                  r="4.5"
+                  fill="white"
+                  stroke="#00A092"
+                />
+                <circle
+                  cx="45"
+                  cy="5"
+                  r="4.5"
+                  fill="white"
+                  stroke="#00A092"
+                  class="active"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_38782_9082">
+                  <rect width="50" height="10" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <button class="btn-back">Back</button>
+            <button class="btn-complete-donation">
+              complete donation
+              <svg
+                width="25"
+                height="22"
+                viewBox="0 0 25 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M13.2098 0.119971C13.0277 0.199174 12.8622 0.315255 12.7229 0.461565C12.5833 0.607505 12.4725 0.780876 12.397 0.971748C12.3214 1.16262 12.2825 1.36724 12.2825 1.57389C12.2825 1.78055 12.3214 1.98517 12.397 2.17604C12.4725 2.36691 12.5833 2.54028 12.7229 2.68622L18.7506 9H1.6C1.17565 9 0.768688 9.21071 0.468629 9.58579C0.168571 9.96086 0 10.4696 0 11C0 11.5304 0.168571 12.0391 0.468629 12.4142C0.768688 12.7893 1.17565 13 1.6 13H18.7514L12.7229 19.3146C12.4414 19.6096 12.2833 20.0097 12.2833 20.4269C12.2833 20.8441 12.4414 21.2443 12.7229 21.5393C13.0045 21.8343 13.3863 22 13.7845 22C14.1826 22 14.5645 21.8343 14.846 21.5393L23.842 12.1127C23.9816 11.9668 24.0924 11.7934 24.168 11.6026C24.2436 11.4117 24.2825 11.2071 24.2825 11.0004C24.2825 10.7938 24.2436 10.5891 24.168 10.3983C24.0924 10.2074 23.9816 10.034 23.842 9.88808L14.846 0.461565C14.7067 0.315255 14.5413 0.199174 14.3591 0.119971C14.177 0.0407677 13.9817 0 13.7845 0C13.5873 0 13.392 0.0407677 13.2098 0.119971Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </main>

@@ -2,12 +2,32 @@
 @use "../../scss/variables" as *;
 @use "../../scss/mixins" as *;
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 main {
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+  }
+
+  .hidden {
+    display: none;
+  }
+
   .animal-navigation {
     background-color: $darkBlue;
     width: fit-content;
     position: sticky;
     top: 0;
+    height: fit-content;
     .camera-and-btn {
       display: flex;
       align-items: flex-end;
@@ -292,6 +312,327 @@ main {
 
       p {
         @include regularText;
+      }
+    }
+  }
+}
+.donation-pop-up-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+
+  .donation-pop-up {
+    display: none;
+    .image-container {
+      @include flexAlignCenter();
+      position: relative;
+
+      button {
+        position: absolute;
+        top: 3rem;
+        right: 3rem;
+      }
+    }
+
+    .donation-amount-container {
+      background-color: $white;
+      padding-top: 2rem;
+      padding-bottom: 5rem;
+      @include flexColumn(3rem);
+      align-items: center;
+      justify-content: center;
+
+      h2,
+      p {
+        text-align: center;
+      }
+
+      h2 {
+        width: 58%;
+        @include heading2Styles($orange);
+      }
+
+      p {
+        @include regularText;
+        width: 49%;
+      }
+
+      .donation-amount {
+        @include flexAlignCenter(4rem);
+        & > button {
+          @include buttonStyles($lightGreen, $white);
+          &:hover {
+            background-color: $lightGreenHover;
+          }
+          &:not(:last-child) {
+            padding: 2.15rem 4.3rem;
+          }
+          &:last-child {
+            padding: 2.15rem;
+          }
+        }
+      }
+    }
+  }
+
+  .donation-pop-up-step-1,
+  .donation-pop-up-step-2,
+  .donation-pop-up-step-3 {
+    @include flexColumn(5rem);
+    padding-bottom: 5rem;
+    background-color: $white;
+
+    & > div {
+      padding: 0 12rem;
+    }
+    h3 {
+      @include heading3styles;
+      color: $white;
+      background-color: $orange;
+      padding: 4.2rem 20rem;
+    }
+    h4 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      color: var(--black);
+    }
+
+    hr {
+      background-color: #a4a8ae;
+      margin-top: 1rem;
+    }
+
+    .next-steps {
+      @include flexAlignCenter();
+      & > svg {
+        circle.active {
+          fill: $lightGreen;
+        }
+      }
+
+      .btn-next {
+        @include flexAlignCenter(1rem);
+        @include buttonStyles($lightGreen, $white);
+        padding: 2.6rem 5.7rem;
+
+        &:hover {
+          background-color: $lightGreenHover;
+        }
+      }
+    }
+  }
+
+  .donation-pop-up-step-1,
+  .donation-pop-up-step-3 {
+    .select-container {
+      position: relative;
+
+      select {
+        @include regularText;
+        border: 1px solid $black;
+        border-radius: 5px;
+        flex-grow: 1;
+        padding: 1.9rem;
+        text-align: center;
+        color: #a4a8ae;
+        appearance: none;
+        cursor: pointer;
+      }
+      .select-arrow {
+        position: absolute;
+        right: 0;
+        padding: 2.9rem 0.8rem 2.8rem;
+        background-color: $lightGreen;
+        pointer-events: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-left: 1px solid $black;
+      }
+    }
+  }
+
+  .donation-pop-up-step-1 {
+    display: none;
+    .choose-dontation-container {
+      background-color: $white;
+
+      .choose-donation-amount {
+        @include flexColumn(4rem);
+
+        label:not(.gift-checkbox > label, .other-amount) {
+          font-weight: 600;
+          font-size: 18px;
+          text-transform: uppercase;
+          color: $white;
+          border-radius: 5px;
+          padding: 2.15rem;
+        }
+
+        input {
+          @include regularText;
+          width: 33%;
+          padding: 2rem;
+          border: 1px solid $black;
+          border-radius: 5px;
+          height: 6.5rem;
+        }
+
+        .amount-box {
+          margin-top: 4rem;
+          h5 {
+            @include regularText;
+            margin-bottom: 1rem;
+
+            span {
+              color: $lightGreen;
+            }
+          }
+
+          & > div {
+            @include flexAlignCenter;
+            justify-content: space-between;
+
+            button {
+              @include buttonStyles(rgba(0, 160, 146, 0.5), $white);
+              padding: 2.15rem 2.45rem;
+            }
+          }
+        }
+
+        .other-amount,
+        .select-container {
+          @include flexAlignCenter(4rem);
+          label {
+            background-color: #80cfc8;
+          }
+        }
+
+        .other-amount {
+          label {
+            background-color: #00a092;
+          }
+        }
+
+        .gift-checkbox {
+          @include flexAlignCenter(1rem);
+
+          input {
+            width: 3rem;
+          }
+
+          label {
+            @include regularText();
+            color: $black;
+          }
+        }
+      }
+    }
+    .next-steps {
+      gap: 32.5rem;
+    }
+  }
+
+  .donation-pop-up-step-2,
+  .donation-pop-up-step-3 {
+    form {
+      width: 100%;
+      margin: 4rem 0 1rem;
+      label {
+        .asterisk {
+          color: $lightGreen;
+        }
+      }
+      input {
+        margin-top: 1rem;
+        padding: 1.7rem 2rem;
+        border: 1px solid $black;
+        margin-bottom: 3rem;
+        border-radius: 5px;
+        width: 100%;
+      }
+      label,
+      input {
+        @include regularText;
+      }
+    }
+
+    .next-steps {
+      .btn-back {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        text-decoration: underline;
+        color: $lightGreen;
+
+        &:hover {
+          color: $lightGreenHover;
+        }
+      }
+    }
+  }
+
+  .donation-pop-up-step-2 {
+    display: none;
+    .details-inputs {
+      form {
+        input {
+          width: 100%;
+        }
+      }
+      p {
+        @include regularText;
+      }
+    }
+
+    .next-steps {
+      gap: 10.3rem;
+    }
+  }
+
+  .donation-pop-up-step-3 {
+    display: none;
+    form {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+
+      .credit-card-input {
+        grid-column: span 2;
+      }
+
+      .select-container {
+        label {
+          display: block;
+        }
+        select {
+          width: 100%;
+        }
+        .select-arrow {
+          background-color: #80cfc8;
+        }
+      }
+
+      .select-container.year {
+        align-self: flex-end;
+      }
+    }
+
+    .next-steps {
+      justify-content: space-between;
+
+      .btn-complete-donation {
+        @include buttonStyles($orange, $white);
+        @include flexAlignCenter(1rem);
+        padding: 2.6rem 5.5rem;
+
+        &:hover {
+          background-color: $orangeHover;
+        }
       }
     }
   }
