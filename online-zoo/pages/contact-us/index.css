@@ -69,6 +69,12 @@ header .logo-links .page-navigation > ul a:hover {
 header .logo-links .page-navigation > ul a.active {
   color: #00a092;
 }
+@media (max-width: 1200px) {
+  header .logo-links {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
 
 .page-navigation > ul {
   display: flex;
@@ -146,6 +152,23 @@ footer .credits-and-social-networks .credits span {
   line-height: 150%;
   letter-spacing: 0%;
   color: #ffffff;
+}
+@media (max-width: 1200px) {
+  footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  footer .logos-and-links,
+  footer .credits-and-social-networks {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  footer .logos-and-links > div {
+    gap: 3rem;
+  }
+  footer .logos-and-links nav > ul {
+    gap: 2rem;
+  }
 }
 
 main {

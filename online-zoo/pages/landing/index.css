@@ -69,6 +69,12 @@ header .logo-links .page-navigation > ul a:hover {
 header .logo-links .page-navigation > ul a.active {
   color: #00a092;
 }
+@media (max-width: 1200px) {
+  header .logo-links {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
 
 .page-navigation > ul {
   display: flex;
@@ -147,6 +153,23 @@ footer .credits-and-social-networks .credits span {
   letter-spacing: 0%;
   color: #ffffff;
 }
+@media (max-width: 1200px) {
+  footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  footer .logos-and-links,
+  footer .credits-and-social-networks {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  footer .logos-and-links > div {
+    gap: 3rem;
+  }
+  footer .logos-and-links nav > ul {
+    gap: 2rem;
+  }
+}
 
 header .panda-container {
   padding: 0 26rem;
@@ -159,6 +182,12 @@ header .panda-container {
   background-image: url(../../assets/images/panda.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media (max-width: 1200px) {
+  header .panda-container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
 }
 header .panda-container h1 {
   font-weight: 800;
@@ -243,6 +272,26 @@ main .articles-donation section p {
 main .articles-donation section img {
   max-width: 80rem;
 }
+@media (max-width: 1200px) {
+  main .articles-donation section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+  main .articles-donation section img {
+    order: -1;
+  }
+  main .articles-donation section div {
+    width: 56%;
+  }
+}
+@media (max-width: 1200px) {
+  main .articles-donation section {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
 main .donation-container {
   padding: 0 26rem;
   display: flex;
@@ -308,6 +357,15 @@ main .donation-container .donation-button-box button img {
   padding: 2.6rem;
   border-radius: 5px;
 }
+@media (max-width: 1200px) {
+  main .donation-container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  main .donation-container p {
+    width: 100%;
+  }
+}
 main .pets-carousel-container {
   display: flex;
   flex-direction: column;
@@ -361,6 +419,14 @@ main .pets-carousel-container .article-arrows .arrows-box button:hover {
 }
 main .pets-carousel-container .article-arrows .arrows-box button:hover svg {
   fill: #ffffff;
+}
+@media (max-width: 1200px) {
+  main .pets-carousel-container .article-arrows {
+    width: 69.1%;
+  }
+  main .pets-carousel-container .article-arrows > div p {
+    text-align: center;
+  }
 }
 main .pets-carousel-container .carousel-container {
   display: grid;
@@ -455,6 +521,14 @@ main .pets-carousel-container .carousel-container .carousel-item > div:last-chil
   border-radius: 5px;
   color: #ffffff;
   background-color: #f58021;
+}
+@media (max-width: 1200px) {
+  main .pets-carousel-container .carousel-container {
+    width: 112.7rem;
+    gap: 2rem;
+    margin-left: 4rem;
+    margin-bottom: 5rem;
+  }
 }
 main .pets-carousel-container .choose-fav {
   font-weight: 600;
@@ -570,6 +644,19 @@ main .pay-and-feed-container .donation-main-content div button {
 main .pay-and-feed-container .donation-main-content div button:hover {
   background-color: #d26004;
 }
+@media (max-width: 1200px) {
+  main .pay-and-feed-container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    gap: 9.6rem;
+  }
+  main .pay-and-feed-container .donation-main-content {
+    gap: 2rem;
+  }
+  main .pay-and-feed-container .donation-main-content .btn-donate {
+    margin-top: 10rem;
+  }
+}
 main .feedback-container {
   background-image: url(../../assets/images/panda-background.png);
   background-repeat: no-repeat;
@@ -670,6 +757,27 @@ main .feedback-container .btn-leave-feedback {
 }
 main .feedback-container .btn-leave-feedback:hover {
   background-color: #00a092;
+}
+@media (max-width: 1200px) {
+  main .feedback-container {
+    padding-left: 4rem;
+  }
+  main .feedback-container .users-feedback {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  main .feedback-container .users-feedback > div:first-child {
+    width: 51.5%;
+  }
+  main .feedback-container .users-feedback > div:first-child h2 {
+    margin-bottom: 3rem;
+  }
+  main .feedback-container .users-feedback .feedbacks {
+    padding-left: 10rem;
+  }
+  main .feedback-container .btn-leave-feedback {
+    margin-left: 11.5rem;
+  }
 }
 main .animal-caring {
   padding: 0 26rem;
@@ -793,6 +901,16 @@ main .animal-caring button:hover {
   color: #ffffff;
   background-color: #20113d;
 }
+@media (max-width: 1200px) {
+  main .animal-caring {
+    padding-left: 13.5rem;
+    padding-right: 13.5rem;
+  }
+  main .animal-caring .feed-animal-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
 main .animal-on-screen {
   padding: 0 26rem;
   margin: 15rem 0;
@@ -800,6 +918,14 @@ main .animal-on-screen {
 main .animal-on-screen img {
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 1200px) {
+  main .animal-on-screen {
+    padding: 0;
+  }
+  main .animal-on-screen img {
+    max-width: 120rem;
+  }
 }
 
 .donation-pop-up-container {

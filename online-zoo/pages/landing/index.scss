@@ -13,6 +13,9 @@ header {
     background-image: url(../../assets/images/panda.png);
     background-repeat: no-repeat;
     background-size: cover;
+    @media (max-width: 1200px) {
+      @include paddingLeftRightOn1200px;
+    }
 
     h1 {
       font-weight: 800;
@@ -68,6 +71,10 @@ main {
     section {
       @include paddingLeftRight;
       @include sectionStyles;
+
+      @media (max-width: 1200px) {
+        @include paddingLeftRightOn1200px;
+      }
     }
   }
 
@@ -119,6 +126,13 @@ main {
         }
       }
     }
+
+    @media (max-width: 1200px) {
+      @include paddingLeftRightOn1200px;
+      p {
+        width: 100%;
+      }
+    }
   }
 
   .pets-carousel-container {
@@ -163,6 +177,16 @@ main {
             svg {
               fill: $white;
             }
+          }
+        }
+      }
+
+      @media (max-width: 1200px) {
+        width: 69.1%;
+
+        & > div {
+          p {
+            text-align: center;
           }
         }
       }
@@ -237,6 +261,13 @@ main {
             }
           }
         }
+      }
+
+      @media (max-width: 1200px) {
+        width: 112.7rem;
+        gap: 2rem;
+        margin-left: 4rem;
+        margin-bottom: 5rem;
       }
     }
 
@@ -321,6 +352,19 @@ main {
           &:hover {
             background-color: $orangeHover;
           }
+        }
+      }
+    }
+
+    @media (max-width: 1200px) {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      gap: 9.6rem;
+
+      .donation-main-content {
+        gap: 2rem;
+        .btn-donate {
+          margin-top: 10rem;
         }
       }
     }
@@ -414,6 +458,30 @@ main {
         background-color: $lightGreen;
       }
     }
+
+    @media (max-width: 1200px) {
+      padding-left: 4rem;
+
+      .users-feedback {
+        flex-direction: column;
+        align-items: flex-start;
+
+        & > div:first-child {
+          width: 51.5%;
+          h2 {
+            margin-bottom: 3rem;
+          }
+        }
+
+        .feedbacks {
+          padding-left: 10rem;
+        }
+      }
+
+      .btn-leave-feedback {
+        margin-left: 11.5rem;
+      }
+    }
   }
 
   .animal-caring {
@@ -501,12 +569,28 @@ main {
         @include buttonStyles($darkBlue, $white);
       }
     }
+
+    @media (max-width: 1200px) {
+      padding-left: 13.5rem;
+      padding-right: 13.5rem;
+      .feed-animal-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+    }
   }
   .animal-on-screen {
     @include paddingLeftRight;
     margin: 15rem 0;
     img {
       object-fit: cover;
+    }
+    @media (max-width: 1200px) {
+      padding: 0;
+
+      img {
+        max-width: 120rem;
+      }
     }
   }
 }

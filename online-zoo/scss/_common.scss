@@ -33,6 +33,12 @@ header {
       }
     }
   }
+
+  @media (max-width: 1200px) {
+    .logo-links {
+      @include paddingLeftRightOn1200px;
+    }
+  }
 }
 
 .page-navigation > ul {
@@ -93,6 +99,26 @@ footer {
       span {
         @include regularText;
         color: $white;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    padding-left: 0;
+    padding-right: 0;
+
+    .logos-and-links,
+    .credits-and-social-networks {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+    .logos-and-links {
+      & > div {
+        gap: 3rem;
+      }
+
+      nav > ul {
+        gap: 2rem;
       }
     }
   }
