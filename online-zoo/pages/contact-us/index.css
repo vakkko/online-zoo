@@ -29,7 +29,8 @@ button {
 }
 
 input,
-textarea {
+textarea,
+select {
   outline: none;
   font-family: "Montserrat", sans-serif;
 }

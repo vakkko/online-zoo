@@ -552,4 +552,143 @@ main {
       }
     }
   }
+  .donation-pop-up-step-1 {
+    padding-bottom: 5rem;
+    background-color: $white;
+    h3 {
+      @include heading3styles;
+      color: $white;
+      background-color: $orange;
+      padding: 4.2rem 20rem;
+    }
+
+    .choose-dontation-container {
+      background-color: $white;
+      padding: 5rem 12rem 0;
+
+      h4 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--black);
+      }
+
+      hr {
+        background-color: #a4a8ae;
+        margin-top: 1rem;
+      }
+
+      .choose-donation-amount {
+        @include flexColumn(4rem);
+
+        label {
+          font-weight: 600;
+          font-size: 18px;
+          text-transform: uppercase;
+          color: $white;
+          border-radius: 5px;
+          padding: 2.15rem;
+        }
+
+        input {
+          @include regularText;
+          width: 33%;
+          padding: 2rem;
+          border: 1px solid $black;
+          border-radius: 5px;
+          height: 6.5rem;
+        }
+
+        .amount-box {
+          margin-top: 4rem;
+          h5 {
+            @include regularText;
+            margin-bottom: 1rem;
+
+            span {
+              color: $lightGreen;
+            }
+          }
+
+          & > div {
+            @include flexAlignCenter;
+            justify-content: space-between;
+
+            button {
+              @include buttonStyles(rgba(0, 160, 146, 0.5), $white);
+              padding: 2.15rem 2.45rem;
+            }
+          }
+        }
+
+        .other-amount,
+        .select-pet {
+          @include flexAlignCenter(4rem);
+        }
+
+        .other-amount {
+          label {
+            background-color: #00a092;
+          }
+        }
+
+        .select-pet {
+          position: relative;
+          label {
+            background-color: #80cfc8;
+          }
+          select {
+            @include regularText;
+            border: 1px solid $black;
+            border-radius: 5px;
+            flex-grow: 1;
+            padding: 1.9rem;
+            text-align: center;
+            color: #a4a8ae;
+            appearance: none;
+            cursor: pointer;
+          }
+          .select-arrow {
+            position: absolute;
+            right: 0;
+            padding: 2.9rem 0.8rem 2.8rem;
+            background-color: $lightGreen;
+            pointer-events: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-left: 1px solid $black;
+          }
+        }
+
+        .gift-checkbox {
+          @include flexAlignCenter(1rem);
+
+          input {
+            width: 3rem;
+          }
+
+          label {
+            @include regularText();
+            color: $black;
+          }
+        }
+      }
+
+      .next-steps {
+        @include flexAlignCenter(32.5rem);
+        margin-top: 5rem;
+        & > svg {
+          circle.active {
+            fill: $lightGreen;
+          }
+        }
+
+        button {
+          @include flexAlignCenter(1rem);
+          @include buttonStyles($lightGreen, $white);
+          padding: 2.6rem 5.7rem;
+        }
+      }
+    }
+  }
 }
