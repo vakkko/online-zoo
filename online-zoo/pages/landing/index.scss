@@ -492,14 +492,14 @@ main {
   }
 }
 
-.donation-pop-up {
+.donation-pop-up-container {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.3);
 
-  .donation-pop-up-1 {
+  .donation-pop-up {
     display: none;
     .image-container {
       @include flexAlignCenter();
@@ -552,31 +552,60 @@ main {
       }
     }
   }
-  .donation-pop-up-step-1 {
+
+  .donation-pop-up-step-1,
+  .donation-pop-up-step-2,
+  .donation-pop-up-step-3 {
+    @include flexColumn(5rem);
     padding-bottom: 5rem;
     background-color: $white;
+
+    & > div {
+      padding: 0 12rem;
+    }
     h3 {
       @include heading3styles;
       color: $white;
       background-color: $orange;
       padding: 4.2rem 20rem;
     }
+    h4 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      color: var(--black);
+    }
 
+    hr {
+      background-color: #a4a8ae;
+      margin-top: 1rem;
+    }
+
+    .next-steps {
+      @include flexAlignCenter();
+      padding: 0 12rem;
+      & > svg {
+        circle.active {
+          fill: $lightGreen;
+        }
+      }
+
+      .btn-next {
+        @include flexAlignCenter(1rem);
+        @include buttonStyles($lightGreen, $white);
+        padding: 2.6rem 5.7rem;
+
+        &:hover {
+          background-color: $lightGreenHover;
+        }
+      }
+    }
+  }
+
+  .donation-pop-up-step-1 {
+    display: none;
     .choose-dontation-container {
       background-color: $white;
-      padding: 5rem 12rem 0;
-
-      h4 {
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 150%;
-        color: var(--black);
-      }
-
-      hr {
-        background-color: #a4a8ae;
-        margin-top: 1rem;
-      }
 
       .choose-donation-amount {
         @include flexColumn(4rem);
@@ -673,20 +702,52 @@ main {
           }
         }
       }
+    }
+    .next-steps {
+      gap: 32.5rem;
+    }
+  }
 
-      .next-steps {
-        @include flexAlignCenter(32.5rem);
-        margin-top: 5rem;
-        & > svg {
-          circle.active {
-            fill: $lightGreen;
+  .donation-pop-up-step-2 {
+    .details-inputs {
+      form {
+        width: 100%;
+        margin: 4rem 0 1rem;
+        label {
+          .asterisk {
+            color: $lightGreen;
           }
         }
+        input {
+          margin-top: 1rem;
+          width: 100%;
+          padding: 1.7rem 2rem;
+          border: 1px solid $black;
+          margin-bottom: 3rem;
+          border-radius: 5px;
+        }
+        label,
+        input {
+          @include regularText;
+        }
+      }
+      p {
+        @include regularText;
+      }
+    }
 
-        button {
-          @include flexAlignCenter(1rem);
-          @include buttonStyles($lightGreen, $white);
-          padding: 2.6rem 5.7rem;
+    .next-steps {
+      gap: 10.3rem;
+
+      .btn-back {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        text-decoration: underline;
+        color: $lightGreen;
+
+        &:hover {
+          color: $lightGreenHover;
         }
       }
     }
