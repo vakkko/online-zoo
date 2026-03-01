@@ -33,10 +33,48 @@ header {
       }
     }
   }
+  .btn-humburger-menu,
+  .btn-cancel-header {
+    display: none;
+  }
 
   @media (max-width: 1200px) {
     .logo-links {
       @include paddingLeftRightOn1200px;
+    }
+  }
+
+  @media (max-width: 880px) {
+    .page-navigation {
+      display: none;
+    }
+    .social-networks {
+      display: none;
+    }
+
+    .btn-humburger-menu {
+      display: block;
+    }
+
+    .page-navigation.open {
+      @include flexColumn(8rem);
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: $darkBlue;
+      padding: 4rem 4.7rem 26.9rem;
+      ul {
+        flex-direction: column;
+        gap: 5rem;
+        padding: 0 4rem;
+        li > a {
+          color: $white;
+        }
+      }
+      .btn-cancel-header {
+        display: block;
+        align-self: flex-end;
+      }
     }
   }
 }
@@ -119,6 +157,30 @@ footer {
 
       nav > ul {
         gap: 2rem;
+      }
+    }
+  }
+  @media (max-width: 880px) {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    .logos-and-links {
+      flex-direction: column;
+      gap: 5rem;
+      & > div,
+      & > nav {
+        width: 100%;
+      }
+      & > div,
+      & > nav > ul {
+        justify-content: space-between;
+      }
+    }
+    .credits-and-social-networks {
+      flex-direction: column-reverse;
+      gap: 3rem;
+      .credits {
+        width: 100%;
+        justify-content: space-between;
       }
     }
   }

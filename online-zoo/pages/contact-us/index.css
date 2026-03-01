@@ -69,10 +69,47 @@ header .logo-links .page-navigation > ul a:hover {
 header .logo-links .page-navigation > ul a.active {
   color: #00a092;
 }
+header .btn-humburger-menu,
+header .btn-cancel-header {
+  display: none;
+}
 @media (max-width: 1200px) {
   header .logo-links {
     padding-left: 10rem;
     padding-right: 10rem;
+  }
+}
+@media (max-width: 880px) {
+  header .page-navigation {
+    display: none;
+  }
+  header .social-networks {
+    display: none;
+  }
+  header .btn-humburger-menu {
+    display: block;
+  }
+  header .page-navigation.open {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #20113d;
+    padding: 4rem 4.7rem 26.9rem;
+  }
+  header .page-navigation.open ul {
+    flex-direction: column;
+    gap: 5rem;
+    padding: 0 4rem;
+  }
+  header .page-navigation.open ul li > a {
+    color: #ffffff;
+  }
+  header .page-navigation.open .btn-cancel-header {
+    display: block;
+    align-self: flex-end;
   }
 }
 
@@ -168,6 +205,30 @@ footer .credits-and-social-networks .credits span {
   }
   footer .logos-and-links nav > ul {
     gap: 2rem;
+  }
+}
+@media (max-width: 880px) {
+  footer {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+  footer .logos-and-links {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  footer .logos-and-links > div, footer .logos-and-links > nav {
+    width: 100%;
+  }
+  footer .logos-and-links > div, footer .logos-and-links > nav > ul {
+    justify-content: space-between;
+  }
+  footer .credits-and-social-networks {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+  footer .credits-and-social-networks .credits {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 

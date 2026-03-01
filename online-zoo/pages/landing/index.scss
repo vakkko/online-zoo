@@ -41,6 +41,16 @@ header {
         background-color: $orangeHover;
       }
     }
+    @media (max-width: 880px) {
+      background-position: top 9rem right -31rem;
+      padding: 5rem 8.3rem 5rem 2rem;
+      h1 {
+        width: 100%;
+      }
+      p {
+        width: 63%;
+      }
+    }
   }
 }
 
@@ -74,6 +84,13 @@ main {
 
       @media (max-width: 1200px) {
         @include paddingLeftRightOn1200px;
+      }
+      @media (max-width: 880px) {
+        padding: 0;
+        & > div {
+          width: 100%;
+          padding: 0 2rem;
+        }
       }
     }
   }
@@ -133,6 +150,17 @@ main {
         width: 100%;
       }
     }
+
+    @media (max-width: 880px) {
+      flex-direction: column;
+      gap: 3rem;
+      & > div {
+        text-align: center;
+      }
+      .donation-button-box {
+        align-items: center;
+      }
+    }
   }
 
   .pets-carousel-container {
@@ -189,6 +217,10 @@ main {
             text-align: center;
           }
         }
+      }
+      @media (max-width: 880px) {
+        width: 100%;
+        text-align: center;
       }
     }
 
@@ -268,6 +300,23 @@ main {
         gap: 2rem;
         margin-left: 4rem;
         margin-bottom: 5rem;
+      }
+      @media (max-width: 880px) {
+        width: 64rem;
+        margin: 0;
+        grid-auto-flow: column;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(6, 29rem);
+        .carousel-item {
+          .carousel-image-box {
+            width: 29rem;
+            height: 33rem;
+          }
+          & > div:last-child {
+            padding: 1.5rem 2.5rem;
+            width: 29rem;
+          }
+        }
       }
     }
 
@@ -365,6 +414,25 @@ main {
         gap: 2rem;
         .btn-donate {
           margin-top: 10rem;
+        }
+
+        @media (max-width: 880px) {
+          & > div {
+            align-items: center;
+          }
+        }
+      }
+    }
+    @media (max-width: 880px) {
+      h2 {
+        text-align: center;
+      }
+      section {
+        .donation-main-content {
+          flex-direction: column;
+          & > img {
+            width: 100%;
+          }
         }
       }
     }
@@ -480,6 +548,29 @@ main {
 
       .btn-leave-feedback {
         margin-left: 11.5rem;
+      }
+    }
+
+    @media (max-width: 880px) {
+      overflow-x: hidden;
+      .users-feedback > div:first-child {
+        h2 {
+          width: 50%;
+        }
+        width: 100%;
+        padding: 0 2rem;
+      }
+      .feedbacks {
+        overflow-x: hidden;
+        grid-auto-flow: column;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(6, 52rem);
+        .arrows-box.feedback {
+          display: none;
+        }
+      }
+      .btn-leave-feedback {
+        margin-top: 5rem;
       }
     }
   }
@@ -608,6 +699,14 @@ main {
 
       img {
         max-width: 120rem;
+      }
+    }
+    @media (max-width: 880px) {
+      div {
+        width: 100%;
+      }
+      img {
+        width: 100%;
       }
     }
   }

@@ -69,10 +69,47 @@ header .logo-links .page-navigation > ul a:hover {
 header .logo-links .page-navigation > ul a.active {
   color: #00a092;
 }
+header .btn-humburger-menu,
+header .btn-cancel-header {
+  display: none;
+}
 @media (max-width: 1200px) {
   header .logo-links {
     padding-left: 10rem;
     padding-right: 10rem;
+  }
+}
+@media (max-width: 880px) {
+  header .page-navigation {
+    display: none;
+  }
+  header .social-networks {
+    display: none;
+  }
+  header .btn-humburger-menu {
+    display: block;
+  }
+  header .page-navigation.open {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #20113d;
+    padding: 4rem 4.7rem 26.9rem;
+  }
+  header .page-navigation.open ul {
+    flex-direction: column;
+    gap: 5rem;
+    padding: 0 4rem;
+  }
+  header .page-navigation.open ul li > a {
+    color: #ffffff;
+  }
+  header .page-navigation.open .btn-cancel-header {
+    display: block;
+    align-self: flex-end;
   }
 }
 
@@ -170,6 +207,30 @@ footer .credits-and-social-networks .credits span {
     gap: 2rem;
   }
 }
+@media (max-width: 880px) {
+  footer {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+  footer .logos-and-links {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  footer .logos-and-links > div, footer .logos-and-links > nav {
+    width: 100%;
+  }
+  footer .logos-and-links > div, footer .logos-and-links > nav > ul {
+    justify-content: space-between;
+  }
+  footer .credits-and-social-networks {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+  footer .credits-and-social-networks .credits {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
 
 header .panda-container {
   padding: 0 26rem;
@@ -220,6 +281,18 @@ header .panda-container button {
 }
 header .panda-container button:hover {
   background-color: #d26004;
+}
+@media (max-width: 880px) {
+  header .panda-container {
+    background-position: top 9rem right -31rem;
+    padding: 5rem 8.3rem 5rem 2rem;
+  }
+  header .panda-container h1 {
+    width: 100%;
+  }
+  header .panda-container p {
+    width: 63%;
+  }
 }
 
 body.no-scroll {
@@ -290,6 +363,15 @@ main .articles-donation section img {
   main .articles-donation section {
     padding-left: 10rem;
     padding-right: 10rem;
+  }
+}
+@media (max-width: 880px) {
+  main .articles-donation section {
+    padding: 0;
+  }
+  main .articles-donation section > div {
+    width: 100%;
+    padding: 0 2rem;
   }
 }
 main .donation-container {
@@ -366,6 +448,18 @@ main .donation-container .donation-button-box button img {
     width: 100%;
   }
 }
+@media (max-width: 880px) {
+  main .donation-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  main .donation-container > div {
+    text-align: center;
+  }
+  main .donation-container .donation-button-box {
+    align-items: center;
+  }
+}
 main .pets-carousel-container {
   display: flex;
   flex-direction: column;
@@ -425,6 +519,12 @@ main .pets-carousel-container .article-arrows .arrows-box button:hover svg {
     width: 69.1%;
   }
   main .pets-carousel-container .article-arrows > div p {
+    text-align: center;
+  }
+}
+@media (max-width: 880px) {
+  main .pets-carousel-container .article-arrows {
+    width: 100%;
     text-align: center;
   }
 }
@@ -528,6 +628,23 @@ main .pets-carousel-container .carousel-container .carousel-item > div:last-chil
     gap: 2rem;
     margin-left: 4rem;
     margin-bottom: 5rem;
+  }
+}
+@media (max-width: 880px) {
+  main .pets-carousel-container .carousel-container {
+    width: 64rem;
+    margin: 0;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(6, 29rem);
+  }
+  main .pets-carousel-container .carousel-container .carousel-item .carousel-image-box {
+    width: 29rem;
+    height: 33rem;
+  }
+  main .pets-carousel-container .carousel-container .carousel-item > div:last-child {
+    padding: 1.5rem 2.5rem;
+    width: 29rem;
   }
 }
 main .pets-carousel-container .choose-fav {
@@ -657,6 +774,22 @@ main .pay-and-feed-container .donation-main-content div button:hover {
     margin-top: 10rem;
   }
 }
+@media (max-width: 1200px) and (max-width: 880px) {
+  main .pay-and-feed-container .donation-main-content > div {
+    align-items: center;
+  }
+}
+@media (max-width: 880px) {
+  main .pay-and-feed-container h2 {
+    text-align: center;
+  }
+  main .pay-and-feed-container section .donation-main-content {
+    flex-direction: column;
+  }
+  main .pay-and-feed-container section .donation-main-content > img {
+    width: 100%;
+  }
+}
 main .feedback-container {
   background-image: url(../../assets/images/panda-background.png);
   background-repeat: no-repeat;
@@ -777,6 +910,30 @@ main .feedback-container .btn-leave-feedback:hover {
   }
   main .feedback-container .btn-leave-feedback {
     margin-left: 11.5rem;
+  }
+}
+@media (max-width: 880px) {
+  main .feedback-container {
+    overflow-x: hidden;
+  }
+  main .feedback-container .users-feedback > div:first-child h2 {
+    width: 50%;
+  }
+  main .feedback-container .users-feedback > div:first-child {
+    width: 100%;
+    padding: 0 2rem;
+  }
+  main .feedback-container .feedbacks {
+    overflow-x: hidden;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(6, 52rem);
+  }
+  main .feedback-container .feedbacks .arrows-box.feedback {
+    display: none;
+  }
+  main .feedback-container .btn-leave-feedback {
+    margin-top: 5rem;
   }
 }
 main .animal-caring {
@@ -948,6 +1105,14 @@ main .animal-on-screen img {
   }
   main .animal-on-screen img {
     max-width: 120rem;
+  }
+}
+@media (max-width: 880px) {
+  main .animal-on-screen div {
+    width: 100%;
+  }
+  main .animal-on-screen img {
+    width: 100%;
   }
 }
 
