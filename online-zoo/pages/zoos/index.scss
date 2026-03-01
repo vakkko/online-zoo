@@ -96,12 +96,6 @@ main {
       }
     }
 
-    &.open {
-      p {
-        display: block;
-      }
-    }
-
     a.active {
       svg {
         circle {
@@ -114,13 +108,61 @@ main {
     }
 
     &.open {
-      a > svg {
+      p {
+        display: block;
+      }
+      a:not(a.active) > svg {
         circle {
           fill: none;
           stroke: none;
         }
+      }
+
+      a:not(a.active) > svg {
         path {
-          fill: white;
+          fill: $orange;
+        }
+      }
+      a.active {
+        svg {
+          circle {
+            stroke: none;
+            fill: none;
+          }
+          path {
+            fill: $white;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1200px) {
+      width: 11.5rem;
+      &.open {
+        width: 30rem;
+        .camera-and-btn {
+          padding-bottom: 3.5rem;
+          padding-right: 3rem;
+          justify-content: space-between;
+          span {
+            display: block;
+          }
+          .btn-open-close {
+            margin-bottom: -0.7rem;
+            padding: 0;
+          }
+        }
+      }
+      .camera-and-btn {
+        padding: 0;
+        justify-content: center;
+
+        span {
+          display: none;
+        }
+        .btn-open-close {
+          margin-bottom: 0;
+          padding: 3rem 5rem;
         }
       }
     }
@@ -132,8 +174,7 @@ main {
 
     .animal-container {
       @include flexColumn(5rem);
-      align-items: center;
-      padding-right: 26rem;
+      align-items: flex-start;
       margin-top: 5rem;
 
       .video-heading {
@@ -159,8 +200,13 @@ main {
         }
       }
 
-      .large-youtube-link > img {
-        width: 140rem;
+      .large-youtube-link {
+        @include flexAlignCenter();
+        justify-content: center;
+        width: 100%;
+        img {
+          width: 100%;
+        }
       }
 
       .more-videos-container {
@@ -192,6 +238,19 @@ main {
           .carousel-container {
             @include flexAlignCenter(4rem);
           }
+        }
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .animal-container {
+        padding-right: 4rem;
+        .video-heading {
+          @include flexAlignCenter(7rem);
+          padding-left: 19rem;
+        }
+        .large-youtube-link {
+          width: fit-content;
         }
       }
     }
@@ -243,6 +302,12 @@ main {
           padding: 2.6rem;
           border-radius: 5px;
         }
+      }
+    }
+    @media (max-width: 1200px) {
+      @include paddingLeftRightOn1200px;
+      p {
+        width: 100%;
       }
     }
   }
@@ -313,6 +378,16 @@ main {
       p {
         @include regularText;
       }
+    }
+
+    @media (max-width: 1200px) {
+      .info {
+        width: 77.5%;
+      }
+    }
+    .animal-detailed-info {
+      margin: 0;
+      padding: 0 4rem;
     }
   }
 }

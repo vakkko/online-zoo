@@ -261,21 +261,59 @@ main .animal-navigation a svg circle {
 main .animal-navigation a svg g {
   fill: #f58021;
 }
-main .animal-navigation.open p {
-  display: block;
-}
 main .animal-navigation a.active svg circle {
   stroke: white;
 }
 main .animal-navigation a.active svg g {
   fill: white;
 }
-main .animal-navigation.open a > svg circle {
+main .animal-navigation.open p {
+  display: block;
+}
+main .animal-navigation.open a:not(a.active) > svg circle {
   fill: none;
   stroke: none;
 }
-main .animal-navigation.open a > svg path {
-  fill: white;
+main .animal-navigation.open a:not(a.active) > svg path {
+  fill: #f58021;
+}
+main .animal-navigation.open a.active svg circle {
+  stroke: none;
+  fill: none;
+}
+main .animal-navigation.open a.active svg path {
+  fill: #ffffff;
+}
+@media (max-width: 1200px) {
+  main .animal-navigation {
+    width: 11.5rem;
+  }
+  main .animal-navigation.open {
+    width: 30rem;
+  }
+  main .animal-navigation.open .camera-and-btn {
+    padding-bottom: 3.5rem;
+    padding-right: 3rem;
+    justify-content: space-between;
+  }
+  main .animal-navigation.open .camera-and-btn span {
+    display: block;
+  }
+  main .animal-navigation.open .camera-and-btn .btn-open-close {
+    margin-bottom: -0.7rem;
+    padding: 0;
+  }
+  main .animal-navigation .camera-and-btn {
+    padding: 0;
+    justify-content: center;
+  }
+  main .animal-navigation .camera-and-btn span {
+    display: none;
+  }
+  main .animal-navigation .camera-and-btn .btn-open-close {
+    margin-bottom: 0;
+    padding: 3rem 5rem;
+  }
 }
 main .navigation-and-videos {
   display: flex;
@@ -285,8 +323,7 @@ main .navigation-and-videos .animal-container {
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  align-items: center;
-  padding-right: 26rem;
+  align-items: flex-start;
   margin-top: 5rem;
 }
 main .navigation-and-videos .animal-container .video-heading {
@@ -321,8 +358,15 @@ main .navigation-and-videos .animal-container .video-heading > button {
 main .navigation-and-videos .animal-container .video-heading > button:hover {
   background-color: #d26004;
 }
-main .navigation-and-videos .animal-container .large-youtube-link > img {
-  width: 140rem;
+main .navigation-and-videos .animal-container .large-youtube-link {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: center;
+  width: 100%;
+}
+main .navigation-and-videos .animal-container .large-youtube-link img {
+  width: 100%;
 }
 main .navigation-and-videos .animal-container .more-videos-container {
   margin-top: 5rem;
@@ -362,6 +406,21 @@ main .navigation-and-videos .animal-container .more-videos-container > div .caro
   display: flex;
   align-items: center;
   gap: 4rem;
+}
+@media (max-width: 1200px) {
+  main .navigation-and-videos .animal-container {
+    padding-right: 4rem;
+  }
+  main .navigation-and-videos .animal-container .video-heading {
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+    padding-left: 19rem;
+  }
+  main .navigation-and-videos .animal-container .large-youtube-link {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }
 main .donation-container {
   padding: 0 26rem;
@@ -427,6 +486,15 @@ main .donation-container .donation-button-box button img {
   background-color: #f58021;
   padding: 2.6rem;
   border-radius: 5px;
+}
+@media (max-width: 1200px) {
+  main .donation-container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  main .donation-container p {
+    width: 100%;
+  }
 }
 main .info-container {
   display: flex;
@@ -528,6 +596,15 @@ main .info-container .animal-detailed-info p {
   font-size: 18px;
   line-height: 150%;
   letter-spacing: 0%;
+}
+@media (max-width: 1200px) {
+  main .info-container .info {
+    width: 77.5%;
+  }
+}
+main .info-container .animal-detailed-info {
+  margin: 0;
+  padding: 0 4rem;
 }
 
 .donation-pop-up-container {
