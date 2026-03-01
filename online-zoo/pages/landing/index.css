@@ -787,6 +787,26 @@ main .animal-caring {
   margin-top: 13.6rem;
   align-items: center;
 }
+main .animal-caring .animal-caring-text {
+  width: 46%;
+  text-align: center;
+}
+main .animal-caring .animal-caring-text h2 {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: #00a092;
+}
+main .animal-caring .animal-caring-text p {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  color: #000000;
+}
 main .animal-caring .feed-animal-heading {
   width: 42%;
 }

@@ -489,6 +489,19 @@ main {
     @include flexColumn(10rem);
     margin-top: 13.6rem;
     align-items: center;
+
+    .animal-caring-text {
+      width: 46%;
+      text-align: center;
+      h2 {
+        @include heading2Styles($lightGreen);
+      }
+      p {
+        @include subHeaderStyles;
+        color: $black;
+      }
+    }
+
     .feed-animal-heading {
       width: 42%;
       h2 {
