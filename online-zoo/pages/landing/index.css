@@ -926,6 +926,9 @@ main .animal-caring button:hover {
     padding-left: 13.5rem;
     padding-right: 13.5rem;
   }
+  main .animal-caring .animal-caring-text {
+    width: 71%;
+  }
   main .animal-caring .feed-animal-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -1298,6 +1301,7 @@ main .animal-on-screen img {
 }
 .donation-pop-up-container .donation-pop-up-step-3 .next-steps {
   justify-content: space-between;
+  gap: 11rem;
 }
 .donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-complete-donation {
   font-weight: 600;

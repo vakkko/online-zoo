@@ -586,6 +586,11 @@ main {
     @media (max-width: 1200px) {
       padding-left: 13.5rem;
       padding-right: 13.5rem;
+
+      .animal-caring-text {
+        width: 71%;
+      }
+
       .feed-animal-container {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
@@ -916,6 +921,7 @@ main {
 
     .next-steps {
       justify-content: space-between;
+      gap: 11rem;
 
       .btn-complete-donation {
         @include buttonStyles($orange, $white);
