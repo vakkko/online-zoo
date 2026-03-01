@@ -1,0 +1,112 @@
+@use "../../scss/common";
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+main {
+  @include flexColumn(7rem);
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 15rem;
+
+  h2 {
+    @include heading2Styles($darkBlue);
+    width: 42.7%;
+    text-align: center;
+    @media (max-width: 1200px) {
+      width: 49.5%;
+    }
+  }
+
+  .map-container {
+    position: relative;
+
+    @media (max-width: 1200px) {
+      img {
+        max-width: 120rem;
+      }
+    }
+
+    svg {
+      position: absolute;
+    }
+
+    svg:hover {
+      cursor: pointer;
+      path[fill="#F58021"] {
+        fill: $white;
+      }
+    }
+
+    .eagle-pin {
+      top: 39.6rem;
+      left: 16.4rem;
+      @media (max-width: 1200px) {
+        top: 31.8rem;
+        left: 13.2rem;
+      }
+    }
+
+    .crocodile-pin {
+      top: 40.9rem;
+      left: 28.9rem;
+      @media (max-width: 1200px) {
+        top: 33.5rem;
+        left: 24.4rem;
+      }
+    }
+
+    .lion-pin {
+      bottom: 31.2rem;
+      left: 57.4rem;
+      @media (max-width: 1200px) {
+        top: 35.9rem;
+        left: 48rem;
+      }
+    }
+
+    .gorilla-pin {
+      bottom: 28.9rem;
+      right: 61.6rem;
+      @media (max-width: 1200px) {
+        bottom: 24.6rem;
+        right: 51.7rem;
+      }
+    }
+
+    .lemur-pin {
+      bottom: 16.9rem;
+      right: 51.3rem;
+      @media (max-width: 1200px) {
+        bottom: 14.4rem;
+        right: 42.6rem;
+      }
+    }
+
+    .panda-icon {
+      top: 35.2rem;
+      right: 35.6rem;
+      @media (max-width: 1200px) {
+        top: 25.5rem;
+        right: 24.6rem;
+      }
+    }
+
+    .tiger-pin {
+      right: 29.3rem;
+      bottom: 25.8rem;
+      @media (max-width: 1200px) {
+        bottom: 20.7rem;
+        right: 24.4rem;
+      }
+    }
+
+    .koala-pin {
+      right: 16.2rem;
+      bottom: 14.4rem;
+      @media (max-width: 1200px) {
+        bottom: 12.2rem;
+        right: 13.1rem;
+      }
+    }
+  }
+}

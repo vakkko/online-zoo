@@ -1,0 +1,95 @@
+@use "variables";
+
+@mixin regularText {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+@mixin paddingLeftRight {
+  padding: 0 26rem;
+}
+
+@mixin paddingLeftRightOn1200px {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+@mixin flexAlignCenter($gap: 0) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin flexColumn($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin buttonStyles($backgroundColor: "", $color: "") {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: $color;
+  background-color: $backgroundColor;
+}
+
+@mixin heading2Styles($color: "") {
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@mixin heading3styles {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: variables.$white;
+}
+
+@mixin subHeaderStyles {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: variables.$white;
+}
+
+@mixin sectionStyles {
+  @include flexAlignCenter(7.7rem);
+  h2 {
+    @include heading2Styles(variables.$lightGreen);
+    margin-bottom: 5rem;
+  }
+
+  p {
+    @include regularText;
+    width: 100%;
+  }
+
+  img {
+    max-width: 80rem;
+  }
+
+  @media (max-width: 1200px) {
+    @include flexColumn(3rem);
+    align-items: flex-start;
+
+    img {
+      order: -1;
+    }
+
+    div {
+      width: 56%;
+    }
+  }
+}
