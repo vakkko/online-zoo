@@ -81,4 +81,17 @@ main {
       }
     }
   }
+
+  @media (max-width: 880px) {
+    .get-in-touch-and-form {
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+      form {
+        button {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
 }

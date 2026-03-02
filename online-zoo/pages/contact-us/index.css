@@ -322,4 +322,13 @@ main form button {
     width: 100%;
     text-align: center;
   }
+}
+@media (max-width: 880px) {
+  main .get-in-touch-and-form {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  main .get-in-touch-and-form form button {
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=index.css.map */
