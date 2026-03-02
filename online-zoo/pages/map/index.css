@@ -257,11 +257,10 @@ main h2 {
 }
 main .map-container {
   position: relative;
+  max-width: 140rem;
 }
-@media (max-width: 1200px) {
-  main .map-container img {
-    max-width: 120rem;
-  }
+main .map-container img {
+  width: 100%;
 }
 main .map-container svg {
   position: absolute;
@@ -273,82 +272,34 @@ main .map-container svg:hover path[fill="#F58021"] {
   fill: #ffffff;
 }
 main .map-container .eagle-pin {
-  top: 39.6rem;
-  left: 16.4rem;
-}
-@media (max-width: 1200px) {
-  main .map-container .eagle-pin {
-    top: 31.8rem;
-    left: 13.2rem;
-  }
+  top: 43.4%;
+  left: 11.7%;
 }
 main .map-container .crocodile-pin {
-  top: 40.9rem;
-  left: 28.9rem;
-}
-@media (max-width: 1200px) {
-  main .map-container .crocodile-pin {
-    top: 33.5rem;
-    left: 24.4rem;
-  }
+  bottom: 39.36%;
+  left: 20.64%;
 }
 main .map-container .lion-pin {
-  bottom: 31.2rem;
-  left: 57.4rem;
-}
-@media (max-width: 1200px) {
-  main .map-container .lion-pin {
-    top: 35.9rem;
-    left: 48rem;
-  }
+  bottom: 34.2%;
+  left: 41%;
 }
 main .map-container .gorilla-pin {
-  bottom: 28.9rem;
-  right: 61.6rem;
-}
-@media (max-width: 1200px) {
-  main .map-container .gorilla-pin {
-    bottom: 24.6rem;
-    right: 51.7rem;
-  }
+  bottom: 31.69%;
+  right: 44%;
 }
 main .map-container .lemur-pin {
-  bottom: 16.9rem;
-  right: 51.3rem;
-}
-@media (max-width: 1200px) {
-  main .map-container .lemur-pin {
-    bottom: 14.4rem;
-    right: 42.6rem;
-  }
+  bottom: 18.53%;
+  right: 36.64%;
 }
 main .map-container .panda-icon {
-  top: 35.2rem;
-  right: 35.6rem;
-}
-@media (max-width: 1200px) {
-  main .map-container .panda-icon {
-    top: 25.5rem;
-    right: 24.6rem;
-  }
+  top: 38.6%;
+  right: 25.4%;
 }
 main .map-container .tiger-pin {
-  right: 29.3rem;
-  bottom: 25.8rem;
-}
-@media (max-width: 1200px) {
-  main .map-container .tiger-pin {
-    bottom: 20.7rem;
-    right: 24.4rem;
-  }
+  right: 20.92%;
+  bottom: 28.28%;
 }
 main .map-container .koala-pin {
-  right: 16.2rem;
-  bottom: 14.4rem;
-}
-@media (max-width: 1200px) {
-  main .map-container .koala-pin {
-    bottom: 12.2rem;
-    right: 13.1rem;
-  }
+  right: 11.57%;
+  bottom: 15.78%;
 }/*# sourceMappingURL=index.css.map */
