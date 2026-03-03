@@ -167,7 +167,21 @@ main {
     @include flexColumn(5rem);
     align-items: center;
     margin-top: 13.6rem;
+    margin-bottom: 15rem;
     justify-content: center;
+
+    .error-message,
+    .loader {
+      @include subHeaderStyles();
+    }
+
+    .error-message {
+      color: #d32f2f;
+    }
+
+    .loader {
+      color: $lightGreen;
+    }
 
     .article-arrows {
       width: 47.9%;
@@ -226,12 +240,14 @@ main {
 
     .carousel-container {
       display: grid;
-      grid-template-columns: repeat(4, 44rem);
-      grid-template-rows: repeat(2, 74.7rem);
+      grid-template-rows: repeat(2, auto);
+      grid-auto-columns: 44rem;
+      grid-auto-flow: column;
       gap: 4rem;
       margin-left: 26rem;
       margin-bottom: 10rem;
-      overflow-x: scroll;
+      overflow-x: auto;
+      white-space: nowrap;
       width: 166rem;
       .carousel-item {
         @include flexColumn;
@@ -349,7 +365,6 @@ main {
     @include flexColumn(11.6rem);
     background-color: $darkBlue;
     color: $white;
-    margin-top: 15rem;
     padding-bottom: 10rem;
     padding-top: 9rem;
 

@@ -466,7 +466,22 @@ main .pets-carousel-container {
   gap: 5rem;
   align-items: center;
   margin-top: 13.6rem;
+  margin-bottom: 15rem;
   justify-content: center;
+}
+main .pets-carousel-container .error-message,
+main .pets-carousel-container .loader {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+main .pets-carousel-container .error-message {
+  color: #d32f2f;
+}
+main .pets-carousel-container .loader {
+  color: #00a092;
 }
 main .pets-carousel-container .article-arrows {
   width: 47.9%;
@@ -530,12 +545,14 @@ main .pets-carousel-container .article-arrows .arrows-box button:hover svg {
 }
 main .pets-carousel-container .carousel-container {
   display: grid;
-  grid-template-columns: repeat(4, 44rem);
-  grid-template-rows: repeat(2, 74.7rem);
+  grid-template-rows: repeat(2, auto);
+  grid-auto-columns: 44rem;
+  grid-auto-flow: column;
   gap: 4rem;
   margin-left: 26rem;
   margin-bottom: 10rem;
-  overflow-x: scroll;
+  overflow-x: auto;
+  white-space: nowrap;
   width: 166rem;
 }
 main .pets-carousel-container .carousel-container .carousel-item {
@@ -687,7 +704,6 @@ main .pay-and-feed-container {
   gap: 11.6rem;
   background-color: #20113d;
   color: #ffffff;
-  margin-top: 15rem;
   padding-bottom: 10rem;
   padding-top: 9rem;
 }
