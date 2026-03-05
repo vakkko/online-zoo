@@ -1,3 +1,5 @@
+import { addContentAfter } from "../addContentAfter/addContentAfter";
+
 export const fetchData = async (url: string) => {
   const response = await fetch(url);
 
@@ -6,3 +8,20 @@ export const fetchData = async (url: string) => {
   }
   return response.json();
 };
+
+export function showLoader(element: HTMLElement | null) {
+  if (element) {
+    addContentAfter("p", "Loading...", "loader", element);
+  }
+}
+
+export function showError(element: HTMLElement | null) {
+  if (element) {
+    addContentAfter(
+      "p",
+      "Something went wrong, please refresh the page",
+      "error-message",
+      element,
+    );
+  }
+}

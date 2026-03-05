@@ -1,6 +1,4 @@
-import { fetchData } from "../../utils/fetch/fetch.js";
-
-import { addContentAfter } from "../../utils/addContentAfter/addContentAfter.js";
+import { fetchData, showLoader, showError } from "../../utils/fetch/fetch.js";
 
 import { createElement } from "../../utils/createElement/createElement.js";
 
@@ -26,23 +24,6 @@ function slideRight(): void {
       left: 220,
       behavior: "smooth",
     });
-  }
-}
-
-function showLoader() {
-  if (articleArrows) {
-    addContentAfter("p", "Loading...", "loader", articleArrows);
-  }
-}
-
-function showError() {
-  if (articleArrows) {
-    addContentAfter(
-      "p",
-      "Something went wrong, please refresh the page",
-      "error-message",
-      articleArrows,
-    );
   }
 }
 
@@ -97,7 +78,7 @@ function addCarouselItem({
 
 async function AnimalData() {
   try {
-    showLoader();
+    showLoader(articleArrows);
 
     const { data }: { data: Animal[] } = await fetchData(
       "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets",
@@ -116,7 +97,7 @@ async function AnimalData() {
       articleArrows?.after(carouselContainer);
     }
   } catch (error) {
-    showError();
+    showError(articleArrows);
   } finally {
     hideLoader();
   }
