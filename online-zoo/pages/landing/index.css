@@ -552,7 +552,6 @@ main .pets-carousel-container .carousel-container {
   margin-left: 26rem;
   margin-bottom: 10rem;
   overflow-x: auto;
-  white-space: nowrap;
   width: 166rem;
 }
 main .pets-carousel-container .carousel-container .carousel-item {
@@ -814,6 +813,21 @@ main .feedback-container {
   padding-bottom: 15rem;
   padding-top: 15rem;
 }
+main .feedback-container .arrows-box.feedback {
+  margin-top: 3rem;
+}
+main .feedback-container .arrows-box.feedback button {
+  border: 1px solid #ffffff !important;
+}
+main .feedback-container .arrows-box.feedback button svg {
+  fill: white;
+}
+main .feedback-container .arrows-box.feedback button:hover {
+  background-color: white;
+}
+main .feedback-container .arrows-box.feedback button:hover svg {
+  fill: #20113d;
+}
 main .feedback-container .users-feedback {
   display: flex;
   align-items: flex-start;
@@ -838,9 +852,14 @@ main .feedback-container .users-feedback > div:first-child p {
 }
 main .feedback-container .feedbacks {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(1fr, 3);
+  grid-template-columns: repeat(2, 51.3rem);
+  grid-template-rows: repeat(2, 43.6rem);
+  grid-auto-flow: column;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 103rem;
   gap: 3rem;
+  padding-bottom: 2rem;
 }
 main .feedback-container .feedbacks > section {
   display: flex;
@@ -873,21 +892,6 @@ main .feedback-container .feedbacks > section span {
   line-height: 100%;
   letter-spacing: 0%;
   text-transform: uppercase;
-}
-main .feedback-container .feedbacks .arrows-box.feedback {
-  margin-top: 3rem;
-}
-main .feedback-container .feedbacks .arrows-box.feedback button {
-  border: 1px solid #ffffff !important;
-}
-main .feedback-container .feedbacks .arrows-box.feedback button svg {
-  fill: white;
-}
-main .feedback-container .feedbacks .arrows-box.feedback button:hover {
-  background-color: white;
-}
-main .feedback-container .feedbacks .arrows-box.feedback button:hover svg {
-  fill: #20113d;
 }
 main .feedback-container .btn-leave-feedback {
   font-weight: 600;

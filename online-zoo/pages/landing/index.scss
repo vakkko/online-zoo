@@ -247,7 +247,6 @@ main {
       margin-left: 26rem;
       margin-bottom: 10rem;
       overflow-x: auto;
-      white-space: nowrap;
       width: 166rem;
       .carousel-item {
         @include flexColumn;
@@ -461,6 +460,25 @@ main {
     padding-bottom: 15rem;
     padding-top: 15rem;
 
+    .arrows-box.feedback {
+      margin-top: 3rem;
+      button {
+        border: 1px solid $white !important;
+
+        svg {
+          fill: white;
+        }
+
+        &:hover {
+          background-color: white;
+
+          svg {
+            fill: $darkBlue;
+          }
+        }
+      }
+    }
+
     .users-feedback {
       display: flex;
       align-items: flex-start;
@@ -481,9 +499,15 @@ main {
 
     .feedbacks {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(1fr, 3);
+      grid-template-columns: repeat(2, 51.3rem);
+      grid-template-rows: repeat(2, 43.6rem);
+      grid-auto-flow: column;
+      overflow-x: auto;
+      overflow-y: hidden;
+      width: 103rem;
       gap: 3rem;
+      padding-bottom: 2rem;
+
       & > section {
         @include flexColumn;
         align-items: flex-start;
@@ -508,24 +532,6 @@ main {
           line-height: 100%;
           letter-spacing: 0%;
           text-transform: uppercase;
-        }
-      }
-      .arrows-box.feedback {
-        margin-top: 3rem;
-        button {
-          border: 1px solid $white !important;
-
-          svg {
-            fill: white;
-          }
-
-          &:hover {
-            background-color: white;
-
-            svg {
-              fill: $darkBlue;
-            }
-          }
         }
       }
     }

@@ -1,4 +1,4 @@
-import { addContentAfter } from "../addContentAfter/addContentAfter";
+import { addContentAfter } from "../addContentAfter/addContentAfter.js";
 
 export const fetchData = async (url: string) => {
   const response = await fetch(url);
@@ -24,4 +24,9 @@ export function showError(element: HTMLElement | null) {
       element,
     );
   }
+}
+
+export function hideLoader() {
+  const loader = document.querySelector(".loader");
+  loader?.remove();
 }

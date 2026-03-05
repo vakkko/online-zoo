@@ -31,5 +31,23 @@ function closeNavigation(): void {
   }
 }
 
+export function slideLeft(element: HTMLElement | null): void {
+  if (element) {
+    element.scrollBy({
+      left: -220,
+      behavior: "smooth",
+    });
+  }
+}
+
+export function slideRight(element: HTMLElement | null): void {
+  if (element) {
+    element.scrollBy({
+      left: 220,
+      behavior: "smooth",
+    });
+  }
+}
+
 humburgerBtn?.addEventListener("click", showNavigation);
 closeBtn?.addEventListener("click", closeNavigation);

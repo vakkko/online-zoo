@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { addContentAfter } from "../addContentAfter/addContentAfter.js";
 export const fetchData = (url) => __awaiter(void 0, void 0, void 0, function* () {
     const response = yield fetch(url);
     if (!response.ok) {
@@ -14,4 +15,18 @@ export const fetchData = (url) => __awaiter(void 0, void 0, void 0, function* ()
     }
     return response.json();
 });
+export function showLoader(element) {
+    if (element) {
+        addContentAfter("p", "Loading...", "loader", element);
+    }
+}
+export function showError(element) {
+    if (element) {
+        addContentAfter("p", "Something went wrong, please refresh the page", "error-message", element);
+    }
+}
+export function hideLoader() {
+    const loader = document.querySelector(".loader");
+    loader === null || loader === void 0 ? void 0 : loader.remove();
+}
 //# sourceMappingURL=fetch.js.map

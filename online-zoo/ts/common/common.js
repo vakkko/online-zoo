@@ -22,7 +22,22 @@ function closeNavigation() {
         humburgerBtn.style.display = "block";
     }
 }
+export function slideLeft(element) {
+    if (element) {
+        element.scrollBy({
+            left: -220,
+            behavior: "smooth",
+        });
+    }
+}
+export function slideRight(element) {
+    if (element) {
+        element.scrollBy({
+            left: 220,
+            behavior: "smooth",
+        });
+    }
+}
 humburgerBtn === null || humburgerBtn === void 0 ? void 0 : humburgerBtn.addEventListener("click", showNavigation);
 closeBtn === null || closeBtn === void 0 ? void 0 : closeBtn.addEventListener("click", closeNavigation);
-export {};
 //# sourceMappingURL=common.js.map
