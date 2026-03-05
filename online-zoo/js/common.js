@@ -2,7 +2,7 @@ const path = window.location.pathname;
 const navLinks = document.querySelectorAll(".page-navigation a");
 const hamburgerBtn = document.querySelector(".btn-humburger-menu");
 const navigationCont = document.querySelector(".page-navigation");
-const closeBtn = document.querySelector(".btn-cancel-header");
+const cancelBtn = document.querySelector(".btn-cancel-header");
 
 navLinks.forEach((link) => {
   const href = link.getAttribute("href");
@@ -24,4 +24,4 @@ function closeNavigation() {
 }
 
 hamburgerBtn.addEventListener("click", showNavigation);
-closeBtn.addEventListener("click", closeNavigation);
+cancelBtn.addEventListener("click", closeNavigation);
