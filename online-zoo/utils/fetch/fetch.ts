@@ -1,4 +1,4 @@
-import { addContentAfter } from "../addContentAfter/addContentAfter.js";
+import { addContententAt } from "../addContentAt/addContentAt.js";
 
 export const fetchData = async (url: string) => {
   const response = await fetch(url);
@@ -9,19 +9,26 @@ export const fetchData = async (url: string) => {
   return response.json();
 };
 
-export function showLoader(element: HTMLElement | null) {
+export function showLoader(
+  element: HTMLElement | null,
+  renderAt: "after" | "before" | "append",
+) {
   if (element) {
-    addContentAfter("p", "Loading...", "loader", element);
+    addContententAt("p", "Loading...", "loader", element, renderAt);
   }
 }
 
-export function showError(element: HTMLElement | null) {
+export function showError(
+  element: HTMLElement | null,
+  renderAt: "after" | "before" | "append",
+) {
   if (element) {
-    addContentAfter(
+    addContententAt(
       "p",
       "Something went wrong, please refresh the page",
       "error-message",
       element,
+      renderAt,
     );
   }
 }

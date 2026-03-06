@@ -460,6 +460,20 @@ main .donation-container .donation-button-box button img {
     align-items: center;
   }
 }
+main .error-message,
+main .loader {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+main .error-message {
+  color: #d32f2f;
+}
+main .loader {
+  color: #00a092;
+}
 main .pets-carousel-container {
   display: flex;
   flex-direction: column;
@@ -468,20 +482,6 @@ main .pets-carousel-container {
   margin-top: 13.6rem;
   margin-bottom: 15rem;
   justify-content: center;
-}
-main .pets-carousel-container .error-message,
-main .pets-carousel-container .loader {
-  font-weight: 500;
-  font-size: 26px;
-  line-height: 130%;
-  letter-spacing: 0%;
-  color: #ffffff;
-}
-main .pets-carousel-container .error-message {
-  color: #d32f2f;
-}
-main .pets-carousel-container .loader {
-  color: #00a092;
 }
 main .pets-carousel-container .article-arrows {
   width: 47.9%;
@@ -850,10 +850,15 @@ main .feedback-container .users-feedback > div:first-child p {
   color: #ffffff;
   width: 100%;
 }
-main .feedback-container .feedbacks {
+main .feedback-container .feedback-carousel-cotainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+main .feedback-container .feedback-carousel {
   display: grid;
-  grid-template-columns: repeat(2, 51.3rem);
-  grid-template-rows: repeat(2, 43.6rem);
+  grid-template-rows: repeat(2, auto);
+  grid-auto-columns: 51.3rem;
   grid-auto-flow: column;
   overflow-x: auto;
   overflow-y: hidden;
@@ -861,7 +866,7 @@ main .feedback-container .feedbacks {
   gap: 3rem;
   padding-bottom: 2rem;
 }
-main .feedback-container .feedbacks > section {
+main .feedback-container .feedback-carousel > section {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -871,7 +876,7 @@ main .feedback-container .feedbacks > section {
   background-color: #ffffff;
   border-radius: 5px;
 }
-main .feedback-container .feedbacks > section h4 {
+main .feedback-container .feedback-carousel > section h4 {
   font-weight: 500;
   font-size: 26px;
   line-height: 130%;
@@ -879,14 +884,14 @@ main .feedback-container .feedbacks > section h4 {
   color: #ffffff;
   color: #000000;
 }
-main .feedback-container .feedbacks > section p {
+main .feedback-container .feedback-carousel > section p {
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
   letter-spacing: 0%;
   width: 100%;
 }
-main .feedback-container .feedbacks > section span {
+main .feedback-container .feedback-carousel > section span {
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
@@ -925,7 +930,7 @@ main .feedback-container .btn-leave-feedback:hover {
   main .feedback-container .users-feedback > div:first-child h2 {
     margin-bottom: 3rem;
   }
-  main .feedback-container .users-feedback .feedbacks {
+  main .feedback-container .users-feedback .feedback-carousel {
     padding-left: 10rem;
   }
   main .feedback-container .btn-leave-feedback {
@@ -943,13 +948,13 @@ main .feedback-container .btn-leave-feedback:hover {
     width: 100%;
     padding: 0 2rem;
   }
-  main .feedback-container .feedbacks {
+  main .feedback-container .feedback-carousel {
     overflow-x: hidden;
     grid-auto-flow: column;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(6, 52rem);
   }
-  main .feedback-container .feedbacks .arrows-box.feedback {
+  main .feedback-container .feedback-carousel .arrows-box.feedback {
     display: none;
   }
   main .feedback-container .btn-leave-feedback {

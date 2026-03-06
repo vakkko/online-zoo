@@ -1,0 +1,2 @@
+export declare function addContententAt(htmlElement: string, content: string, className: string, showAfter: HTMLElement, renderAt: "after" | "before" | "append"): void;
+//# sourceMappingURL=addContentAt.d.ts.map

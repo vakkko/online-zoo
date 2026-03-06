@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { addContentAfter } from "../addContentAfter/addContentAfter.js";
+import { addContententAt } from "../addContentAt/addContentAt.js";
 export const fetchData = (url) => __awaiter(void 0, void 0, void 0, function* () {
     const response = yield fetch(url);
     if (!response.ok) {
@@ -15,14 +15,14 @@ export const fetchData = (url) => __awaiter(void 0, void 0, void 0, function* ()
     }
     return response.json();
 });
-export function showLoader(element) {
+export function showLoader(element, renderAt) {
     if (element) {
-        addContentAfter("p", "Loading...", "loader", element);
+        addContententAt("p", "Loading...", "loader", element, renderAt);
     }
 }
-export function showError(element) {
+export function showError(element, renderAt) {
     if (element) {
-        addContentAfter("p", "Something went wrong, please refresh the page", "error-message", element);
+        addContententAt("p", "Something went wrong, please refresh the page", "error-message", element, renderAt);
     }
 }
 export function hideLoader() {
