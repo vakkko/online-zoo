@@ -18,9 +18,6 @@ import { slideLeft, slideRight } from "../../ts/common/common.js";
 
 let carouselContainer: HTMLElement | null = null;
 let feedbackCarousel: HTMLElement | null = null;
-const feedBackCarouselCont: HTMLElement | null = document.querySelector(
-  ".feedback-carousel-cotainer",
-);
 document.querySelector<HTMLElement>("feedback-carousel-cotainer");
 const leftSliderAnimal = document.querySelector<HTMLElement>(".left-arrow");
 const rightSliderAnimal = document.querySelector<HTMLElement>(".right-arrow");

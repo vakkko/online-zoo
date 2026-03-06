@@ -8,6 +8,10 @@ out/
 *.tsbuildinfo
 *.css
 *.css.map
+*.js
+*.d.ts
+*.d.ts.map
+*.js.map
 
 .env
 .env.local

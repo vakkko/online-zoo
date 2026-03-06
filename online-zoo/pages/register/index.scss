@@ -11,7 +11,6 @@ main {
   min-height: 100vh;
   @include flexAlignCenter();
   justify-content: center;
-  //   margin-top: 10rem;
 
   .registration-container {
     display: flex;
@@ -39,43 +38,47 @@ main {
       display: flex;
       flex-direction: column;
       margin-top: 2rem;
-    }
 
-    label {
-      margin-bottom: 1rem;
-      font-weight: 600;
-      color: #555;
-      font-size: 2rem;
-    }
+      .err-msg {
+        color: #dc3545;
+        font-size: 1.3rem;
+      }
 
-    input {
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 1.5rem;
-      transition: border-color 0.3s ease;
-    }
+      label {
+        margin-bottom: 1rem;
+        font-weight: 600;
+        color: #555;
+        font-size: 2rem;
+      }
 
-    input:focus {
-      outline: none;
-      border-color: #4a90e2;
-      box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
-    }
+      input {
+        padding: 10px;
+        margin-bottom: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        transition: border-color 0.3s ease;
+      }
 
-    button {
-      background-color: #4a90e2;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 4px;
-      font-size: 2rem;
-      cursor: pointer;
-      font-weight: bold;
-    }
+      input.err-border {
+        border: 1px solid #dc3545;
+      }
 
-    button:hover {
-      background-color: #357abd;
+      button {
+        background-color: #4a90e2;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 2rem;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 1rem;
+      }
+
+      button:hover {
+        background-color: #357abd;
+      }
     }
   }
 }

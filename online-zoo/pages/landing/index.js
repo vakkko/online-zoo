@@ -13,7 +13,6 @@ import { BASE_URL } from "../../consts/consts.js";
 import { slideLeft, slideRight } from "../../ts/common/common.js";
 let carouselContainer = null;
 let feedbackCarousel = null;
-const feedBackCarouselCont = document.querySelector(".feedback-carousel-cotainer");
 document.querySelector("feedback-carousel-cotainer");
 const leftSliderAnimal = document.querySelector(".left-arrow");
 const rightSliderAnimal = document.querySelector(".right-arrow");
