@@ -7,6 +7,15 @@ const humburgerBtn: HTMLElement | null = document.querySelector(
 const navigationCont: Element | null =
   document.querySelector(".page-navigation");
 const closeBtn: Element | null = document.querySelector(".btn-cancel-header");
+const userAvatar = document.querySelector<HTMLElement>(
+  ".user-box > .user-avatar",
+);
+const authorizationPopup = document.querySelector<HTMLElement>(
+  ".pop-up-authorization.hidden",
+);
+const authOverlay = document.getElementById("auth-overlay");
+const cancelAuthButton =
+  document.querySelector<HTMLElement>(".btn-cancel-auth");
 
 navLinks.forEach((link) => {
   const href = link.getAttribute("href");
@@ -49,5 +58,18 @@ export function slideRight(element: HTMLElement | null): void {
   }
 }
 
+function showAuthPopUp(): void {
+  authorizationPopup?.classList.remove("hidden");
+  authOverlay?.classList.remove("hidden");
+}
+
+function hideAuthPopup(): void {
+  authorizationPopup?.classList.add("hidden");
+  authOverlay?.classList.add("hidden");
+}
+
 humburgerBtn?.addEventListener("click", showNavigation);
 closeBtn?.addEventListener("click", closeNavigation);
+
+userAvatar?.addEventListener("click", showAuthPopUp);
+cancelAuthButton?.addEventListener("click", hideAuthPopup);

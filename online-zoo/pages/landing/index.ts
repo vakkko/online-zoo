@@ -141,8 +141,6 @@ const rightSliderFeedback = document.querySelector<HTMLElement>(
   ".arrows-box.feedback > .right-arrow",
 );
 
-const feedbacks = document.querySelector<HTMLElement>(".feedbacks");
-
 renderFeedbacks();
 leftSliderAnimal?.addEventListener("click", () => {
   slideLeft(carouselContainer);

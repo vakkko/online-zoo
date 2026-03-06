@@ -62,20 +62,6 @@ body.no-scroll {
 main {
   margin: 15rem 0;
 
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 50;
-  }
-
-  .hidden {
-    display: none;
-  }
-
   .articles-donation {
     @include flexColumn(15rem);
     section {

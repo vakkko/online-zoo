@@ -32,6 +32,61 @@ header {
         color: $lightGreen;
       }
     }
+
+    .user-box {
+      .user-avatar {
+        @include flexAlignCenter();
+        & > img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .pop-up-authorization.hidden {
+      display: none;
+    }
+
+    .pop-up-authorization {
+      @include flexColumn(1.5rem);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(197, 130, 99, 0.968);
+      border-radius: 10px;
+      padding: 2rem 4rem;
+      z-index: 1000;
+
+      .btn-cancel-auth {
+        align-self: flex-end;
+        img {
+          width: 20px;
+        }
+      }
+
+      h3 {
+        @include subHeaderStyles();
+        color: $black;
+        text-align: center;
+      }
+
+      ul {
+        @include flexAlignCenter(1.5rem);
+        justify-content: center;
+        li {
+          @include regularText();
+          font-weight: 500;
+          &:hover {
+            border-bottom: 1px solid $black;
+          }
+          a {
+            color: $black;
+          }
+        }
+      }
+    }
   }
   .btn-humburger-menu,
   .btn-cancel-header {
@@ -77,6 +132,21 @@ header {
       }
     }
   }
+}
+
+#overlay,
+#auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 50;
+}
+
+.hidden {
+  display: none;
 }
 
 .page-navigation > ul {

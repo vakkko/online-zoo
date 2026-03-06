@@ -69,6 +69,66 @@ header .logo-links .page-navigation > ul a:hover {
 header .logo-links .page-navigation > ul a.active {
   color: #00a092;
 }
+header .logo-links .user-box .user-avatar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+header .logo-links .user-box .user-avatar > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+header .logo-links .pop-up-authorization.hidden {
+  display: none;
+}
+header .logo-links .pop-up-authorization {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(197, 130, 99, 0.968);
+  border-radius: 10px;
+  padding: 2rem 4rem;
+  z-index: 1000;
+}
+header .logo-links .pop-up-authorization .btn-cancel-auth {
+  align-self: flex-end;
+}
+header .logo-links .pop-up-authorization .btn-cancel-auth img {
+  width: 20px;
+}
+header .logo-links .pop-up-authorization h3 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+  color: #000000;
+  text-align: center;
+}
+header .logo-links .pop-up-authorization ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+}
+header .logo-links .pop-up-authorization ul li {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  font-weight: 500;
+}
+header .logo-links .pop-up-authorization ul li:hover {
+  border-bottom: 1px solid #000000;
+}
+header .logo-links .pop-up-authorization ul li a {
+  color: #000000;
+}
 header .btn-humburger-menu,
 header .btn-cancel-header {
   display: none;
@@ -111,6 +171,21 @@ header .btn-cancel-header {
     display: block;
     align-self: flex-end;
   }
+}
+
+#overlay,
+#auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 50;
+}
+
+.hidden {
+  display: none;
 }
 
 .page-navigation > ul {
@@ -302,18 +377,6 @@ body.no-scroll {
 
 main {
   margin: 15rem 0;
-}
-main #overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 50;
-}
-main .hidden {
-  display: none;
 }
 main .articles-donation {
   display: flex;
