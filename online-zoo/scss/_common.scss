@@ -78,6 +78,7 @@ header {
         li {
           @include regularText();
           font-weight: 500;
+          padding-bottom: 1px;
           &:hover {
             border-bottom: 1px solid $black;
           }

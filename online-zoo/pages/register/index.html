@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="../../ts/common/common.js" type="module"></script>
+    <script
+      src="../../ts/pop-up-handler/pop-up-handler.js"
+      type="module"
+    ></script>
+    <script src="./index.js" type="module"></script>
+    <title>Online Zoo</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../assets/images/zoo-favicon.png"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo-links">
+        <img src="../../assets/images/logo.png" alt="zoo logo" />
+        <nav class="page-navigation">
+          <button class="btn-cancel-header">
+            <img
+              src="../../assets/images/donation-pop-up/x.png"
+              alt="cancel icon"
+            />
+          </button>
+          <ul>
+            <li><a href="../landing/index.html">about</a></li>
+            <li><a href="../map/index.html">map</a></li>
+            <li><a href="../zoos/index.html">zoos</a></li>
+            <li><a href="../contact-us/index.html">Contact us</a></li>
+          </ul>
+        </nav>
+
+        <div class="social-networks">
+          <a
+            href="https://www.youtube.com/@RSSchool"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="../../assets/images/youTube.png" alt="youtube logo"
+          /></a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/rsschool_en?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            ><img src="../../assets/images/instagram.png" alt="instagram logo"
+          /></a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/rsschoolEN"
+            ><img src="../../assets/images/facebook.png" alt="facebook logo"
+          /></a>
+        </div>
+        <div class="user-box">
+          <button class="user-avatar">
+            <img src="../../assets/images/user-avatar.jpg" alt="user" />
+          </button>
+          <div class="pop-up-authorization hidden">
+            <button class="btn-cancel-auth">
+              <img
+                src="../../assets/images/donation-pop-up/x.png"
+                alt="cancel icon"
+              />
+            </button>
+            <h3>Would you like to sign in or register?</h3>
+            <ul>
+              <li><a href="">Sign in</a></li>
+              <li><a href="">Register</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="auth-overlay" class="hidden"></div>
+        <button class="btn-humburger-menu">
+          <img src="../../assets/images/hamburger.png" alt="hamburger menu" />
+        </button>
+      </div>
+    </header>
+    <main>
+      <div class="registration-container">
+        <div class="registration-card">
+          <h3>Registration</h3>
+          <form>
+            <label for="login">Login</label>
+            <input
+              type="text"
+              id="login"
+              minlength="3"
+              placeholder="Enter username"
+            />
+
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              minlength="6"
+              autocomplete="new-password"
+            />
+
+            <label for="confirmpassword">Confirm password</label>
+            <input type="password" id="confirmpassword" />
+
+            <label for="name">Name</label>
+            <input type="text" id="name" minlength="3" autocomplete="name" />
+
+            <button type="submit">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
