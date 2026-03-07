@@ -87,11 +87,20 @@
               minlength="3"
               placeholder="Enter username"
               required
+              autocomplete="off"
             />
             <p class="err-msg login hidden">
               Login should be at least 3 characters and only Englishe letters
               are allowed
             </p>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter email"
+              autocomplete="email"
+            />
+            <p class="err-msg email hidden">Should match the email format</p>
             <label for="password">Password</label>
             <input
               placeholder="Password"
@@ -110,6 +119,7 @@
               type="text"
               minlength="6"
               id="confirmpassword"
+              autocomplete="new-password"
               required
             />
             <p class="err-msg confirmpassword hidden">Passwords didn't match</p>
@@ -125,8 +135,9 @@
             <p class="err-msg name hidden">
               Name should contain at least 3 English letters
             </p>
-            <button type="submit">Create Account</button>
+            <button type="submit">Register</button>
           </form>
+          <p class="response-msg hidden"></p>
         </div>
       </div>
     </main>

@@ -12,6 +12,12 @@ main {
   @include flexAlignCenter();
   justify-content: center;
 
+  .err-msg,
+  .response-msg {
+    color: #dc3545;
+    font-size: 1.3rem;
+  }
+
   .registration-container {
     display: flex;
     justify-content: center;
@@ -37,12 +43,7 @@ main {
     form {
       display: flex;
       flex-direction: column;
-      margin-top: 2rem;
-
-      .err-msg {
-        color: #dc3545;
-        font-size: 1.3rem;
-      }
+      margin-bottom: 2rem;
 
       label {
         margin-bottom: 1rem;
@@ -76,7 +77,8 @@ main {
         margin-top: 1rem;
       }
 
-      button:hover {
+      button:hover,
+      button:disabled {
         background-color: #357abd;
       }
     }
