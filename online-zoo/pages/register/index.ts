@@ -1,4 +1,9 @@
 import { BASE_URL } from "../../consts/consts.js";
+import {
+  validateField,
+  showError,
+  hideError,
+} from "../../ts/registerLogin/registerLogin.js";
 
 const registrationForm = document.querySelector("form") as HTMLFormElement;
 const submitButton = document.querySelector("form button");
@@ -22,35 +27,6 @@ const loginRegex: RegExp = /^[a-zA-Z][a-zA-Z]{2,}$/;
 const passwordRegexx: RegExp = /^(?=.*[^a-zA-Z0-9])[a-zA-Z].{5,}$/;
 const nameRegex: RegExp = /^[a-zA-Z]{3,}$/;
 const emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-function showError(
-  inputElement: HTMLElement | null,
-  errorMsg: HTMLElement | null,
-) {
-  inputElement?.classList.add("err-border");
-  errorMsg?.classList.remove("hidden");
-}
-
-function hideError(
-  inputElement: HTMLElement | null,
-  errorMsg: HTMLElement | null,
-) {
-  inputElement?.classList.remove("err-border");
-  errorMsg?.classList.add("hidden");
-}
-
-function validateField(
-  input: HTMLInputElement,
-  errorMsg: HTMLElement | null,
-  regex: RegExp,
-): boolean {
-  if (!regex.test(input.value)) {
-    showError(input, errorMsg);
-    return false;
-  }
-  hideError(input, errorMsg);
-  return true;
-}
 
 function validateConfirmPassword(): boolean {
   if (
@@ -100,11 +76,6 @@ function updateButtonState() {
   input?.addEventListener("input", updateButtonState);
 });
 
-loginInput?.addEventListener("blur", () =>
-  validateField(loginInput, loginErrMsg, loginRegex),
-);
-loginInput?.addEventListener("focus", () => hideError(loginInput, loginErrMsg));
-
 emailInput?.addEventListener("blur", () => {
   validateField(emailInput, emailInputErrMsg, emailRegex);
 });
@@ -113,12 +84,8 @@ emailInput?.addEventListener("focus", () =>
 );
 
 passwordInput?.addEventListener("blur", () => {
-  validateField(passwordInput, passwordErrMsg, passwordRegexx);
   if (confirmPasswordInput.value) validateConfirmPassword();
 });
-passwordInput?.addEventListener("focus", () =>
-  hideError(passwordInput, passwordErrMsg),
-);
 
 confirmPasswordInput?.addEventListener("blur", validateConfirmPassword);
 confirmPasswordInput?.addEventListener("focus", () =>
