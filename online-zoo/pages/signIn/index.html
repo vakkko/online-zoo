@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="../register/index.css" />
     <script src="./index.js" type="module"></script>
     <script src="../../ts/common/common.js" type="module"></script>
     <title>Online Zoo</title>
@@ -65,8 +65,8 @@
             </button>
             <h3>Would you like to sign in or register?</h3>
             <ul>
-              <li><a href="../signIn/index.html">Sign in</a></li>
-              <li><a href="./index.html">Register</a></li>
+              <li><a href="./index.html">Sign in</a></li>
+              <li><a href="../register/index.html">Register</a></li>
             </ul>
           </div>
         </div>
@@ -76,71 +76,5 @@
         </button>
       </div>
     </header>
-    <main>
-      <div class="registration-container">
-        <div class="registration-card">
-          <h3>Registration</h3>
-          <form>
-            <label for="login">Login</label>
-            <input
-              type="text"
-              id="login"
-              minlength="3"
-              placeholder="Enter username"
-              required
-              autocomplete="off"
-            />
-            <p class="err-msg login hidden">
-              Login should be at least 3 characters and only Englishe letters
-              are allowed
-            </p>
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Enter email"
-              autocomplete="email"
-            />
-            <p class="err-msg email hidden">Should match the email format</p>
-            <label for="password">Password</label>
-            <input
-              placeholder="Password"
-              type="password"
-              id="password"
-              minlength="6"
-              autocomplete="new-password"
-              required
-            />
-            <p class="err-msg password hidden">
-              Passowrd should be at least 6 characters and 1 special character
-            </p>
-            <label for="confirmpassword">Confirm password</label>
-            <input
-              placeholder="Confirm password"
-              type="text"
-              minlength="6"
-              id="confirmpassword"
-              autocomplete="new-password"
-              required
-            />
-            <p class="err-msg confirmpassword hidden">Passwords didn't match</p>
-            <label for="name">Name</label>
-            <input
-              placeholder="name"
-              type="text"
-              id="name"
-              minlength="3"
-              autocomplete="username"
-              required
-            />
-            <p class="err-msg name hidden">
-              Name should contain at least 3 English letters
-            </p>
-            <button type="submit">Register</button>
-          </form>
-          <p class="response-msg hidden"></p>
-        </div>
-      </div>
-    </main>
   </body>
 </html>
