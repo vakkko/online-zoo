@@ -66,6 +66,11 @@ signInForm?.addEventListener("submit", (e) => {
           }
         }
         responseMsg?.classList.add("hidden");
+        const { data } = await response.json();
+        const name = data.user.name;
+        const email = data.user.email;
+        sessionStorage.setItem("name", name);
+        sessionStorage.setItem("email", email);
         window.location.href =
           "http://127.0.0.1:5500/online-zoo/pages/landing/index.html";
       } catch (err) {

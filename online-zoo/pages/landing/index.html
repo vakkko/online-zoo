@@ -35,7 +35,6 @@
             <li><a href="../contact-us/index.html">Contact us</a></li>
           </ul>
         </nav>
-
         <div class="social-networks">
           <a
             href="https://www.youtube.com/@RSSchool"
@@ -59,6 +58,7 @@
         <div class="user-box">
           <button class="user-avatar">
             <img src="../../assets/images/user-avatar.jpg" alt="user" />
+            <span class="user-name hidden"></span>
           </button>
           <div class="pop-up-authorization hidden">
             <button class="btn-cancel-auth">
@@ -67,11 +67,25 @@
                 alt="cancel icon"
               />
             </button>
+
             <h3>Would you like to sign in or register?</h3>
             <ul>
               <li><a href="../signIn/index.html">Sign in</a></li>
               <li><a href="../register/index.html">Register</a></li>
             </ul>
+          </div>
+          <div class="pop-up-sign-out hidden">
+            <button class="btn-cancel-sign-out">
+              <img
+                src="../../assets/images/donation-pop-up/x.png"
+                alt="cancel icon"
+              />
+            </button>
+            <ul>
+              <li class="user-name"></li>
+              <li class="user-email"></li>
+            </ul>
+            <button class="btn-sign-out">Sign Out</button>
           </div>
         </div>
         <div id="auth-overlay" class="hidden"></div>
