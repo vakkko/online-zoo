@@ -372,9 +372,16 @@ main .animal-navigation {
   width: -moz-fit-content;
   width: fit-content;
   position: sticky;
-  top: 0;
   height: -moz-fit-content;
   height: fit-content;
+  top: 0;
+}
+main .animal-navigation .animal-navigation-carousel {
+  max-height: 60rem;
+  overflow-y: scroll;
+}
+main .animal-navigation .down-arrow {
+  cursor: pointer;
 }
 main .animal-navigation .camera-and-btn {
   display: flex;
@@ -405,7 +412,7 @@ main .animal-navigation .camera-and-btn .btn-open-close {
 main .animal-navigation .camera-and-btn .btn-open-close.open {
   transform: rotate(180deg);
 }
-main .animal-navigation ul > li:not(.camera-and-btn) {
+main .animal-navigation ul li:not(.camera-and-btn) {
   display: flex;
   align-items: center;
   gap: 0;

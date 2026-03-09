@@ -26,8 +26,18 @@ main {
     background-color: $darkBlue;
     width: fit-content;
     position: sticky;
-    top: 0;
     height: fit-content;
+    top: 0;
+
+    .animal-navigation-carousel {
+      max-height: 60rem;
+      overflow-y: scroll;
+    }
+
+    .down-arrow {
+      cursor: pointer;
+    }
+
     .camera-and-btn {
       display: flex;
       align-items: flex-end;
@@ -57,7 +67,7 @@ main {
       }
     }
 
-    ul > li:not(.camera-and-btn) {
+    ul li:not(.camera-and-btn) {
       @include flexAlignCenter();
       justify-content: center;
       padding: 2.5rem 5rem;
