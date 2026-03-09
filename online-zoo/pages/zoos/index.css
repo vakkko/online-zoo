@@ -393,6 +393,9 @@ main .animal-navigation {
   height: fit-content;
   top: 0;
 }
+main .animal-navigation a {
+  cursor: pointer;
+}
 main .animal-navigation .animal-navigation-carousel {
   max-height: 60rem;
   overflow-y: scroll;

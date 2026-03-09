@@ -20,9 +20,9 @@ function addOpenClass() {
     openCloseBtn === null || openCloseBtn === void 0 ? void 0 : openCloseBtn.classList.toggle("open");
 }
 openCloseBtn === null || openCloseBtn === void 0 ? void 0 : openCloseBtn.addEventListener("click", addOpenClass);
-function animalNavigationItem(animal, commonName) {
+function animalNavigationItem(animal, commonName, id, active) {
     const html = `        <li>
-              <a class="active" href="./index.html">
+              <a href='#' data-id=${id} class="animal-nav-link ${active ? "active" : ""}"  }>
                 <svg
                   width="120"
                   height="120"
@@ -86,8 +86,8 @@ function fetchAnimals() {
         try {
             showLoader(videoHeading, "after");
             const { data } = yield fetchData(`${BASE_URL}/pets`);
-            data.forEach((animal) => {
-                const element = animalNavigationItem(animal.name, animal.commonName);
+            data.forEach((animal, index) => {
+                const element = animalNavigationItem(animal.name, animal.commonName, animal.id, index === 0);
                 animalNavigationCarousel === null || animalNavigationCarousel === void 0 ? void 0 : animalNavigationCarousel.insertAdjacentHTML("beforeend", element);
             });
         }

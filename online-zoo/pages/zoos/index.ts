@@ -25,9 +25,14 @@ function addOpenClass(): void {
 
 openCloseBtn?.addEventListener("click", addOpenClass);
 
-function animalNavigationItem(animal: string, commonName: string): string {
+function animalNavigationItem(
+  animal: string,
+  commonName: string,
+  id: number,
+  active?: boolean,
+): string {
   const html = `        <li>
-              <a class="active" href="./index.html">
+              <a href='#' data-id=${id} class="animal-nav-link ${active ? "active" : ""}"  }>
                 <svg
                   width="120"
                   height="120"
@@ -92,8 +97,13 @@ async function fetchAnimals() {
   try {
     showLoader(videoHeading, "after");
     const { data }: { data: animal[] } = await fetchData(`${BASE_URL}/pets`);
-    data.forEach((animal) => {
-      const element = animalNavigationItem(animal.name, animal.commonName);
+    data.forEach((animal, index) => {
+      const element = animalNavigationItem(
+        animal.name,
+        animal.commonName,
+        animal.id,
+        index === 0,
+      );
       animalNavigationCarousel?.insertAdjacentHTML("beforeend", element);
     });
   } catch (err) {
