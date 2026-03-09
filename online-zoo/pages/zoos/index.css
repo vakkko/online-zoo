@@ -536,6 +536,7 @@ main .navigation-and-videos .animal-container .video-heading {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: center;
 }
 main .navigation-and-videos .animal-container .video-heading > h2 {
   font-weight: 600;
@@ -704,6 +705,12 @@ main .donation-container .donation-button-box button img {
   main .donation-container p {
     width: 100%;
   }
+}
+main .error-message {
+  padding: 0 26rem;
+}
+main .info-container.hidden {
+  display: none;
 }
 main .info-container {
   display: flex;
