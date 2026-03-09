@@ -1,4 +1,9 @@
-import { fetchData } from "../../utils/fetch/fetch.js";
+import {
+  fetchData,
+  hideLoader,
+  showError,
+  showLoader,
+} from "../../utils/fetch/fetch.js";
 
 import { BASE_URL } from "../../consts/consts.js";
 import type { animal } from "../landing/index.interface";
@@ -7,6 +12,8 @@ const animalNavigationCarousel = document.querySelector<HTMLElement>(
   ".animal-navigation-carousel",
 );
 const downArrow = document.querySelector<HTMLElement>(".down-arrow");
+const videoHeading = document.querySelector<HTMLElement>(".video-heading");
+const liveCams = document.querySelector<HTMLElement>(".live-animal-cams");
 
 const navigation = document.querySelector<HTMLElement>(".animal-navigation");
 const openCloseBtn = document.querySelector<HTMLElement>(".btn-open-close");
@@ -83,13 +90,18 @@ function animalNavigationItem(animal: string, commonName: string): string {
 
 async function fetchAnimals() {
   try {
+    showLoader(videoHeading, "after");
     const { data }: { data: animal[] } = await fetchData(`${BASE_URL}/pets`);
-    console.log(data);
     data.forEach((animal) => {
       const element = animalNavigationItem(animal.name, animal.commonName);
       animalNavigationCarousel?.insertAdjacentHTML("beforeend", element);
     });
-  } catch (err) {}
+  } catch (err) {
+    liveCams?.classList.add("hide");
+    showError(videoHeading, "after");
+  } finally {
+    hideLoader();
+  }
 }
 
 fetchAnimals();

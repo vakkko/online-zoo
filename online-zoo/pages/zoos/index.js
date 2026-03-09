@@ -7,10 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { fetchData } from "../../utils/fetch/fetch.js";
+import { fetchData, hideLoader, showError, showLoader, } from "../../utils/fetch/fetch.js";
 import { BASE_URL } from "../../consts/consts.js";
 const animalNavigationCarousel = document.querySelector(".animal-navigation-carousel");
 const downArrow = document.querySelector(".down-arrow");
+const videoHeading = document.querySelector(".video-heading");
+const liveCams = document.querySelector(".live-animal-cams");
 const navigation = document.querySelector(".animal-navigation");
 const openCloseBtn = document.querySelector(".btn-open-close");
 function addOpenClass() {
@@ -82,14 +84,20 @@ function animalNavigationItem(animal, commonName) {
 function fetchAnimals() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            showLoader(videoHeading, "after");
             const { data } = yield fetchData(`${BASE_URL}/pets`);
-            console.log(data);
             data.forEach((animal) => {
                 const element = animalNavigationItem(animal.name, animal.commonName);
                 animalNavigationCarousel === null || animalNavigationCarousel === void 0 ? void 0 : animalNavigationCarousel.insertAdjacentHTML("beforeend", element);
             });
         }
-        catch (err) { }
+        catch (err) {
+            liveCams === null || liveCams === void 0 ? void 0 : liveCams.classList.add("hide");
+            showError(videoHeading, "after");
+        }
+        finally {
+            hideLoader();
+        }
     });
 }
 fetchAnimals();

@@ -39,6 +39,23 @@ textarea {
   resize: none;
 }
 
+.error-message,
+.loader {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.error-message {
+  color: #d32f2f;
+}
+
+.loader {
+  color: #00a092;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -543,6 +560,9 @@ main .navigation-and-videos .animal-container .video-heading > button {
 }
 main .navigation-and-videos .animal-container .video-heading > button:hover {
   background-color: #d26004;
+}
+main .navigation-and-videos .animal-container .live-animal-cams.hide {
+  display: none;
 }
 main .navigation-and-videos .animal-container .large-youtube-link {
   display: flex;

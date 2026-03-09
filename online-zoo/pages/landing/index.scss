@@ -149,19 +149,6 @@ main {
     }
   }
 
-  .error-message,
-  .loader {
-    @include subHeaderStyles();
-  }
-
-  .error-message {
-    color: #d32f2f;
-  }
-
-  .loader {
-    color: $lightGreen;
-  }
-
   .pets-carousel-container {
     @include flexColumn(5rem);
     align-items: center;

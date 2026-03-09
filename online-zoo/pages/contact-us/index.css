@@ -39,6 +39,23 @@ textarea {
   resize: none;
 }
 
+.error-message,
+.loader {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.error-message {
+  color: #d32f2f;
+}
+
+.loader {
+  color: #00a092;
+}
+
 header {
   display: flex;
   flex-direction: column;

@@ -210,6 +210,10 @@ main {
         }
       }
 
+      .live-animal-cams.hide {
+        display: none;
+      }
+
       .large-youtube-link {
         @include flexAlignCenter();
         justify-content: center;
