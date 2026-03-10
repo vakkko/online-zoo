@@ -331,7 +331,8 @@ main {
     }
   }
 
-  .error-message {
+  .error-message,
+  .loader {
     @include paddingLeftRight;
   }
 
