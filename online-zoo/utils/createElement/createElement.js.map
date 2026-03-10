@@ -1,1 +1,0 @@
-{"version":3,"file":"createElement.js","sourceRoot":"","sources":["createElement.ts"],"names":[],"mappings":"AAAA,MAAM,UAAU,aAAa,CAAC,WAAmB,EAAE,SAAkB;IACnE,MAAM,OAAO,GAAG,QAAQ,CAAC,aAAa,CAAC,WAAW,CAAC,CAAC;IACpD,IAAI,SAAS,EAAE,CAAC;QACd,OAAO,CAAC,YAAY,CAAC,OAAO,EAAE,SAAS,CAAC,CAAC;IAC3C,CAAC;IACD,OAAO,OAAO,CAAC;AACjB,CAAC"}
