@@ -18,11 +18,19 @@ const liveCams = document.querySelector<HTMLElement>(".live-animal-cams");
 const animalHeading = document.querySelector<HTMLElement>(
   ".video-heading > h2",
 );
-
 const navigation = document.querySelector<HTMLElement>(".animal-navigation");
+
 const openCloseBtn = document.querySelector<HTMLElement>(".btn-open-close");
+
 const infoContainer = document.querySelector<HTMLElement>(".info-container");
 const didYouKnowParagraph = document.querySelector<HTMLElement>(".info > p");
+const animalCommonName = document.getElementById("aniaml-common-name");
+const animalScientificName = document.getElementById("animal-scientific-name");
+const animalType = document.getElementById("animal-type");
+const animalSize = document.getElementById("animal-size");
+const animalDiet = document.getElementById("animal-diet");
+const animalHabitat = document.getElementById("animal-habitat");
+const animalRange = document.getElementById("animal-range");
 
 const donationContainer = document.querySelector<HTMLElement>(
   ".donation-container",
@@ -193,8 +201,14 @@ function updateAnimalDisplay(animal: AnimalDetailsInterface): void {
   if (animalHeading)
     animalHeading.textContent = `live ${animal.commonName} cams`;
   if (didYouKnowParagraph) didYouKnowParagraph.innerText = animal.description;
-  const animalDescriptionList = animalDetailDescription(animal);
-  if (infoContainer) infoContainer.innerHTML = animalDescriptionList;
+  if (animalCommonName) animalCommonName.textContent = animal.commonName;
+  if (animalScientificName)
+    animalScientificName.textContent = animal.scientificName;
+  if (animalType) animalType.textContent = animal.type;
+  if (animalSize) animalSize.textContent = animal.size;
+  if (animalDiet) animalDiet.textContent = animal.diet;
+  if (animalHabitat) animalHabitat.textContent = animal.habitat;
+  if (animalRange) animalRange.textContent = animal.range;
 }
 
 animalNavigationCarousel?.addEventListener("click", (e) => {
@@ -204,7 +218,6 @@ animalNavigationCarousel?.addEventListener("click", (e) => {
     ".animal-nav-link.active",
   );
   let errorMessage = document.querySelector(".error-message");
-  console.log(errorMessage);
   errorMessage?.classList.add("hidden");
 
   activeAnimalNavLink?.classList.remove("active");
@@ -216,7 +229,6 @@ animalNavigationCarousel?.addEventListener("click", (e) => {
     try {
       showLoader(donationContainer, "after");
       const { data } = await fetchData(`${BASE_URL}/pets/${id}`);
-      console.log(data);
 
       if (typeof data === "object") {
         infoContainer?.classList.remove("hidden");
@@ -225,6 +237,7 @@ animalNavigationCarousel?.addEventListener("click", (e) => {
       }
     } catch (err) {
       showError(donationContainer, "after");
+      infoContainer?.classList.add("hidden");
     } finally {
       hideLoader();
     }

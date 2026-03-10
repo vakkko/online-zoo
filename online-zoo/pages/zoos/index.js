@@ -16,10 +16,15 @@ const liveCams = document.querySelector(".live-animal-cams");
 const animalHeading = document.querySelector(".video-heading > h2");
 const navigation = document.querySelector(".animal-navigation");
 const openCloseBtn = document.querySelector(".btn-open-close");
-let firstAnimalId;
 const infoContainer = document.querySelector(".info-container");
 const didYouKnowParagraph = document.querySelector(".info > p");
-const animalDetailedInfo = document.querySelector(".animal-detailed-info > div");
+const animalCommonName = document.getElementById("aniaml-common-name");
+const animalScientificName = document.getElementById("animal-scientific-name");
+const animalType = document.getElementById("animal-type");
+const animalSize = document.getElementById("animal-size");
+const animalDiet = document.getElementById("animal-diet");
+const animalHabitat = document.getElementById("animal-habitat");
+const animalRange = document.getElementById("animal-range");
 const donationContainer = document.querySelector(".donation-container");
 function addOpenClass() {
     navigation === null || navigation === void 0 ? void 0 : navigation.classList.toggle("open");
@@ -174,8 +179,20 @@ function updateAnimalDisplay(animal) {
         animalHeading.textContent = `live ${animal.commonName} cams`;
     if (didYouKnowParagraph)
         didYouKnowParagraph.innerText = animal.description;
-    const animalDescriptionList = animalDetailDescription(animal);
-    infoContainer === null || infoContainer === void 0 ? void 0 : infoContainer.insertAdjacentHTML("beforeend", animalDescriptionList);
+    if (animalCommonName)
+        animalCommonName.textContent = animal.commonName;
+    if (animalScientificName)
+        animalScientificName.textContent = animal.scientificName;
+    if (animalType)
+        animalType.textContent = animal.type;
+    if (animalSize)
+        animalSize.textContent = animal.size;
+    if (animalDiet)
+        animalDiet.textContent = animal.diet;
+    if (animalHabitat)
+        animalHabitat.textContent = animal.habitat;
+    if (animalRange)
+        animalRange.textContent = animal.range;
 }
 animalNavigationCarousel === null || animalNavigationCarousel === void 0 ? void 0 : animalNavigationCarousel.addEventListener("click", (e) => {
     const target = e.target.closest(".animal-nav-link");
@@ -183,7 +200,6 @@ animalNavigationCarousel === null || animalNavigationCarousel === void 0 ? void 
         return;
     let activeAnimalNavLink = document.querySelector(".animal-nav-link.active");
     let errorMessage = document.querySelector(".error-message");
-    console.log(errorMessage);
     errorMessage === null || errorMessage === void 0 ? void 0 : errorMessage.classList.add("hidden");
     activeAnimalNavLink === null || activeAnimalNavLink === void 0 ? void 0 : activeAnimalNavLink.classList.remove("active");
     target.classList.add("active");
@@ -194,7 +210,6 @@ animalNavigationCarousel === null || animalNavigationCarousel === void 0 ? void 
             try {
                 showLoader(donationContainer, "after");
                 const { data } = yield fetchData(`${BASE_URL}/pets/${id}`);
-                console.log(data);
                 if (typeof data === "object") {
                     infoContainer === null || infoContainer === void 0 ? void 0 : infoContainer.classList.remove("hidden");
                     updateAnimalDisplay(data);
@@ -202,6 +217,7 @@ animalNavigationCarousel === null || animalNavigationCarousel === void 0 ? void 
             }
             catch (err) {
                 showError(donationContainer, "after");
+                infoContainer === null || infoContainer === void 0 ? void 0 : infoContainer.classList.add("hidden");
             }
             finally {
                 hideLoader();
