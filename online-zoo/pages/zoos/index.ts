@@ -3,6 +3,7 @@ import { fetchAnimals, getAnimalById } from "./zoos.dom.js";
 const animalNavigationCarousel = document.querySelector<HTMLElement>(
   ".animal-navigation-carousel",
 );
+
 const downArrow = document.querySelector<HTMLElement>(".down-arrow");
 const navigation = document.querySelector<HTMLElement>(".animal-navigation");
 const openCloseBtn = document.querySelector<HTMLElement>(".btn-open-close");

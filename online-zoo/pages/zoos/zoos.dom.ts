@@ -5,6 +5,9 @@ import {
   showLoader,
 } from "../../utils/fetch/fetch.js";
 
+import * as L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
 import { BASE_URL } from "../../consts/consts.js";
 
 import type { animal } from "../landing/index.interface.js";
@@ -31,6 +34,16 @@ const animalSize = document.getElementById("animal-size");
 const animalDiet = document.getElementById("animal-diet");
 const animalHabitat = document.getElementById("animal-habitat");
 const animalRange = document.getElementById("animal-range");
+const animalDetailedDescription = document.querySelector<HTMLElement>(
+  ".detailed-description",
+);
+
+let mapInstance: L.Map | null = null;
+const mapElement = document.getElementById("map");
+const mapContainer = document.getElementById("map-container");
+const btnViewMap = document.querySelector(".view-map");
+const btnCancelMap = document.querySelector(".btn-cancel-map");
+const overlay = document.getElementById("overlay");
 
 export function animalNavigationItem(
   animal: string,
@@ -145,6 +158,16 @@ export async function fetchAnimals() {
   }
 }
 
+function parseCoordinate(coordString: string) {
+  let number = parseFloat(coordString.replace(/[^\d.]/g, ""));
+
+  if (coordString.includes("S") || coordString.includes("W")) {
+    number = -number;
+  }
+
+  return number;
+}
+
 function updateAnimalDisplay(animal: AnimalDetailsInterface): void {
   if (animalHeading)
     animalHeading.textContent = `live ${animal.commonName} cams`;
@@ -157,4 +180,32 @@ function updateAnimalDisplay(animal: AnimalDetailsInterface): void {
   if (animalDiet) animalDiet.textContent = animal.diet;
   if (animalHabitat) animalHabitat.textContent = animal.habitat;
   if (animalRange) animalRange.textContent = animal.range;
+  if (animalDetailedDescription)
+    animalDetailedDescription.textContent = animal.detailedDescription;
+
+  if (mapElement) {
+    const latitude = parseCoordinate(animal.latitude);
+    const longitude = parseCoordinate(animal.longitude);
+
+    console.log("lat", latitude);
+    console.log("long", longitude);
+
+    if (mapInstance) mapInstance.remove();
+
+    mapInstance = L.map(mapElement).setView([latitude, longitude], 20);
+
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap",
+    }).addTo(mapInstance);
+  }
 }
+
+btnViewMap?.addEventListener("click", () => {
+  mapContainer?.classList.remove("hidden");
+  overlay?.classList.remove("hidden");
+});
+
+btnCancelMap?.addEventListener("click", () => {
+  mapContainer?.classList.add("hidden");
+  overlay?.classList.add("hidden");
+});

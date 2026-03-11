@@ -418,6 +418,26 @@ main {
       padding: 0 4rem;
     }
   }
+  #map-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    z-index: 1000;
+
+    .btn-cancel-map {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1010;
+    }
+    #map {
+      height: 600px;
+      width: 100%;
+      z-index: 1005;
+    }
+  }
 }
 .donation-pop-up-container {
   display: none;
