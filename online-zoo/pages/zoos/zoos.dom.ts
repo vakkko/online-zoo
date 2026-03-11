@@ -187,9 +187,6 @@ function updateAnimalDisplay(animal: AnimalDetailsInterface): void {
     const latitude = parseCoordinate(animal.latitude);
     const longitude = parseCoordinate(animal.longitude);
 
-    console.log("lat", latitude);
-    console.log("long", longitude);
-
     if (mapInstance) mapInstance.remove();
 
     mapInstance = L.map(mapElement).setView([latitude, longitude], 20);
@@ -200,12 +197,21 @@ function updateAnimalDisplay(animal: AnimalDetailsInterface): void {
   }
 }
 
+function closeMapContainer(): void {
+  mapContainer?.classList.add("hidden");
+  overlay?.classList.add("hidden");
+}
+
 btnViewMap?.addEventListener("click", () => {
   mapContainer?.classList.remove("hidden");
   overlay?.classList.remove("hidden");
 });
 
-btnCancelMap?.addEventListener("click", () => {
-  mapContainer?.classList.add("hidden");
-  overlay?.classList.add("hidden");
+btnCancelMap?.addEventListener("click", closeMapContainer);
+
+document.addEventListener("keydown", (event) => {
+  const keyName = event.key;
+  if (keyName === "Escape" && !mapContainer?.classList.contains("hidden")) {
+    closeMapContainer();
+  }
 });
