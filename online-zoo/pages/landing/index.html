@@ -577,22 +577,27 @@
               <div class="amount-box">
                 <h5><span>*</span>Choose your donation amount:</h5>
                 <div>
-                  <button>$10</button>
-                  <button>$20</button>
-                  <button>$30</button>
-                  <button>$50</button>
-                  <button>$80</button>
-                  <button>$100</button>
+                  <button value="10">$10</button>
+                  <button value="20">$20</button>
+                  <button value="30">$30</button>
+                  <button value="50">$50</button>
+                  <button value="80">$80</button>
+                  <button value="100">$100</button>
                 </div>
               </div>
               <div class="other-amount">
                 <label for="amount">Other amount</label>
-                <input type="text" id="amount" autocomplete="off" />
+                <input type="text" id="amount" autocomplete="off" /><br />
+                <p id="err-message-amount" class="hidden">
+                  Other amount value should be only number
+                </p>
               </div>
               <div class="select-container">
                 <label for="pet">for special pet</label>
-                <select aria-placeholder="name" name="pet" id="pet">
-                  <option selected hidden>Choose your favourite</option>
+                <select aria-placeholder="name" name="pet" required id="pet">
+                  <option value="" selected hidden>
+                    Choose your favourite
+                  </option>
                   <option>Lukas the Panda</option>
                   <option>Andy the Lemur</option>
                   <option>Clen the Gorilla</option>
@@ -640,7 +645,7 @@
                 </clipPath>
               </defs>
             </svg>
-            <button class="btn-next">
+            <button disabled class="btn-next">
               next
               <svg
                 width="25"
@@ -723,7 +728,7 @@
               </defs>
             </svg>
             <button class="btn-back">Back</button>
-            <button class="btn-next">
+            <button disabled class="btn-next">
               next
               <svg
                 width="25"

@@ -901,6 +901,7 @@ main {
         .other-amount,
         .select-container {
           @include flexAlignCenter(4rem);
+          flex-wrap: wrap;
           label {
             background-color: #80cfc8;
           }
@@ -909,6 +910,10 @@ main {
         .other-amount {
           label {
             background-color: #00a092;
+          }
+          #err-message-amount {
+            color: #dc3545;
+            font-size: 1.3rem;
           }
         }
 

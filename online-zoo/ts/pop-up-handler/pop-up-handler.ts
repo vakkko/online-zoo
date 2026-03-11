@@ -39,6 +39,13 @@ const backBtnStep2 = document.querySelector<HTMLElement>(
 const backBtnStep3 = document.querySelector<HTMLElement>(
   ".donation-pop-up-step-3 .btn-back",
 );
+const amountQuantities =
+  document.querySelector<HTMLElement>(".amount-box > div");
+let donationAmountQuantity: null | string = null;
+let otherAmount = document.getElementById("amount");
+const otherAmountErrMsg = document.getElementById("err-message-amount");
+const selectPetContainer = document.getElementById("pet") as HTMLSelectElement;
+const otherAmountRegex = /^\d+$/;
 
 donateBtns.forEach((btn) => {
   if (popUpContainer && popUp && body && overlay) {
@@ -77,6 +84,7 @@ otherAmountBtn?.addEventListener("click", () => {
 nextBtnStep1?.addEventListener("click", () => {
   if (popUpStep1 && popUpStep2) {
     showHIdePopUps(popUpStep1, popUpStep2);
+    validateStep1();
   }
 });
 
@@ -97,6 +105,45 @@ backBtnStep2?.addEventListener("click", () => {
     showHIdePopUps(popUpStep2, popUpStep1);
   }
 });
+
 backBtnStep3?.addEventListener("click", () => {
   if (popUpStep3 && popUpStep2) showHIdePopUps(popUpStep3, popUpStep2);
 });
+
+amountQuantities?.addEventListener("click", (event) => {
+  const target = event.target as HTMLButtonElement;
+  if (target.value) {
+    donationAmountQuantity = target.value;
+    validateStep1();
+  }
+});
+
+otherAmount?.addEventListener("blur", (e) => {
+  const input = e.target as HTMLInputElement;
+  if (!otherAmountRegex.test(input.value)) {
+    otherAmountErrMsg?.classList.remove("hidden");
+    donationAmountQuantity = null;
+  } else {
+    otherAmountErrMsg?.classList.add("hidden");
+  }
+  console.log("inside");
+  validateStep1();
+});
+
+selectPetContainer?.addEventListener("change", () => {
+  if (selectPetContainer?.value) {
+    validateStep1();
+  }
+});
+
+function validateStep1() {
+  const hasAmount =
+    donationAmountQuantity !== null ||
+    (otherAmount as HTMLInputElement).value !== "";
+
+  const hasPet = selectPetContainer && selectPetContainer.value !== "";
+
+  if (nextBtnStep1) {
+    (nextBtnStep1 as HTMLButtonElement).disabled = !(hasAmount && hasPet);
+  }
+}
