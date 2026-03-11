@@ -202,7 +202,8 @@ function closeMapContainer(): void {
   overlay?.classList.add("hidden");
 }
 
-btnViewMap?.addEventListener("click", () => {
+btnViewMap?.addEventListener("click", (event) => {
+  event.stopPropagation();
   mapContainer?.classList.remove("hidden");
   overlay?.classList.remove("hidden");
 });
@@ -214,4 +215,10 @@ document.addEventListener("keydown", (event) => {
   if (keyName === "Escape" && !mapContainer?.classList.contains("hidden")) {
     closeMapContainer();
   }
+});
+
+document.addEventListener("click", (event) => {
+  const isClickInsideMap = mapContainer?.contains(event.target as Node);
+  const mapContainerIsOpen = !mapContainer?.classList.contains("hidden");
+  if (!isClickInsideMap && mapContainerIsOpen) closeMapContainer();
 });
