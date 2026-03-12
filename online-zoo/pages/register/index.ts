@@ -18,15 +18,20 @@ const confirmPasswordInput = document.getElementById(
 const confirmPasswordErrMsg = document.querySelector<HTMLElement>(
   ".err-msg.confirmpassword",
 );
-const nameInput = document.getElementById("name") as HTMLInputElement;
+const nameInput = document.querySelector(
+  ".donation-pop-up-step-2#name",
+) as HTMLInputElement;
 const nameInputErrMsg = document.querySelector<HTMLElement>(".err-msg.name");
-const emailInput = document.getElementById("email") as HTMLInputElement;
+const emailInput = document.querySelector(
+  ".donation-pop-up-step-2#email",
+) as HTMLInputElement;
 const emailInputErrMsg = document.querySelector<HTMLElement>(".err-msg.email");
 
 const loginRegex: RegExp = /^[a-zA-Z][a-zA-Z]{2,}$/;
 const passwordRegexx: RegExp = /^(?=.*[^a-zA-Z0-9])[a-zA-Z].{5,}$/;
-const nameRegex: RegExp = /^[a-zA-Z]{3,}$/;
-const emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+export const nameRegex: RegExp = /^[a-zA-Z]{3,}$/;
+export const emailRegex: RegExp =
+  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 function validateConfirmPassword(): boolean {
   if (

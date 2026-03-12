@@ -1,3 +1,5 @@
+import { nameRegex, emailRegex } from "../../pages/register/index.js";
+
 const body = document.querySelector<HTMLBodyElement>("body");
 
 const overlay = document.querySelector<HTMLElement>("#overlay");
@@ -51,6 +53,8 @@ const userName = sessionStorage.getItem("name");
 const userEmail = sessionStorage.getItem("email");
 const nameInput = document.getElementById("name") as HTMLInputElement;
 const emailInput = document.getElementById("email") as HTMLInputElement;
+const nameError = document.querySelector(".err-msg.name");
+const emailError = document.querySelector(".err-msg.email");
 
 donateBtns.forEach((btn) => {
   if (popUpContainer && popUp && body && overlay) {
@@ -156,3 +160,12 @@ if (userName && userEmail) {
   if (nameInput) nameInput.value = userName;
   if (emailInput) emailInput.value = userEmail;
 }
+
+nameInput.addEventListener("blur", () => {
+  const nameInputValue = nameInput.value;
+  if (!nameRegex.test(nameInputValue)) {
+    nameError?.classList.remove("hidden");
+  } else {
+    nameError?.classList.add("hidden");
+  }
+});
