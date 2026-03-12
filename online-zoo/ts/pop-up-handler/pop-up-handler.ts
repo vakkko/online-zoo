@@ -156,9 +156,17 @@ function validateStep1() {
   }
 }
 
+function validateStep2() {
+  const validName = nameRegex.test(nameInput.value);
+  const validEmail = emailRegex.test(emailInput.value);
+
+  (nextBtnStep2 as HTMLButtonElement).disabled = !(validName && validEmail);
+}
+
 if (userName && userEmail) {
   if (nameInput) nameInput.value = userName;
   if (emailInput) emailInput.value = userEmail;
+  validateStep2();
 }
 
 nameInput.addEventListener("blur", () => {
@@ -168,4 +176,15 @@ nameInput.addEventListener("blur", () => {
   } else {
     nameError?.classList.add("hidden");
   }
+  validateStep2();
+});
+
+emailInput.addEventListener("blur", () => {
+  const emailInputValue = emailInput.value;
+  if (!emailRegex.test(emailInputValue)) {
+    emailError?.classList.remove("hidden");
+  } else {
+    emailError?.classList.add("hidden");
+  }
+  validateStep2();
 });
