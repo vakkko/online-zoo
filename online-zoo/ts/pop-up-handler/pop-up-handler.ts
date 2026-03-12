@@ -57,8 +57,11 @@ const nameError = document.querySelector(".err-msg.name");
 const emailError = document.querySelector(".err-msg.email");
 
 const creditCardInput = document.getElementById("card") as HTMLInputElement;
-const creditCardErrMsg = document.querySelector(".err-msg.card");
+const creditCartError = document.querySelector(".err-msg.card");
 const cardRegex = /^[0-9]+$/;
+
+const cvvInput = document.getElementById("cvv") as HTMLInputElement;
+const cvvError = document.querySelector(".err-msg.cvv");
 
 donateBtns.forEach((btn) => {
   if (popUpContainer && popUp && body && overlay) {
@@ -199,10 +202,21 @@ creditCardInput.addEventListener("blur", () => {
 
   if (
     (!cardRegex.test(creditCardInputValue) || splited.length < 16) &&
-    creditCardErrMsg
+    creditCartError
   ) {
-    creditCardErrMsg?.classList.remove("hidden");
+    creditCartError?.classList.remove("hidden");
   } else {
-    creditCardErrMsg?.classList.add("hidden");
+    creditCartError?.classList.add("hidden");
+  }
+});
+
+cvvInput?.addEventListener("blur", () => {
+  const cvvInputValue = cvvInput.value;
+  const splited = cvvInputValue?.split("");
+
+  if (!cardRegex.test(cvvInputValue) || (splited.length < 3 && cvvError)) {
+    cvvError?.classList.remove("hidden");
+  } else {
+    cvvError?.classList.add("hidden");
   }
 });
