@@ -47,6 +47,11 @@ const otherAmountErrMsg = document.getElementById("err-message-amount");
 const selectPetContainer = document.getElementById("pet") as HTMLSelectElement;
 const otherAmountRegex = /^\d+$/;
 
+const userName = sessionStorage.getItem("name");
+const userEmail = sessionStorage.getItem("email");
+const nameInput = document.getElementById("name") as HTMLInputElement;
+const emailInput = document.getElementById("email") as HTMLInputElement;
+
 donateBtns.forEach((btn) => {
   if (popUpContainer && popUp && body && overlay) {
     btn.addEventListener("click", () => {
@@ -126,7 +131,6 @@ otherAmount?.addEventListener("blur", (e) => {
   } else {
     otherAmountErrMsg?.classList.add("hidden");
   }
-  console.log("inside");
   validateStep1();
 });
 
@@ -146,4 +150,9 @@ function validateStep1() {
   if (nextBtnStep1) {
     (nextBtnStep1 as HTMLButtonElement).disabled = !(hasAmount && hasPet);
   }
+}
+
+if (userName && userEmail) {
+  if (nameInput) nameInput.value = userName;
+  if (emailInput) emailInput.value = userEmail;
 }
