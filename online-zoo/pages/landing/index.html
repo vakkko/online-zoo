@@ -763,13 +763,26 @@
                 <label for="card"
                   ><span class="asterisk">*</span> Credit Card Number</label
                 ><br />
-                <input type="text" id="card" placeholder="" />
+                <input type="text" id="card" maxlength="16" placeholder="" />
+                <p class="err-msg card hidden">
+                  Card Number Should be exactly 16 digits long and contain only
+                  numeric characters
+                </p>
               </div>
               <div>
                 <label for="cvvNumber"
                   ><span class="asterisk">*</span> CVVNumber</label
                 ><br />
-                <input type="text" id="cvvNumber" placeholder="" />
+                <input
+                  type="text"
+                  id="cvvNumber"
+                  maxlength="3"
+                  placeholder=""
+                />
+                <p class="err-msg cvv hidden">
+                  CVV Should be exactly 3 digits long and contain only numeric
+                  characters
+                </p>
               </div>
               <div class="select-container">
                 <label for="month"

@@ -56,6 +56,10 @@ const emailInput = document.getElementById("email") as HTMLInputElement;
 const nameError = document.querySelector(".err-msg.name");
 const emailError = document.querySelector(".err-msg.email");
 
+const creditCardInput = document.getElementById("card") as HTMLInputElement;
+const creditCardErrMsg = document.querySelector(".err-msg.card");
+const cardRegex = /^[0-9]+$/;
+
 donateBtns.forEach((btn) => {
   if (popUpContainer && popUp && body && overlay) {
     btn.addEventListener("click", () => {
@@ -187,4 +191,18 @@ emailInput.addEventListener("blur", () => {
     emailError?.classList.add("hidden");
   }
   validateStep2();
+});
+
+creditCardInput.addEventListener("blur", () => {
+  const creditCardInputValue = creditCardInput.value;
+  const splited = creditCardInputValue.split("");
+
+  if (
+    (!cardRegex.test(creditCardInputValue) || splited.length < 16) &&
+    creditCardErrMsg
+  ) {
+    creditCardErrMsg?.classList.remove("hidden");
+  } else {
+    creditCardErrMsg?.classList.add("hidden");
+  }
 });
