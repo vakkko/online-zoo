@@ -71,6 +71,7 @@ const currentYear = dateObj.getFullYear();
 
 const cardYear = document.getElementById("card-year") as HTMLSelectElement;
 const cardMonth = document.getElementById("card-month") as HTMLSelectElement;
+const saveCardCheckBox = document.getElementById("save-card-checkbox");
 
 donateBtns.forEach((btn) => {
   if (popUpContainer && popUp && body && overlay) {
@@ -255,6 +256,12 @@ if (!popUpStep3?.classList.contains("hidden")) {
     const option = new Option(year);
     option.setAttribute("value", year);
     cardYear?.append(option);
+  }
+
+  if (userName && userEmail) {
+    saveCardCheckBox?.classList.remove("hidden");
+  } else {
+    saveCardCheckBox?.classList.add("hidden");
   }
 }
 

@@ -1026,6 +1026,12 @@ main {
       }
     }
 
+    #save-card-checkbox {
+      @include regularText();
+      @include flexAlignCenter(1rem);
+      margin-top: 3rem;
+    }
+
     .next-steps {
       justify-content: space-between;
       gap: 11rem;

@@ -71,8 +71,7 @@ signInForm?.addEventListener("submit", (e) => {
         const email = data.user.email;
         sessionStorage.setItem("name", name);
         sessionStorage.setItem("email", email);
-        window.location.href =
-          "http://127.0.0.1:5500/online-zoo/pages/landing/index.html";
+        window.location.href = "../landing/index.html";
       } catch (err) {
         console.error(err);
       }
