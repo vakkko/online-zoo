@@ -63,6 +63,11 @@ const cardRegex = /^[0-9]+$/;
 const cvvInput = document.getElementById("cvv") as HTMLInputElement;
 const cvvError = document.querySelector(".err-msg.cvv");
 
+const dateObj = new Date();
+const currentYear = dateObj.getFullYear();
+
+const cardYear = document.getElementById("card-year");
+
 donateBtns.forEach((btn) => {
   if (popUpContainer && popUp && body && overlay) {
     btn.addEventListener("click", () => {
@@ -220,3 +225,14 @@ cvvInput?.addEventListener("blur", () => {
     cvvError?.classList.add("hidden");
   }
 });
+
+if (!popUpStep3?.classList.contains("hidden")) {
+  for (let i = 4; i >= 0; i--) {
+    const option = new Option(String(currentYear - i));
+    cardYear?.append(option);
+  }
+  for (let i = 1; i <= 7; i++) {
+    const option = new Option(String(currentYear + i));
+    cardYear?.append(option);
+  }
+}
