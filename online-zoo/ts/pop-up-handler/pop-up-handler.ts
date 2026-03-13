@@ -66,7 +66,8 @@ const cvvError = document.querySelector(".err-msg.cvv");
 const dateObj = new Date();
 const currentYear = dateObj.getFullYear();
 
-const cardYear = document.getElementById("card-year");
+const cardYear = document.getElementById("card-year") as HTMLSelectElement;
+const cardMonth = document.getElementById("card-month") as HTMLSelectElement;
 
 donateBtns.forEach((btn) => {
   if (popUpContainer && popUp && body && overlay) {
@@ -163,9 +164,7 @@ function validateStep1() {
 
   const hasPet = selectPetContainer && selectPetContainer.value !== "";
 
-  if (nextBtnStep1) {
-    (nextBtnStep1 as HTMLButtonElement).disabled = !(hasAmount && hasPet);
-  }
+  (nextBtnStep1 as HTMLButtonElement).disabled = !(hasAmount && hasPet);
 }
 
 function validateStep2() {
@@ -213,6 +212,7 @@ creditCardInput.addEventListener("blur", () => {
   } else {
     creditCartError?.classList.add("hidden");
   }
+  validateStep3();
 });
 
 cvvInput?.addEventListener("blur", () => {
@@ -224,15 +224,43 @@ cvvInput?.addEventListener("blur", () => {
   } else {
     cvvError?.classList.add("hidden");
   }
+  validateStep3();
 });
 
 if (!popUpStep3?.classList.contains("hidden")) {
   for (let i = 4; i >= 0; i--) {
-    const option = new Option(String(currentYear - i));
+    const year = String(currentYear - i);
+    const option = new Option(year);
+    option.setAttribute("value", year);
     cardYear?.append(option);
   }
   for (let i = 1; i <= 7; i++) {
-    const option = new Option(String(currentYear + i));
+    const year = String(currentYear + i);
+    const option = new Option(year);
+    option.setAttribute("value", year);
     cardYear?.append(option);
   }
+}
+
+cardMonth.addEventListener("change", () => {
+  validateStep3();
+});
+cardYear.addEventListener("change", () => {
+  validateStep3();
+});
+
+function validateStep3() {
+  const validCreditCardNumber =
+    cardRegex.test(creditCardInput.value) &&
+    creditCardInput.value.split("").length === 16;
+  const validCvv = cardRegex.test(cvvInput.value) && cvvInput.value;
+  const yearValue = cardYear.value;
+  const monthValue = cardMonth.value;
+
+  (completeDonation as HTMLButtonElement).disabled = !(
+    validCreditCardNumber &&
+    validCvv &&
+    yearValue &&
+    monthValue
+  );
 }

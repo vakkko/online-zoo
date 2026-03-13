@@ -783,20 +783,20 @@
                 <label for="month"
                   ><span class="asterisk">*</span> Expiration Date</label
                 ><br />
-                <select name="month">
-                  <option hidden selected>Month</option>
-                  <option>January</option>
-                  <option>February</option>
-                  <option>March</option>
-                  <option>April</option>
-                  <option>May</option>
-                  <option>June</option>
-                  <option>July</option>
-                  <option>August</option>
-                  <option>September</option>
-                  <option>October</option>
-                  <option>November</option>
-                  <option>December</option>
+                <select id="card-month" name="card-month" required>
+                  <option value="" hidden selected>Month</option>
+                  <option value="01">January</option>
+                  <option value="02">February</option>
+                  <option value="03">March</option>
+                  <option value="04">April</option>
+                  <option value="05">May</option>
+                  <option value="06">June</option>
+                  <option value="07">July</option>
+                  <option value="08">August</option>
+                  <option value="09">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
                 </select>
                 <img
                   src="../../assets/images/donation-pop-up/arrow-down.png"
@@ -805,8 +805,8 @@
                 />
               </div>
               <div class="select-container year">
-                <select id="card-year" name="card-year">
-                  <option selected hidden>Year</option>
+                <select id="card-year" name="card-year" required>
+                  <option value="" selected hidden>Year</option>
                 </select>
                 <img
                   src="../../assets/images/donation-pop-up/arrow-down.png"
@@ -857,7 +857,7 @@
               </defs>
             </svg>
             <button class="btn-back">Back</button>
-            <button class="btn-complete-donation">
+            <button disabled class="btn-complete-donation">
               complete donation
               <svg
                 width="25"
