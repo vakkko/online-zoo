@@ -1,4 +1,7 @@
+import { BASE_URL } from "../../consts/consts.js";
+import type { animal } from "../../pages/landing/index.interface.js";
 import { nameRegex, emailRegex } from "../../pages/register/index.js";
+import { fetchData } from "../../utils/fetch/fetch.js";
 
 const body = document.querySelector<HTMLBodyElement>("body");
 
@@ -131,6 +134,19 @@ backBtnStep2?.addEventListener("click", () => {
 backBtnStep3?.addEventListener("click", () => {
   if (popUpStep3 && popUpStep2) showHIdePopUps(popUpStep3, popUpStep2);
 });
+
+if (!popUpStep1?.classList.contains("hidden")) {
+  async function getAnimals() {
+    const { data }: { data: animal[] } = await fetchData(`${BASE_URL}/pets`);
+    data.forEach((animal) => {
+      const optionValue = animal.name + ", " + animal.commonName;
+      const option = new Option(optionValue);
+      option.setAttribute("value", String(animal.id));
+      selectPetContainer.append(option);
+    });
+  }
+  getAnimals();
+}
 
 amountQuantities?.addEventListener("click", (event) => {
   const target = event.target as HTMLButtonElement;
