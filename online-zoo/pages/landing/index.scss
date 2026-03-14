@@ -828,30 +828,29 @@ main {
 
   .donation-pop-up-step-1,
   .donation-pop-up-step-3 {
+    select {
+      @include regularText;
+      border: 1px solid $black;
+      border-radius: 5px;
+      flex-grow: 1;
+      padding: 1.9rem;
+      text-align: center;
+      color: #a4a8ae;
+      appearance: none;
+      cursor: pointer;
+    }
+    .select-arrow {
+      position: absolute;
+      right: 0;
+      padding: 2.9rem 0.8rem 2.8rem;
+      background-color: $lightGreen;
+      pointer-events: none;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-left: 1px solid $black;
+    }
     .select-container {
       position: relative;
-
-      select {
-        @include regularText;
-        border: 1px solid $black;
-        border-radius: 5px;
-        flex-grow: 1;
-        padding: 1.9rem;
-        text-align: center;
-        color: #a4a8ae;
-        appearance: none;
-        cursor: pointer;
-      }
-      .select-arrow {
-        position: absolute;
-        right: 0;
-        padding: 2.9rem 0.8rem 2.8rem;
-        background-color: $lightGreen;
-        pointer-events: none;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        border-left: 1px solid $black;
-      }
     }
   }
 
@@ -1000,6 +999,20 @@ main {
 
   .donation-pop-up-step-3 {
     display: none;
+
+    .select-container.saved-card {
+      align-self: flex-start;
+      width: fit-content;
+      margin-top: 2rem;
+
+      img {
+        background-color: #80cfc8;
+      }
+
+      #saved-cards {
+        padding: 1.9rem 7rem;
+      }
+    }
     form {
       display: grid;
       grid-template-columns: repeat(3, 1fr);

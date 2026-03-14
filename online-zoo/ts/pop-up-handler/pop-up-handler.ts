@@ -76,6 +76,10 @@ const currentYear = dateObj.getFullYear();
 const cardYear = document.getElementById("card-year") as HTMLSelectElement;
 const cardMonth = document.getElementById("card-month") as HTMLSelectElement;
 const saveCardCheckBox = document.getElementById("save-card-checkbox");
+const savedCards = document.getElementById("saved-cards");
+const savedCardsContainer = document.querySelector(
+  ".select-container.saved-card",
+);
 
 donateBtns.forEach((btn) => {
   if (popUpContainer && popUp && body && overlay) {
@@ -199,6 +203,16 @@ if (userName && userEmail) {
   if (nameInput) nameInput.value = userName;
   if (emailInput) emailInput.value = userEmail;
   validateStep2();
+  savedCardsContainer?.classList.remove("hidden");
+  const savedCardsFromStorage = localStorage.getItem("savedCards");
+  if (savedCardsFromStorage) {
+    const parsedSavedCard: SavedCard[] = JSON.parse(savedCardsFromStorage);
+    parsedSavedCard.forEach((card) => {
+      const option = new Option(card.maskedNumber);
+      option.setAttribute("value", card.maskedNumber);
+      savedCards?.append(option);
+    });
+  }
 }
 
 nameInput.addEventListener("blur", () => {
@@ -327,5 +341,23 @@ saveCardCheckBox?.addEventListener("change", (event) => {
 
   if (target.checked) {
     saveCard();
+  }
+});
+
+savedCards?.addEventListener("change", (event) => {
+  const target = event.target as HTMLInputElement;
+  const cardNumber = target.value;
+  const savedCardsFromStorage = localStorage.getItem("savedCards");
+  if (savedCardsFromStorage) {
+    const parsedSavedCard: SavedCard[] = JSON.parse(savedCardsFromStorage);
+    const card = parsedSavedCard.find(
+      (creditCard) => creditCard.maskedNumber === cardNumber,
+    );
+    if (card) {
+      creditCardInput.value = card.maskedNumber;
+      cvvInput.value = card.cvv;
+      cardMonth.value = card.month;
+      cardYear.value = card.year;
+    }
   }
 });
