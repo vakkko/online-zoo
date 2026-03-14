@@ -1,7 +1,11 @@
 import { BASE_URL } from "../../consts/consts.js";
-import type { animal } from "../../pages/landing/index.interface.js";
-import { nameRegex, emailRegex } from "../../pages/register/index.js";
+
 import { fetchData } from "../../utils/fetch/fetch.js";
+
+import { nameRegex, emailRegex } from "../../pages/register/index.js";
+
+import type { animal } from "../../pages/landing/index.interface.js";
+import type { SavedCard } from "./pop-up-handler.interface.js";
 
 const body = document.querySelector<HTMLBodyElement>("body");
 
@@ -272,6 +276,32 @@ cardYear.addEventListener("change", () => {
   validateStep3();
 });
 
+function saveCard() {
+  const isValid = validateStep3();
+  if (!isValid) return;
+  const number = creditCardInput.value;
+  const masked = `${number.slice(0, 4)} **** **** ${number.slice(-4)}`;
+  const cvv = cvvInput.value;
+  const year = cardYear.value;
+  const month = cardMonth.value;
+
+  const newCard: SavedCard = {
+    maskedNumber: masked,
+    cvv,
+    month,
+    year,
+  };
+
+  const existingCardsRaw = localStorage.getItem("savedCards");
+  const cards: SavedCard[] = existingCardsRaw
+    ? JSON.parse(existingCardsRaw)
+    : [];
+
+  cards.push(newCard);
+
+  localStorage.setItem("savedCards", JSON.stringify(cards));
+}
+
 function validateStep3() {
   const validCreditCardNumber =
     cardRegex.test(creditCardInput.value) &&
@@ -280,10 +310,22 @@ function validateStep3() {
   const yearValue = cardYear.value;
   const monthValue = cardMonth.value;
 
-  (completeDonation as HTMLButtonElement).disabled = !(
+  const isValid = !!(
     validCreditCardNumber &&
     validCvv &&
     yearValue &&
     monthValue
   );
+
+  (completeDonation as HTMLButtonElement).disabled = !isValid;
+
+  return isValid;
 }
+
+saveCardCheckBox?.addEventListener("change", (event) => {
+  const target = event.target as HTMLInputElement;
+
+  if (target.checked) {
+    saveCard();
+  }
+});
