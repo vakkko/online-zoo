@@ -1060,4 +1060,17 @@ main {
       }
     }
   }
+  .donation-pop-up-step-4 {
+    background-color: white;
+    flex-direction: column;
+    gap: 4rem;
+    border-radius: 5px;
+    padding: 2rem 2rem 7rem;
+    .btn-cancel-step4 {
+      align-self: flex-end;
+    }
+    .donation-request-msg {
+      @include regularText();
+    }
+  }
 }

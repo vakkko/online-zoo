@@ -31,6 +31,9 @@ const popUpStep2 = document.querySelector<HTMLElement>(
 const popUpStep3 = document.querySelector<HTMLElement>(
   ".donation-pop-up-step-3",
 );
+const popUpStep4 = document.querySelector<HTMLElement>(
+  ".donation-pop-up-step-4",
+);
 
 const nextBtnStep1 = document.querySelector<HTMLElement>(
   ".donation-pop-up-step-1 .btn-next",
@@ -80,6 +83,10 @@ const savedCards = document.getElementById("saved-cards");
 const savedCardsContainer = document.querySelector(
   ".select-container.saved-card",
 );
+const donationRequestMsg = document.querySelector<HTMLElement>(
+  ".donation-request-msg",
+);
+const closeStep4 = document.querySelector(".btn-cancel-step4");
 
 const step1ErrMsg = document.querySelector<HTMLInputElement>(".err-msg.step-1");
 
@@ -131,8 +138,9 @@ nextBtnStep2?.addEventListener("click", () => {
 });
 
 completeDonation?.addEventListener("click", () => {
-  if (popUpStep3) {
-    closePopUp(popUpStep3);
+  if (popUpStep3 && popUpStep4) {
+    sendPetData();
+    showHIdePopUps(popUpStep3, popUpStep4);
   }
 });
 
@@ -301,7 +309,7 @@ function saveCard() {
   const isValid = validateStep3();
   if (!isValid) return;
   const number = creditCardInput.value;
-  const masked = `${number.slice(0, 4)} **** **** ${number.slice(-4)}`;
+  const masked = `${number.slice(0, 4)}********${number.slice(-4)}`;
   const cvv = cvvInput.value;
   const year = cardYear.value;
   const month = cardMonth.value;
@@ -367,4 +375,41 @@ savedCards?.addEventListener("change", (event) => {
       cardYear.value = card.year;
     }
   }
+});
+
+async function sendPetData() {
+  try {
+    const finalAmount = Number(
+      (otherAmount as HTMLInputElement).value || donationAmountQuantity,
+    );
+    const name = userName ? userName : nameInput.value;
+    const email = userEmail ? userEmail : emailInput.value;
+    const requestBody = {
+      name,
+      email,
+      amount: finalAmount,
+      petId: Number(selectPetContainer.value),
+    };
+    const response = await fetch(`${BASE_URL}/donation`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
+    });
+    if (!response.ok) throw new Error("Failed to fetch");
+
+    const { data } = await response.json();
+    if (data && donationRequestMsg)
+      donationRequestMsg.textContent = data.message;
+  } catch (err) {
+    console.error(err);
+    if (donationRequestMsg)
+      donationRequestMsg.textContent =
+        "Something went wrong. Please, try again later.";
+  }
+}
+
+closeStep4?.addEventListener("click", () => {
+  if (popUpStep4) closePopUp(popUpStep4);
 });
