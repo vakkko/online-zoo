@@ -81,6 +81,8 @@ const savedCardsContainer = document.querySelector(
   ".select-container.saved-card",
 );
 
+const step1ErrMsg = document.querySelector<HTMLInputElement>(".err-msg.step-1");
+
 donateBtns.forEach((btn) => {
   if (popUpContainer && popUp && body && overlay) {
     btn.addEventListener("click", () => {
@@ -146,13 +148,18 @@ backBtnStep3?.addEventListener("click", () => {
 
 if (!popUpStep1?.classList.contains("hidden")) {
   async function getAnimals() {
-    const { data }: { data: animal[] } = await fetchData(`${BASE_URL}/pets`);
-    data.forEach((animal) => {
-      const optionValue = animal.name + ", " + animal.commonName;
-      const option = new Option(optionValue);
-      option.setAttribute("value", String(animal.id));
-      selectPetContainer.append(option);
-    });
+    try {
+      const { data }: { data: animal[] } = await fetchData(`${BASE_URL}/pets`);
+      step1ErrMsg?.classList.add("hidden");
+      data.forEach((animal) => {
+        const optionValue = animal.name + ", " + animal.commonName;
+        const option = new Option(optionValue);
+        option.setAttribute("value", String(animal.id));
+        selectPetContainer.append(option);
+      });
+    } catch (err) {
+      step1ErrMsg?.classList.remove("hidden");
+    }
   }
   getAnimals();
 }
