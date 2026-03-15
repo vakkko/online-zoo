@@ -6,7 +6,6 @@ dist/
 build/
 out/
 *.tsbuildinfo
-*.css
 *.css.map
 *.js
 *.d.ts
