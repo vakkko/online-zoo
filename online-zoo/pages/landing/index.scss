@@ -62,20 +62,6 @@ body.no-scroll {
 main {
   margin: 15rem 0;
 
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 50;
-  }
-
-  .hidden {
-    display: none;
-  }
-
   .articles-donation {
     @include flexColumn(15rem);
     section {
@@ -167,6 +153,7 @@ main {
     @include flexColumn(5rem);
     align-items: center;
     margin-top: 13.6rem;
+    margin-bottom: 15rem;
     justify-content: center;
 
     .article-arrows {
@@ -226,12 +213,13 @@ main {
 
     .carousel-container {
       display: grid;
-      grid-template-columns: repeat(4, 44rem);
-      grid-template-rows: repeat(2, 74.7rem);
+      grid-template-rows: repeat(2, auto);
+      grid-auto-columns: 44rem;
+      grid-auto-flow: column;
       gap: 4rem;
       margin-left: 26rem;
       margin-bottom: 10rem;
-      overflow-x: scroll;
+      overflow-x: auto;
       width: 166rem;
       .carousel-item {
         @include flexColumn;
@@ -349,7 +337,6 @@ main {
     @include flexColumn(11.6rem);
     background-color: $darkBlue;
     color: $white;
-    margin-top: 15rem;
     padding-bottom: 10rem;
     padding-top: 9rem;
 
@@ -446,6 +433,25 @@ main {
     padding-bottom: 15rem;
     padding-top: 15rem;
 
+    .arrows-box.feedback {
+      margin-top: 3rem;
+      button {
+        border: 1px solid $white !important;
+
+        svg {
+          fill: white;
+        }
+
+        &:hover {
+          background-color: white;
+
+          svg {
+            fill: $darkBlue;
+          }
+        }
+      }
+    }
+
     .users-feedback {
       display: flex;
       align-items: flex-start;
@@ -464,11 +470,21 @@ main {
       }
     }
 
-    .feedbacks {
+    .feedback-carousel-cotainer {
+      @include flexColumn(6rem);
+    }
+
+    .feedback-carousel {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(1fr, 3);
+      grid-template-rows: repeat(2, auto);
+      grid-auto-columns: 51.3rem;
+      grid-auto-flow: column;
+      overflow-x: auto;
+      overflow-y: hidden;
+      width: 103rem;
       gap: 3rem;
+      padding-bottom: 2rem;
+
       & > section {
         @include flexColumn;
         align-items: flex-start;
@@ -493,24 +509,6 @@ main {
           line-height: 100%;
           letter-spacing: 0%;
           text-transform: uppercase;
-        }
-      }
-      .arrows-box.feedback {
-        margin-top: 3rem;
-        button {
-          border: 1px solid $white !important;
-
-          svg {
-            fill: white;
-          }
-
-          &:hover {
-            background-color: white;
-
-            svg {
-              fill: $darkBlue;
-            }
-          }
         }
       }
     }
@@ -541,7 +539,7 @@ main {
           }
         }
 
-        .feedbacks {
+        .feedback-carousel {
           padding-left: 10rem;
         }
       }
@@ -560,7 +558,7 @@ main {
         width: 100%;
         padding: 0 2rem;
       }
-      .feedbacks {
+      .feedback-carousel {
         overflow-x: hidden;
         grid-auto-flow: column;
         grid-template-rows: 1fr;
@@ -721,6 +719,11 @@ main {
   box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.3);
   z-index: 1000;
 
+  .err-msg {
+    color: #dc3545;
+    font-size: 1.3rem;
+  }
+
   .donation-pop-up {
     display: none;
     .image-container {
@@ -825,30 +828,29 @@ main {
 
   .donation-pop-up-step-1,
   .donation-pop-up-step-3 {
+    select {
+      @include regularText;
+      border: 1px solid $black;
+      border-radius: 5px;
+      flex-grow: 1;
+      padding: 1.9rem;
+      text-align: center;
+      color: #a4a8ae;
+      appearance: none;
+      cursor: pointer;
+    }
+    .select-arrow {
+      position: absolute;
+      right: 0;
+      padding: 2.9rem 0.8rem 2.8rem;
+      background-color: $lightGreen;
+      pointer-events: none;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-left: 1px solid $black;
+    }
     .select-container {
       position: relative;
-
-      select {
-        @include regularText;
-        border: 1px solid $black;
-        border-radius: 5px;
-        flex-grow: 1;
-        padding: 1.9rem;
-        text-align: center;
-        color: #a4a8ae;
-        appearance: none;
-        cursor: pointer;
-      }
-      .select-arrow {
-        position: absolute;
-        right: 0;
-        padding: 2.9rem 0.8rem 2.8rem;
-        background-color: $lightGreen;
-        pointer-events: none;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
-        border-left: 1px solid $black;
-      }
     }
   }
 
@@ -903,6 +905,7 @@ main {
         .other-amount,
         .select-container {
           @include flexAlignCenter(4rem);
+          flex-wrap: wrap;
           label {
             background-color: #80cfc8;
           }
@@ -911,6 +914,10 @@ main {
         .other-amount {
           label {
             background-color: #00a092;
+          }
+          #err-message-amount {
+            color: #dc3545;
+            font-size: 1.3rem;
           }
         }
 
@@ -947,7 +954,7 @@ main {
         margin-top: 1rem;
         padding: 1.7rem 2rem;
         border: 1px solid $black;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
         border-radius: 5px;
         width: 100%;
       }
@@ -992,6 +999,20 @@ main {
 
   .donation-pop-up-step-3 {
     display: none;
+
+    .select-container.saved-card {
+      align-self: flex-start;
+      width: fit-content;
+      margin-top: 2rem;
+
+      img {
+        background-color: #80cfc8;
+      }
+
+      #saved-cards {
+        padding: 1.9rem 7rem;
+      }
+    }
     form {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1018,6 +1039,12 @@ main {
       }
     }
 
+    #save-card-checkbox {
+      @include regularText();
+      @include flexAlignCenter(1rem);
+      margin-top: 3rem;
+    }
+
     .next-steps {
       justify-content: space-between;
       gap: 11rem;
@@ -1031,6 +1058,19 @@ main {
           background-color: $orangeHover;
         }
       }
+    }
+  }
+  .donation-pop-up-step-4 {
+    background-color: white;
+    flex-direction: column;
+    gap: 4rem;
+    border-radius: 5px;
+    padding: 2rem 2rem 7rem;
+    .btn-cancel-step4 {
+      align-self: flex-end;
+    }
+    .donation-request-msg {
+      @include regularText();
     }
   }
 }

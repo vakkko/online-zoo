@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js" type="module"></script>
+    <script src="../../ts/common/common.js" type="module"></script>
+    <script
+      src="../../ts/registerLogin/registerLogin.js"
+      type="module"
+    ></script>
+    <title>Online Zoo</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../assets/images/zoo-favicon.png"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo-links">
+        <img src="../../assets/images/logo.png" alt="zoo logo" />
+        <nav class="page-navigation">
+          <button class="btn-cancel-header">
+            <img
+              src="../../assets/images/donation-pop-up/x.png"
+              alt="cancel icon"
+            />
+          </button>
+          <ul>
+            <li><a href="../landing/index.html">about</a></li>
+            <li><a href="../map/index.html">map</a></li>
+            <li><a href="../zoos/index.html">zoos</a></li>
+            <li><a href="../contact-us/index.html">Contact us</a></li>
+          </ul>
+        </nav>
+
+        <div class="social-networks">
+          <a
+            href="https://www.youtube.com/@RSSchool"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="../../assets/images/youTube.png" alt="youtube logo"
+          /></a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/rsschool_en?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            ><img src="../../assets/images/instagram.png" alt="instagram logo"
+          /></a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/rsschoolEN"
+            ><img src="../../assets/images/facebook.png" alt="facebook logo"
+          /></a>
+        </div>
+        <div class="user-box">
+          <button class="user-avatar">
+            <img src="../../assets/images/user-avatar.jpg" alt="user" />
+          </button>
+          <div class="pop-up-authorization hidden">
+            <button class="btn-cancel-auth">
+              <img
+                src="../../assets/images/donation-pop-up/x.png"
+                alt="cancel icon"
+              />
+            </button>
+            <h3>Would you like to sign in or register?</h3>
+            <ul>
+              <li><a href="../signIn/index.html">Sign in</a></li>
+              <li><a href="./index.html">Register</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="auth-overlay" class="hidden"></div>
+        <button class="btn-humburger-menu">
+          <img src="../../assets/images/hamburger.png" alt="hamburger menu" />
+        </button>
+      </div>
+    </header>
+    <main>
+      <div class="registration-container">
+        <div class="registration-card">
+          <h3>Registration</h3>
+          <form>
+            <label for="login">Login</label>
+            <input
+              type="text"
+              id="login"
+              minlength="3"
+              placeholder="Enter username"
+              required
+              autocomplete="off"
+            />
+            <p class="err-msg login hidden">
+              Login should be at least 3 characters and only Englishe letters
+              are allowed
+            </p>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter email"
+              autocomplete="email"
+            />
+            <p class="err-msg email hidden">Should match the email format</p>
+            <label for="password">Password</label>
+            <input
+              placeholder="Password"
+              type="password"
+              id="password"
+              minlength="6"
+              autocomplete="new-password"
+              required
+            />
+            <p class="err-msg password hidden">
+              Passowrd should be at least 6 characters and 1 special character
+            </p>
+            <label for="confirmpassword">Confirm password</label>
+            <input
+              placeholder="Confirm password"
+              type="text"
+              minlength="6"
+              id="confirmpassword"
+              autocomplete="new-password"
+              required
+            />
+            <p class="err-msg confirmpassword hidden">Passwords didn't match</p>
+            <label for="name">Name</label>
+            <input
+              placeholder="name"
+              type="text"
+              id="name"
+              minlength="3"
+              autocomplete="username"
+              required
+            />
+            <p class="err-msg name hidden">
+              Name should contain at least 3 English letters
+            </p>
+            <button type="submit">Register</button>
+          </form>
+          <p class="response-msg hidden"></p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

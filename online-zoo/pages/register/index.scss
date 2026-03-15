@@ -1,0 +1,86 @@
+@use "../../scss/common";
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  min-height: 100vh;
+  @include flexAlignCenter();
+  justify-content: center;
+
+  .err-msg,
+  .response-msg {
+    color: #dc3545;
+    font-size: 1.3rem;
+  }
+
+  .registration-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80rem;
+
+    .registration-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h3 {
+      @include heading3styles();
+      color: #333;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+
+      label {
+        margin-bottom: 1rem;
+        font-weight: 600;
+        color: #555;
+        font-size: 2rem;
+      }
+
+      input {
+        padding: 10px;
+        margin-bottom: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1.5rem;
+        transition: border-color 0.3s ease;
+      }
+
+      input.err-border {
+        border: 1px solid #dc3545;
+      }
+
+      button {
+        background-color: #4a90e2;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 2rem;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 1rem;
+      }
+
+      button:hover,
+      button:disabled {
+        background-color: #357abd;
+      }
+    }
+  }
+}
