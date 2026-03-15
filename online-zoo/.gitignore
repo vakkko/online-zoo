@@ -7,7 +7,6 @@ build/
 out/
 *.tsbuildinfo
 *.css.map
-*.js
 *.d.ts
 *.d.ts.map
 *.js.map

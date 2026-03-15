@@ -1650,6 +1650,7 @@ main .animal-on-screen img {
   background-color: #d26004;
 }
 .donation-pop-up-container .donation-pop-up-step-4 {
+  display: none;
   background-color: white;
   flex-direction: column;
   gap: 4rem;

@@ -1032,6 +1032,7 @@ main .donation-pop-up-container .donation-pop-up-step-3 .next-steps .btn-complet
   background-color: #d26004;
 }
 main .donation-pop-up-container .donation-pop-up-step-4 {
+  display: none;
   background-color: white;
   flex-direction: column;
   gap: 4rem;
