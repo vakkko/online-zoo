@@ -323,30 +323,27 @@
               <div class="amount-box">
                 <h5><span>*</span>Choose your donation amount:</h5>
                 <div>
-                  <button>$10</button>
-                  <button>$20</button>
-                  <button>$30</button>
-                  <button>$50</button>
-                  <button>$80</button>
-                  <button>$100</button>
+                  <button value="10">$10</button>
+                  <button value="20">$20</button>
+                  <button value="30">$30</button>
+                  <button value="50">$50</button>
+                  <button value="80">$80</button>
+                  <button value="100">$100</button>
                 </div>
               </div>
               <div class="other-amount">
                 <label for="amount">Other amount</label>
-                <input type="text" id="amount" autocomplete="off" />
+                <input type="text" id="amount" autocomplete="off" /><br />
+                <p id="err-message-amount" class="hidden">
+                  Other amount value should be only number
+                </p>
               </div>
               <div class="select-container">
                 <label for="pet">for special pet</label>
-                <select aria-placeholder="name" name="pet" id="pet">
-                  <option selected hidden>Choose your favourite</option>
-                  <option>Lukas the Panda</option>
-                  <option>Andy the Lemur</option>
-                  <option>Clen the Gorilla</option>
-                  <option>Mike the Aligator</option>
-                  <option>Sam & Lora the eagles family</option>
-                  <option>Liz the Koala</option>
-                  <option>Shake the Lion</option>
-                  <option>Senja the Tiger</option>
+                <select aria-placeholder="name" name="pet" required id="pet">
+                  <option value="" selected hidden>
+                    Choose your favourite
+                  </option>
                 </select>
                 <img
                   src="../../assets/images/donation-pop-up/arrow-down.png"
@@ -354,6 +351,9 @@
                   class="select-arrow"
                 />
               </div>
+              <p class="err-msg step-1 hidden">
+                Something went wrong, refresh the page
+              </p>
               <div class="gift-checkbox">
                 <input id="gift" type="checkbox" />
                 <label for="gift">Make this a monthly recurring gift</label>
@@ -386,7 +386,7 @@
                 </clipPath>
               </defs>
             </svg>
-            <button class="btn-next">
+            <button disabled class="btn-next">
               next
               <svg
                 width="25"
@@ -419,6 +419,9 @@
                 placeholder="First and last name"
                 autocomplete="name"
               /><br />
+              <p class="err-msg name hidden">
+                Name should contains only letters
+              </p>
               <label for="email"
                 ><span class="asterisk">*</span> Your Email Address</label
               ><br />
@@ -428,6 +431,9 @@
                 autocomplete="email"
                 placeholder="Enter your email"
               />
+              <p class="err-msg email hidden">
+                Email should follow the standard email format
+              </p>
             </form>
             <p>
               You will receive emails from the Online Zoo, including updates and
@@ -469,7 +475,7 @@
               </defs>
             </svg>
             <button class="btn-back">Back</button>
-            <button class="btn-next">
+            <button disabled class="btn-next">
               next
               <svg
                 width="25"
@@ -498,32 +504,40 @@
                 <label for="card"
                   ><span class="asterisk">*</span> Credit Card Number</label
                 ><br />
-                <input type="text" id="card" placeholder="" />
+                <input type="text" id="card" maxlength="16" placeholder="" />
+                <p class="err-msg card hidden">
+                  Card Number Should be exactly 16 digits long and contain only
+                  numeric characters
+                </p>
               </div>
               <div>
-                <label for="cvvNumber"
+                <label for="cvv"
                   ><span class="asterisk">*</span> CVVNumber</label
                 ><br />
-                <input type="text" id="cvvNumber" placeholder="" />
+                <input type="text" id="cvv" maxlength="3" placeholder="" />
+                <p class="err-msg cvv hidden">
+                  CVV Should be exactly 3 digits long and contain only numeric
+                  characters
+                </p>
               </div>
               <div class="select-container">
                 <label for="month"
                   ><span class="asterisk">*</span> Expiration Date</label
                 ><br />
-                <select name="month">
-                  <option hidden selected>Month</option>
-                  <option>January</option>
-                  <option>February</option>
-                  <option>March</option>
-                  <option>April</option>
-                  <option>May</option>
-                  <option>June</option>
-                  <option>July</option>
-                  <option>August</option>
-                  <option>September</option>
-                  <option>October</option>
-                  <option>November</option>
-                  <option>December</option>
+                <select id="card-month" name="card-month" required>
+                  <option value="" hidden selected>Month</option>
+                  <option value="01">January</option>
+                  <option value="02">February</option>
+                  <option value="03">March</option>
+                  <option value="04">April</option>
+                  <option value="05">May</option>
+                  <option value="06">June</option>
+                  <option value="07">July</option>
+                  <option value="08">August</option>
+                  <option value="09">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
                 </select>
                 <img
                   src="../../assets/images/donation-pop-up/arrow-down.png"
@@ -532,24 +546,8 @@
                 />
               </div>
               <div class="select-container year">
-                <select name="year">
-                  <option selected hidden>Year</option>
-                  <option>2015</option>
-                  <option>2016</option>
-                  <option>2017</option>
-                  <option>2018</option>
-                  <option>2019</option>
-                  <option>2020</option>
-                  <option>2021</option>
-                  <option>2022</option>
-                  <option>2023</option>
-                  <option>2024</option>
-                  <option>2025</option>
-                  <option>2026</option>
-                  <option>2027</option>
-                  <option>2028</option>
-                  <option>2029</option>
-                  <option>2030</option>
+                <select id="card-year" name="card-year" required>
+                  <option value="" selected hidden>Year</option>
                 </select>
                 <img
                   src="../../assets/images/donation-pop-up/arrow-down.png"
@@ -558,6 +556,20 @@
                 />
               </div>
             </form>
+            <div id="save-card-checkbox" class="hidden">
+              <input type="checkbox" id="save-card" />
+              <label for="save-card">Save card info for future donations</label>
+            </div>
+            <div class="select-container saved-card hidden">
+              <select name="saved-cards" id="saved-cards">
+                <option value="" selected hidden>Saved Card</option>
+              </select>
+              <img
+                src="../../assets/images/donation-pop-up/arrow-down.png"
+                alt="down arrow"
+                class="select-arrow"
+              />
+            </div>
           </div>
           <div class="next-steps">
             <svg
@@ -600,7 +612,7 @@
               </defs>
             </svg>
             <button class="btn-back">Back</button>
-            <button class="btn-complete-donation">
+            <button disabled class="btn-complete-donation">
               complete donation
               <svg
                 width="25"
@@ -617,6 +629,27 @@
                 />
               </svg>
             </button>
+          </div>
+        </div>
+        <div class="donation-pop-up-step-4">
+          <button class="btn-cancel-step4">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="gray"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M29.5599 2.56066C30.1457 1.97487 30.1457 1.02512 29.5599 0.439337C28.9741 -0.146448 28.0243 -0.146445 27.4386 0.439343L14.9997 12.8783L2.56112 0.439648C1.97534 -0.14614 1.02559 -0.146143 0.4398 0.439642C-0.145987 1.02543 -0.14599 1.97517 0.439795 2.56096L12.8784 14.9996L0.439337 27.4387C-0.146448 28.0245 -0.146445 28.9743 0.439343 29.56C1.02513 30.1458 1.97488 30.1458 2.56066 29.56L14.9997 17.1209L27.439 29.5603C28.0248 30.1461 28.9745 30.1461 29.5603 29.5604C30.1461 28.9746 30.1461 28.0248 29.5603 27.439L17.121 14.9996L29.5599 2.56066Z"
+                fill="gray"
+              />
+            </svg>
+          </button>
+          <div>
+            <p class="donation-request-msg"></p>
           </div>
         </div>
       </div>
