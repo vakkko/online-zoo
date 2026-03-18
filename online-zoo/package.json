@@ -11,7 +11,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@types/leaflet": "^1.9.21",
     "@typescript-eslint/eslint-plugin": "^8.56.1",
