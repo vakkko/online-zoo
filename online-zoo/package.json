@@ -14,6 +14,7 @@
   "type": "module",
   "devDependencies": {
     "@types/leaflet": "^1.9.21",
+    "@types/node": "^25.5.0",
     "@typescript-eslint/eslint-plugin": "^8.56.1",
     "@typescript-eslint/parser": "^8.56.1",
     "eslint": "^9.39.3",
